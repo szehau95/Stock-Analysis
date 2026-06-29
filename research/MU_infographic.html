@@ -1,0 +1,109 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+  :root{--bg:#0a1730;--bg2:#0f2342;--card:#142a4d;--blue:#2f8bff;--cyan:#39d0d8;--green:#2ec27e;--amber:#f5a524;--ink:#eaf1fb;--mut:#9fb3cd;--line:#1f3a63;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',-apple-system,Roboto,Helvetica,Arial,sans-serif;}
+  body{width:1080px;height:1500px;background:linear-gradient(160deg,#0a1730,#0c1d3a 55%,#0a1730);color:#eaf1fb;padding:54px 56px;}
+  .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:30px;}
+  .ttl{font-size:46px;font-weight:800;letter-spacing:-.5px;line-height:1.05;}
+  .ttl span{color:#2f8bff;}
+  .sub{color:#9fb3cd;font-size:21px;margin-top:8px;}
+  .tick{text-align:right;}
+  .tick .px{font-size:40px;font-weight:800;}
+  .tick .d{color:#ff6b6b;font-size:21px;font-weight:700;}
+  .tick .lab{color:#9fb3cd;font-size:16px;}
+  .verdicts{display:flex;gap:24px;margin:14px 0 30px;}
+  .v{flex:1;border-radius:18px;padding:24px 26px;position:relative;overflow:hidden;}
+  .v.buy{background:linear-gradient(135deg,#0e7a4d,#2ec27e);}
+  .v.wait{background:linear-gradient(135deg,#9a6b00,#f5a524);}
+  .v .k{font-size:18px;letter-spacing:.12em;text-transform:uppercase;opacity:.9;font-weight:700;}
+  .v .big{font-size:62px;font-weight:900;line-height:1;margin:6px 0 4px;}
+  .v .l{font-size:21px;font-weight:600;opacity:.97;}
+  h2{font-size:25px;color:#39d0d8;margin:0 0 14px;letter-spacing:.02em;display:flex;align-items:center;gap:10px;}
+  h2::before{content:"";width:8px;height:26px;background:#2f8bff;border-radius:3px;display:inline-block;}
+  .sec{background:#122546;border:1px solid #1f3a63;border-radius:18px;padding:26px 28px;margin-bottom:24px;}
+  .grid2{display:flex;gap:24px;}
+  .grid2>.sec{flex:1;margin-bottom:24px;}
+  ul{list-style:none;}
+  li{font-size:21px;line-height:1.5;margin:11px 0;padding-left:30px;position:relative;color:#dce7f6;}
+  li::before{content:"";position:absolute;left:4px;top:11px;width:9px;height:9px;border-radius:50%;background:#2f8bff;}
+  li.g::before{background:#2ec27e;} li.r::before{background:#ff6b6b;}
+  b{color:#ffffff;font-weight:700;}
+  .stats{display:flex;gap:18px;margin:6px 0 26px;}
+  .stat{flex:1;background:#122546;border:1px solid #1f3a63;border-radius:16px;padding:20px;text-align:center;}
+  .stat .n{font-size:38px;font-weight:900;color:#39d0d8;line-height:1;}
+  .stat .t{font-size:16px;color:#9fb3cd;margin-top:8px;line-height:1.3;}
+  table{width:100%;border-collapse:collapse;}
+  td{font-size:21px;padding:11px 6px;border-bottom:1px solid #1f3a63;color:#dce7f6;}
+  td.lab{color:#9fb3cd;} td.val{text-align:right;font-weight:800;color:#fff;}
+  tr:last-child td{border-bottom:none;}
+  .foot{display:flex;gap:24px;margin-top:6px;}
+  .pill{flex:1;border-radius:14px;padding:18px 22px;font-size:19px;line-height:1.4;}
+  .pill.cat{background:#0e2c52;border:1px solid #2f8bff;}
+  .pill.risk{background:#33121a;border:1px solid #ff6b6b;}
+  .pill .h{font-weight:800;font-size:16px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}
+  .pill.cat .h{color:#2f8bff;} .pill.risk .h{color:#ff8a8a;}
+  .disc{color:#6f86a6;font-size:15px;text-align:center;margin-top:22px;}
+</style></head><body data-document-role="page" data-label="Micron (MU) Research Snapshot">
+  <div class="top">
+    <div>
+      <div class="ttl">MICRON <span>(MU)</span></div>
+      <div class="sub">Equity Research Snapshot · Daily · 29 Jun 2026</div>
+    </div>
+    <div class="tick">
+      <div class="px">~$1,055</div>
+      <div class="d">▼ ~16% in 2 days off ATH $1,255</div>
+      <div class="lab">+270% YTD · mkt cap ~$1.27T</div>
+    </div>
+  </div>
+
+  <div class="verdicts">
+    <div class="v buy"><div class="k">Fundamental · 12-mo</div><div class="big">BUY</div><div class="l">Price target $1,500 (range $1,250–1,650)</div></div>
+    <div class="v wait"><div class="k">Technical · entry timing</div><div class="big">WAIT</div><div class="l">No edge at mid-range ~$1,055</div></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">84.6%</div><div class="t">Q3 gross margin</div></div>
+    <div class="stat"><div class="n">+346%</div><div class="t">Q3 revenue YoY ($41.46B)</div></div>
+    <div class="stat"><div class="n">$24.4B</div><div class="t">net cash</div></div>
+    <div class="stat"><div class="n">&lt;13x</div><div class="t">forward earnings</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="sec">
+      <h2>Why BUY</h2>
+      <ul>
+        <li class="g">HBM (AI memory) <b>sold out through CY2026</b>; ~$100B customer agreements</li>
+        <li class="g"><b>#2 in HBM</b> at ~21% share (SK Hynix 62%, Samsung 17%)</li>
+        <li class="g">Adj. free cash flow <b>$18.3B</b> in the quarter; net-cash balance sheet</li>
+        <li class="g">Market pricing a cycle peak the backlog may defer</li>
+      </ul>
+    </div>
+    <div class="sec">
+      <h2>Why WAIT</h2>
+      <ul>
+        <li class="r">Parabolic: +270% YTD, sharp 2-day drop off the ATH</li>
+        <li class="r">RSI cooling to 54 (was 70) — momentum unwinding</li>
+        <li class="g"><b>But OBV still rising</b> = no institutional selling</li>
+        <li>→ A patience call, not a bearish one</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>The Trade (Daily / 1D)</h2>
+    <table>
+      <tr><td class="lab">Entry zone (EMA21 + Fib confluence)</td><td class="val">$1,020 – $1,029</td></tr>
+      <tr><td class="lab">Stop / invalidation (closing basis)</td><td class="val">$945</td></tr>
+      <tr><td class="lab">Target 1 (prior all-time high)</td><td class="val">$1,255</td></tr>
+      <tr><td class="lab">Target 2 (continuation)</td><td class="val">$1,350</td></tr>
+      <tr><td class="lab">Risk / Reward (T1 / T2)</td><td class="val">~2.9:1 / ~4.0:1</td></tr>
+    </table>
+  </div>
+
+  <div class="foot">
+    <div class="pill cat"><div class="h">Next catalyst</div>Q4 earnings <b>29 Sep 2026</b> — guide $50B revenue, $31 EPS, ~86% gross margin</div>
+    <div class="pill risk"><div class="h">Key risk / invalidation</div>Two straight months of <b>falling DRAM/HBM contract prices</b> → margin roll-over</div>
+  </div>
+
+  <div class="disc">Research/analysis, not personalized investment advice. Figures as of 29 Jun 2026; data from Micron Q3 FY26 filings, press &amp; live IBKR price/volume.</div>
+</body></html>
