@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Supercycle — Portfolio Allocation & Order Tickets · 2026-07-01</title>
+<style>
+  :root{
+    --bg:#0b0f19; --card:#141a2a; --card2:#1b2334; --line:#2a3450;
+    --txt:#e8edf7; --mut:#93a0bd; --grn:#31d07f; --grnbg:#12351f;
+    --red:#ff6b6b; --redbg:#3a1620; --amb:#ffb347; --ambbg:#3a2a12;
+    --blu:#5b9dff; --blubg:#132446; --pur:#b98cff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:28px}
+  h1{font-size:24px;margin:0 0 2px}
+  h2{font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);margin:30px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  .sub{color:var(--mut);margin:0 0 20px;font-size:13px}
+  .wrap{max-width:1060px;margin:0 auto}
+  .grid{display:grid;gap:16px}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g2{grid-template-columns:1.15fr .85fr}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .kpi .n{font-size:22px;font-weight:700}
+  .kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;overflow:hidden;border-radius:12px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--card2);color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+  tr:last-child td{border-bottom:none}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+  .buy{background:var(--grnbg);color:var(--grn);border:1px solid #1f6d43}
+  .sell{background:var(--redbg);color:var(--red);border:1px solid #7d2637}
+  .wait{background:var(--ambbg);color:var(--amb);border:1px solid #7d5a1c}
+  .exit{background:var(--redbg);color:var(--red);border:1px solid #7d2637}
+  .bar{height:26px;border-radius:6px;display:flex;overflow:hidden;background:#0e1524;border:1px solid var(--line)}
+  .seg{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#0b0f19;white-space:nowrap}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:10px;font-size:12px;color:var(--mut)}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+  .mem{background:#ff6b6b}.nvda{background:#31d07f}.anet{background:#5b9dff}.vrt{background:#b98cff}
+  .ibit{background:#ffb347}.hk{background:#6b7280}.cash{background:#48507a}
+  .note{color:var(--mut);font-size:12.5px}
+  .flag{background:var(--redbg);border:1px solid #7d2637;border-radius:12px;padding:12px 14px;margin-top:8px}
+  .ticket{background:var(--card2);border:1px solid var(--line);border-left:4px solid var(--grn);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+  .ticket.sellt{border-left-color:var(--red)}
+  .ticket .h{font-weight:700;font-size:14px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center}
+  code{background:#0e1524;padding:1px 6px;border-radius:5px;color:#cfe0ff;font-size:12.5px}
+  .foot{color:var(--mut);font-size:11.5px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
+  .pill{font-size:11px;color:var(--mut);border:1px solid var(--line);border-radius:20px;padding:2px 10px;margin-right:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>AI Supercycle — Allocation &amp; Order Tickets</h1>
+  <p class="sub">As-of <b>2026-07-01</b> (live IBKR) · NAV <b>$51,121</b> · Capital source: <b>Sourced from existing portfolio</b> · <span class="pill">Draft — not executed</span><span class="pill">Research, not advice</span></p>
+
+  <div class="grid g4">
+    <div class="card kpi"><div class="l">Memory concentration</div><div class="n" style="color:var(--red)">91% → 18%</div><div class="note">2x-levered MUU+RAM, de-clustered</div></div>
+    <div class="card kpi"><div class="l">New diversified basket</div><div class="n" style="color:var(--grn)">$24,000</div><div class="note">3 names · compute/net/power</div></div>
+    <div class="card kpi"><div class="l">Dry powder retained</div><div class="n" style="color:var(--blu)">~$17.8k</div><div class="note">buffer + tranche reserve + adds</div></div>
+    <div class="card kpi"><div class="l">Combined AI theme</div><div class="n">~65%</div><div class="note">across 4 sub-themes (was 1)</div></div>
+  </div>
+
+  <h2>Before → After allocation</h2>
+  <div class="card">
+    <div class="note" style="margin-bottom:6px">BEFORE — 91% in two 2x-leveraged memory ETFs</div>
+    <div class="bar">
+      <div class="seg" style="width:54.2%;background:#ff6b6b">MUU 54%</div>
+      <div class="seg" style="width:36.7%;background:#c2455a">RAM 37%</div>
+      <div class="seg" style="width:3.4%;background:#ffb347"></div>
+      <div class="seg" style="width:5.7%;background:#6b7280"></div>
+    </div>
+    <div class="note" style="margin:16px 0 6px">AFTER — de-levered memory residual + diversified basket + cash</div>
+    <div class="bar">
+      <div class="seg mem" style="width:17.8%;background:#ff6b6b">Mem 18%</div>
+      <div class="seg" style="width:17.6%;background:#31d07f">NVDA 18%</div>
+      <div class="seg" style="width:16.1%;background:#5b9dff">ANET 16%</div>
+      <div class="seg" style="width:13.2%;background:#b98cff">VRT 13%</div>
+      <div class="seg" style="width:35.3%;background:#48507a">Cash / dry powder 35%</div>
+    </div>
+    <div class="legend">
+      <span><i class="dot mem"></i>Residual memory (MUU 3sh + RAM 255sh) $9,080</span>
+      <span><i class="dot nvda"></i>NVDA $9,000</span>
+      <span><i class="dot anet"></i>ANET $8,250</span>
+      <span><i class="dot vrt"></i>VRT $6,750</span>
+      <span><i class="dot cash"></i>Cash/dry powder ~$17,840</span>
+    </div>
+  </div>
+
+  <h2>The basket — buy verdicts (computed from IBKR daily bars)</h2>
+  <table>
+    <thead><tr>
+      <th>Ticker</th><th>Sub-theme</th><th></th><th class="num">$ Target</th><th class="num">Shares</th>
+      <th>Entry zone</th><th class="num">Stop (close)</th><th class="num">T1</th><th class="num">R/R</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><b>NVDA</b></td><td>Compute / silicon</td><td><span class="tag buy">BUY</span></td><td class="num">$9,000</td><td class="num">45</td><td>191–200 <span class="note">(0.618 fib+EMA200)</span></td><td class="num">187</td><td class="num">220</td><td class="num">~2.5:1</td></tr>
+      <tr><td><b>ANET</b></td><td>Networking</td><td><span class="tag buy">BUY</span></td><td class="num">$8,250</td><td class="num">50</td><td>162–165 <span class="note">(wait — no chase @169)</span></td><td class="num">156</td><td class="num">178</td><td class="num">~1.9:1</td></tr>
+      <tr><td><b>VRT</b></td><td>Power &amp; cooling</td><td><span class="tag buy">BUY</span></td><td class="num">$6,750</td><td class="num">21</td><td>318–328 <span class="note">(EMA20+0.236 fib)</span></td><td class="num">300</td><td class="num">376</td><td class="num">~2.4:1</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Live px: NVDA $198.28 · ANET $169.14 · VRT $333.17. Sizing is vol-inverse (NVDA lowest ATR → biggest; VRT highest ATR 6.4% → smallest). No intra-basket sub-theme cluster.</p>
+
+  <h2>Order tickets — SELL (fund the basket)</h2>
+  <div class="ticket sellt"><div class="h"><span>MUU · Direxion 2x Micron <span class="tag sell">TRIM</span></span><span>~$24,617</span></div>
+    <div>SELL <b>24</b> of 27 sh · <code>LMT 1024.00 GTC</code> (marketable, bid $1,023) · keep 3 sh residual. <span class="note">Reason: 2x daily-reset instrument fails standalone risk review; cut single-sub-theme concentration.</span></div></div>
+  <div class="ticket sellt"><div class="h"><span>RAM · Roundhill 2x DRAM <span class="tag sell">TRIM</span></span><span>~$12,806</span></div>
+    <div>SELL <b>544</b> of 799 sh · <code>LMT 23.50 GTC</code> (bid $23.53) · keep 255 sh residual. <span class="note">Same rationale; wider spread — work the limit.</span></div></div>
+  <div class="ticket sellt"><div class="h"><span>IBIT · iShares Bitcoin <span class="tag exit">EXIT</span></span><span>~$1,739</span></div>
+    <div>SELL <b>52</b> sh (all) · <code>LMT 33.44 GTC</code>. <span class="note">Off-theme for this mandate; small loss harvested.</span></div></div>
+  <div class="ticket sellt"><div class="h"><span>45757 (HK real-estate) <span class="tag exit">EXIT (opt.)</span></span><span>~$489</span></div>
+    <div>SELL <b>3,000</b> sh (all) if liquidity allows · <code>LMT at/above bid</code>. <span class="note">Illiquid −72% stub; optional — may leave as rounding error.</span></div></div>
+  <p class="note"><b>Total freed ≈ $39,650</b> (≈$37.4k ETF trim + $1.7k IBIT + $0.5k HK + $16 cash).</p>
+
+  <h2>Order tickets — BUY (staged limits at confluence)</h2>
+  <div class="ticket"><div class="h"><span>NVDA <span class="tag buy">BUY</span></span><span>45 sh · $9,000</span></div>
+    <div>Tranche 1 (~60%): BUY <b>27</b> sh · <code>LMT 196.00 GTC</code> · Tranche 2 (~40%): BUY <b>18</b> sh · <code>LMT 192.00 GTC</code> (0.618 fib+EMA200).<br>
+    After fill: protective stop on <b>close &lt; 187</b>. T1 220 / T2 236.</div></div>
+  <div class="ticket"><div class="h"><span>ANET <span class="tag wait">BUY ON PULLBACK</span></span><span>50 sh · $8,250</span></div>
+    <div>Trading $169 — <b>do not chase.</b> Tranche 1: BUY <b>30</b> sh · <code>LMT 164.00 GTC</code> · Tranche 2: BUY <b>20</b> sh · <code>LMT 162.00 GTC</code> (EMA20+0.236 fib).<br>
+    After fill: stop on <b>close &lt; 156</b>. T1 178.</div></div>
+  <div class="ticket"><div class="h"><span>VRT <span class="tag buy">BUY</span></span><span>21 sh · $6,750</span></div>
+    <div>Trading $333 — scale in on a tag. Tranche 1: BUY <b>13</b> sh · <code>LMT 322.00 GTC</code> · Tranche 2: BUY <b>8</b> sh · <code>LMT 315.00 GTC</code>.<br>
+    After fill: stop on <b>close &lt; 300</b> (1.5×ATR). T1 376.</div></div>
+
+  <h2>Watch / add list (next capital)</h2>
+  <table>
+    <thead><tr><th>Ticker</th><th>Why not now</th><th>Trigger to add</th></tr></thead>
+    <tbody>
+      <tr><td><b>AVGO</b> <span class="tag wait">#1</span></td><td>Passes all gates; held back on semi-overlap vs NVDA + memory residual</td><td>Displace memory residual, or on tag of 365 (0.618 fib) / SMA100 372</td></tr>
+      <tr><td><b>MSFT</b></td><td>Cheap (−22% YTD) but primary downtrend below 200-day</td><td>Reclaim of ~$400 / 50-day on volume</td></tr>
+      <tr><td>AMD·GEV·PANW·CRWD</td><td>At/near all-time highs — fail no-chase R/R</td><td>Pullback to a defined fib/EMA confluence</td></tr>
+    </tbody>
+  </table>
+
+  <div class="flag"><b>⚠ Key risk to hold in view:</b> NVDA (direct China/export-control exposure) and the memory residual are correlated to the <i>same</i> macro shock (export-control action or a hyperscaler capex guide-down) — they would draw down together. That is why the basket is sized restrained and ~35% cash is retained rather than fully deployed.</div>
+
+  <p class="foot">
+  Prices/volume/vol: live IBKR snapshots 2026-07-01. EMA/RSI/ATR/Fib computed from IBKR daily OHLC 2025-07-02 → 2026-06-30. Fundamentals date-anchored (NVDA Q1 FY27 5/20/26; VRT Q1'26; ANET Q1'26). Exact ROIC−WACC, EV/EBITDA-vs-3yr-band and full 90-day revision series not independently pulled — verify before execution. Share counts/limits are drafts at entry-zone levels; adjust to live spreads at execution. Leveraged-ETF sells are marketable limits — mind the spread. This is a research &amp; portfolio-construction framework, not personalized investment advice; execution remains the account owner's decision.
+  </p>
+
+</div>
+</body>
+</html>
