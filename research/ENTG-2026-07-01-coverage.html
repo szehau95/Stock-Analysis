@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Entegris (ENTG) — Institutional Coverage</title>
+<style>
+  :root{
+    --ivory:#F6EFDF;
+    --ivory-2:#FBF7EC;
+    --ink:#1C1B18;
+    --ink-soft:#3A3833;
+    --muted:#6B6659;
+    --gold:#9C7C3A;
+    --gold-soft:#C6A863;
+    --line:#D8CBAA;
+    --red:#8C2E2E;
+    --green:#3E5F3A;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:10.3pt;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;}
+  .page{
+    padding:26mm 22mm 22mm 22mm;
+    page-break-after:always;
+    position:relative;
+    min-height:100vh;
+  }
+  .page:last-child{page-break-after:auto;}
+
+  /* ---------- masthead ---------- */
+  .brandbar{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    border-bottom:1.5px solid var(--gold);
+    padding-bottom:8px;margin-bottom:6px;
+  }
+  .brand{font-family:Georgia,serif;letter-spacing:3px;font-size:12pt;font-weight:700;}
+  .brand .thin{font-weight:400;color:var(--muted);letter-spacing:5px;}
+  .brandbar .meta{font-size:7.6pt;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;text-align:right;}
+  .footer{
+    position:absolute;bottom:12mm;left:22mm;right:22mm;
+    border-top:1px solid var(--line);padding-top:6px;
+    display:flex;justify-content:space-between;
+    font-size:7pt;letter-spacing:1px;color:var(--muted);text-transform:uppercase;
+  }
+
+  /* ---------- cover ---------- */
+  .cover{background:linear-gradient(160deg,#FBF7EC 0%,#F3EAD4 100%);}
+  .cover-inner{display:flex;flex-direction:column;height:210mm;}
+  .eyebrow{letter-spacing:6px;font-size:8pt;text-transform:uppercase;color:var(--gold);margin-top:38mm;}
+  .cover h1{font-size:37pt;line-height:1.08;margin:14px 0 6px;font-weight:400;letter-spacing:.3px;}
+  .cover h1 b{font-weight:700;}
+  .cover .sub{font-size:12pt;color:var(--ink-soft);font-family:Georgia,serif;font-style:italic;margin-bottom:26px;}
+  .rule-gold{height:2px;width:70px;background:var(--gold);margin:20px 0;}
+  .cover .lede{max-width:135mm;font-size:10.6pt;color:var(--ink-soft);line-height:1.7;}
+  .verdict-row{display:flex;gap:14px;margin-top:auto;margin-bottom:6mm;}
+  .vcard{flex:1;border:1px solid var(--line);background:rgba(255,255,255,.45);padding:14px 16px;border-top:3px solid var(--gold);}
+  .vcard .lab{font-size:7.5pt;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+  .vcard .val{font-family:Georgia,serif;font-size:19pt;margin-top:4px;}
+  .vcard .note{font-size:8pt;color:var(--muted);margin-top:3px;}
+
+  /* ---------- section headers ---------- */
+  .sec-label{letter-spacing:4px;font-size:8pt;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
+  h2{font-size:20pt;font-weight:400;margin:2px 0 4px;letter-spacing:.3px;}
+  h2 b{font-weight:700;}
+  h3{font-size:12.5pt;font-weight:700;margin:20px 0 4px;color:var(--ink);}
+  .lead{font-family:Georgia,serif;font-style:italic;color:var(--ink-soft);font-size:11pt;margin:6px 0 16px;}
+
+  p{margin:0 0 9px;}
+  strong{color:var(--ink);}
+  .num{font-variant-numeric:tabular-nums;}
+
+  ul.clean{list-style:none;padding-left:0;margin:6px 0 12px;}
+  ul.clean li{position:relative;padding-left:20px;margin-bottom:8px;}
+  ul.clean li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--gold-soft);transform:rotate(45deg);}
+
+  /* ---------- news flash ---------- */
+  .flash{border:1px solid var(--line);background:var(--ivory-2);padding:16px 18px;margin:14px 0 4px;border-left:4px solid var(--gold);}
+  .flash .tag{display:inline-block;background:var(--ink);color:var(--ivory);font-size:7pt;letter-spacing:2px;padding:3px 9px;text-transform:uppercase;}
+  .flash h3{margin:9px 0 6px;}
+  .verdict-inline{font-family:Georgia,serif;font-size:11pt;color:var(--ink);}
+
+  /* ---------- metric strip ---------- */
+  .strip{display:flex;gap:0;border:1px solid var(--line);margin:14px 0;background:var(--ivory-2);}
+  .strip div{flex:1;padding:11px 12px;border-right:1px solid var(--line);}
+  .strip div:last-child{border-right:none;}
+  .strip .k{font-size:7.3pt;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);}
+  .strip .v{font-family:Georgia,serif;font-size:15pt;margin-top:3px;}
+  .strip .s{font-size:7.6pt;color:var(--muted);}
+
+  /* ---------- tables ---------- */
+  table{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:9.4pt;}
+  th{text-align:left;font-size:7.5pt;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--gold);padding:6px 8px;}
+  td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  .t-key{font-weight:700;width:34%;}
+
+  .pill{display:inline-block;padding:2px 10px;border-radius:1px;font-size:8pt;letter-spacing:1px;text-transform:uppercase;font-weight:700;}
+  .pill.hold{background:#EFE6CB;color:var(--gold);border:1px solid var(--gold-soft);}
+  .pill.trim{background:#F0E1D8;color:#8a4b2e;border:1px solid #cc9a80;}
+
+  .flag{border:1px dashed var(--gold-soft);background:rgba(255,255,255,.4);padding:12px 15px;margin:12px 0;font-size:9.2pt;}
+  .flag b{color:var(--gold);}
+
+  .callout{background:var(--ink);color:var(--ivory);padding:18px 20px;margin:16px 0;}
+  .callout .sec-label{color:var(--gold-soft);}
+  .callout h3{color:var(--ivory);margin-top:6px;}
+  .callout p{color:#E8E1CE;}
+
+  .two-col{column-count:2;column-gap:14px;}
+  a{color:var(--gold);text-decoration:none;}
+  .src{font-size:8pt;color:var(--muted);line-height:1.5;}
+  .disc{font-size:7.6pt;color:var(--muted);line-height:1.5;border-top:1px solid var(--line);padding-top:8px;margin-top:14px;}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="brandbar">
+    <div class="brand">ENTG&nbsp;<span class="thin">PRIVATE&nbsp;RESEARCH</span></div>
+    <div class="meta">Institutional Coverage<br>Prepared 01 July 2026</div>
+  </div>
+  <div class="cover-inner">
+    <div class="eyebrow">Fundamental &amp; Technical Equity Research</div>
+    <h1>Entegris, <b>Inc.</b><br>NASDAQ:&nbsp;ENTG</h1>
+    <div class="sub">The purity layer of the semiconductor supply chain</div>
+    <div class="rule-gold"></div>
+    <div class="lede">
+      A single-name institutional brief on Entegris — the consumables-and-purity
+      franchise levered to advanced-node manufacturing — updated for the 01 July 2026
+      electronic-grade hydrofluoric-acid supply report and the intraday tape supplied
+      by the client. Sourced to SEC filings, company disclosure and recognised
+      financial media; every figure carries an as-of date.
+    </div>
+    <div class="verdict-row">
+      <div class="vcard">
+        <div class="lab">Fundamental Verdict</div>
+        <div class="val">HOLD</div>
+        <div class="note">12-mo target $180 · band $155–185</div>
+      </div>
+      <div class="vcard">
+        <div class="lab">Technical (Intraday)</div>
+        <div class="val">TRIM</div>
+        <div class="note">Do not chase the +5.16% pop</div>
+      </div>
+      <div class="vcard">
+        <div class="lab">Last Price</div>
+        <div class="val">$179.93</div>
+        <div class="note">Intraday, client chart · +5.16%</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>ENTG · Private Research</span><span>Not investment advice · Page 1</span></div>
+</section>
+
+<!-- ============ NEWS IMPACT ============ -->
+<section class="page">
+  <div class="brandbar"><div class="brand">ENTG&nbsp;<span class="thin">PRIVATE&nbsp;RESEARCH</span></div><div class="meta">Section I · News Assessment</div></div>
+  <div class="sec-label">The Question</div>
+  <h2>Does the HF news <b>change anything?</b></h2>
+  <div class="lead">Short answer: it firms the demand leg of the thesis and is a plausible partial driver of today's move — but it does not move the 12-month verdict or the fair-value band.</div>
+
+  <div class="flash">
+    <span class="tag">Tiger Brokers · 01 Jul 2026 · 10:17</span>
+    <h3>TSMC, Samsung &amp; SK Hynix scramble for electronic-grade hydrofluoric acid</h3>
+    <p style="margin-bottom:0">Industry sources report the three leading foundry/memory makers buying up electronic-grade HF. Middle-East geopolitical tension has pushed sulfur, sulfuric acid and anhydrous HF higher since the start of the year, lifting electronic-grade HF costs; some suppliers have raised prices <strong>roughly 20–30% year-to-date</strong>.</p>
+  </div>
+
+  <h3>How this actually transmits to Entegris</h3>
+  <p>The instinct is to read "HF price spike" as a direct windfall. It is not — and the honest read matters more than the convenient one:</p>
+  <ul class="clean">
+    <li><strong>Entegris is a peripheral HF supplier, not a price-setter.</strong> It is named in the electronic-grade HF supplier set, but the market is led by Stella Chemifa, Morita, Solvay, Honeywell and Chinese producers. A 20–30% HF price move is <em>not</em> a first-order revenue line for ENTG.</li>
+    <li><strong>The real signal is demand tightness at the leading edge.</strong> TSMC, Samsung and SK Hynix "scrambling" for materials is a tell that advanced-node and HBM/AI capacity is running hot. That utilisation is exactly what pulls Entegris' filtration, fluid-handling and gas/liquid-purity consumables (the Advanced Purity Solutions engine, 29.1% segment margin). <strong>Demand-positive, and it corroborates the content-per-wafer thesis.</strong></li>
+    <li><strong>Input-cost inflation is a new watch-item for the Materials Solutions segment.</strong> Higher sulfuric acid / anhydrous HF feed into ENTG's own wet chemistries. In a >70% supply-gap market Entegris should hold pricing power, but MS margin (22.0%) is the line to watch on the 30 July print.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="sec-label">Net Effect on the Call</div>
+    <h3>No change to HOLD · $180 target · $155–185 band</h3>
+    <p>This is a thematic tailwind confirmation, not a re-rating catalyst for ENTG specifically. If anything it <em>reinforces</em> the standing discipline — because a theme-driven, sector-wide materials-tightness pop is precisely the kind of strength the technical call says not to chase. It firms conviction on the demand side and adds one margin watch-item. Accumulate on weakness toward the mid-$150s–low-$160s; let the 30 July results confirm both the demand pull and the input-cost pass-through before paying up.</p>
+  </div>
+  <div class="footer"><span>ENTG · Private Research</span><span>Not investment advice · Page 2</span></div>
+</section>
+
+<!-- ============ PART A FUNDAMENTAL ============ -->
+<section class="page">
+  <div class="brandbar"><div class="brand">ENTG&nbsp;<span class="thin">PRIVATE&nbsp;RESEARCH</span></div><div class="meta">Section II · Fundamental Brief</div></div>
+  <div class="sec-label">Part A</div>
+  <h2>Fundamental <b>Research Brief</b></h2>
+  <div class="lead">A consumables-heavy purity franchise compounding through a soft cycle, with deleveraging as the near-term value lever.</div>
+
+  <div class="strip">
+    <div><div class="k">Q1'26 Revenue</div><div class="v">$811.9M</div><div class="s">+5% YoY · beat ~$807.8M</div></div>
+    <div><div class="k">Adj. EBITDA Margin</div><div class="v">27.8%</div><div class="s">$226.1M</div></div>
+    <div><div class="k">Adj. EPS</div><div class="v">$0.86</div><div class="s">vs ~$0.75 cons. (+15%)</div></div>
+    <div><div class="k">Net Leverage</div><div class="v">3.6x</div><div class="s">target ~3.0x by YE'26</div></div>
+  </div>
+
+  <h3>Investment Thesis</h3>
+  <ul class="clean">
+    <li><strong>Margin expansion in a mixed WFE tape.</strong> Q1 FY2026 (rep. 30 Apr 2026) revenue $811.9M, +5% YoY, above consensus, with adjusted operating margin 23.6% and adjusted EBITDA margin 27.8%.</li>
+    <li><strong>Deleveraging transfers value to equity.</strong> Net debt $3.3B / 3.6x, down from 3.8x at end-2025, targeting ~3.0x by YE2026 — value creation that needs no multiple expansion.</li>
+    <li><strong>Content-per-wafer outgrows unit volume.</strong> Materials and filtration content rises with each node transition (EUV, advanced packaging, gate-all-around), so revenue can grow faster than wafer starts. <em>(Structural; wafer-level content not disclosed — flagged.)</em></li>
+  </ul>
+
+  <h3>Business Model &amp; Moat</h3>
+  <p>Entegris sells the materials, filtration and purity-control products <strong>consumed inside a fab</strong> — not the capital tools. Two reporting segments as of FY2026:</p>
+  <table>
+    <tr><th>Segment</th><th>Q1'26 Sales</th><th>Adj. Margin</th><th>What it is</th></tr>
+    <tr><td class="t-key">Advanced Purity Solutions</td><td class="num">$463.6M</td><td class="num">29.1%</td><td>Filtration, fluid handling, gas/liquid purity, wafer handling &amp; packaging — the recurring, higher-margin engine.</td></tr>
+    <tr><td class="t-key">Materials Solutions</td><td class="num">$351.1M</td><td class="num">22.0%</td><td>Deposition materials, CMP slurries/pads (ex-CMC), specialty gases, coatings.</td></tr>
+  </table>
+  <p><strong>Moat — defensible:</strong> qualification lock-in (materials are spec'd into a customer's process; re-qualifying is slow and costly), sub-ppb purity engineering, unit-driven recurring demand. <strong>Commodity-adjacent:</strong> bulk chemicals and some hardware. <strong>Peers:</strong> MKS Instruments (MKSI) on purity/handling; DuPont and Merck KGaA electronic-materials units as diversified adjacencies. Segment-level market share: <em>data unavailable</em> from primary filings.</p>
+
+  <h3>Financial Snapshot <span style="font-size:8pt;color:var(--muted);font-weight:400">— as of Q1 FY2026</span></h3>
+  <table>
+    <tr><th>Metric</th><th>Figure</th><th>Note</th></tr>
+    <tr><td class="t-key">Revenue growth</td><td>+5% YoY</td><td>Sequential: data unavailable in primary form</td></tr>
+    <tr><td class="t-key">Adj. op / EBITDA margin</td><td>23.6% / 27.8%</td><td>GAAP far lower — CMC amortisation drag</td></tr>
+    <tr><td class="t-key">EPS (adj / GAAP)</td><td>$0.86 / $0.60</td><td>Net income $92.0M, +46% YoY</td></tr>
+    <tr><td class="t-key">Free cash flow</td><td>$143.5M</td><td>~17.7% of sales; FY25 FCF margin 12.7%</td></tr>
+    <tr><td class="t-key">Cash</td><td>$442.7M</td><td>CapEx guided ~$250M for 2026 (below 2025)</td></tr>
+    <tr><td class="t-key">Debt</td><td>$3.3B net / 3.6x</td><td>$400M variable-rate term loan; −$50M in Q1, ~$300M repaid in 2025</td></tr>
+    <tr><td class="t-key">ROIC / ROE</td><td>data unavailable</td><td>Stated, not estimated — GAAP returns depressed by intangibles</td></tr>
+  </table>
+  <div class="footer"><span>ENTG · Private Research</span><span>Not investment advice · Page 3</span></div>
+</section>
+
+<!-- ============ VALUATION / CATALYSTS / RISK ============ -->
+<section class="page">
+  <div class="brandbar"><div class="brand">ENTG&nbsp;<span class="thin">PRIVATE&nbsp;RESEARCH</span></div><div class="meta">Section II · Valuation &amp; Verdict</div></div>
+  <div class="sec-label">Part A · continued</div>
+  <h2>Valuation, Catalysts <b>&amp; Verdict</b></h2>
+
+  <h3>Valuation <span style="font-size:8pt;color:var(--muted);font-weight:400">— multiples are source- and date-sensitive; ranges given deliberately</span></h3>
+  <table>
+    <tr><th>Multiple</th><th>Level</th><th>Reconciliation</th></tr>
+    <tr><td class="t-key">Trailing P/E</td><td>~100–106x</td><td>GAAP artefact of CMC amortisation — do not anchor to it</td></tr>
+    <tr><td class="t-key">Forward P/E</td><td>~34–49x (cited)</td><td>Wide by source/estimate; on annualised adj. EPS the adjusted forward sits low-50s x at ~$180 — rich. Discrepancy flagged, not averaged.</td></tr>
+    <tr><td class="t-key">EV/EBITDA</td><td>~24x</td><td>EV ~$21B (mid-May cite)</td></tr>
+    <tr><td class="t-key">Peer frame</td><td>Semi median fwd P/E ~38.8x</td><td>ENTG at a premium to MKSI and the group — justified only if margin recovery AND deleveraging both land</td></tr>
+    <tr><td class="t-key">Market cap</td><td>~$27B @ $179.93</td><td>~152M sh (approx). The $22.1B StockAnalysis figure is dated 13 May at a lower price — a timing artefact, not an error.</td></tr>
+  </table>
+
+  <div class="flag"><b>Fair value —</b> On a normalised adjusted framework (mid-20s EV/EBITDA on recovering-cycle EBITDA, cross-checked to ~35–45x forward adjusted EPS), a defensible 12-month band is <strong>~$155–$185</strong>. At $179.93 the stock is in the <strong>upper half</strong> of that band — priced for successful execution, limited margin of safety.</div>
+
+  <h3>Catalysts</h3>
+  <ul class="clean">
+    <li><strong>Q2 FY2026 earnings — 30 July 2026.</strong> Guide: sales $815–845M, adj. EPS $0.76–0.84, adj. EBITDA margin 27.0–28.0%. The bar is the margin line and WFE-recovery commentary. <em>(Verify time-of-day vs IR before trading it.)</em></li>
+    <li><strong>Deleveraging milestones</strong> toward ~3.0x YE2026 — each paydown is an equity-value transfer and multiple de-risking.</li>
+    <li><strong>WFE / advanced-node demand prints</strong> — EUV layer counts, advanced-packaging/HBM ramp, GAA transitions that lift content-per-wafer. <em>(The 01 Jul HF-tightness report sits here — a demand corroborant.)</em></li>
+    <li><strong>China / export-control policy</strong> — double-edged swing factor for demand and shipping.</li>
+    <li><strong>CMP/materials cross-sell</strong> from CMC integration showing up in MS margin.</li>
+  </ul>
+
+  <h3>Risks &amp; Invalidation Triggers</h3>
+  <table>
+    <tr><th>Risk / mechanism</th><th>Invalidation trigger</th></tr>
+    <tr><td class="t-key">Valuation compression — premium to peers on adj. forwards</td><td>Q2 adj. EBITDA margin below 27% floor, or FY guide cut</td></tr>
+    <tr><td class="t-key">Leverage / rate sensitivity on $3.3B net debt</td><td>Net leverage back above ~3.8x, or FCF margin below ~10%</td></tr>
+    <tr><td class="t-key">China export controls remove a demand tranche</td><td>Management quantifies a China headwind, or new BIS rule names categories</td></tr>
+    <tr><td class="t-key">CMP pricing pressure in Materials Solutions <em>(+ new HF input-cost inflation)</em></td><td>MS segment margin declining sequentially for two quarters</td></tr>
+  </table>
+
+  <div class="callout">
+    <div class="sec-label">Verdict</div>
+    <h3><span class="pill hold">HOLD</span>&nbsp;&nbsp;12-month target $180 · range $155–185</h3>
+    <p>Genuine franchise, margins and deleveraging moving the right way — but at $179.93 the stock already sits in the upper half of a defensible band and trades at a premium to its closest peer on adjusted forwards. Reasoning chain: normalised adjusted EBITDA × mid-20s EV/EBITDA, cross-checked to ~35–45x forward adjusted EPS → ~$155–185. Direction is constructive; risk/reward at spot is balanced. <strong>Accumulate on weakness toward the mid-$150s–low-$160s, not at the top of the band.</strong> Upgrade to Buy on a confirmed WFE up-cycle inflection or a pullback into that lower zone.</p>
+  </div>
+  <div class="footer"><span>ENTG · Private Research</span><span>Not investment advice · Page 4</span></div>
+</section>
+
+<!-- ============ PART B TECHNICAL ============ -->
+<section class="page">
+  <div class="brandbar"><div class="brand">ENTG&nbsp;<span class="thin">PRIVATE&nbsp;RESEARCH</span></div><div class="meta">Section III · Technical Brief</div></div>
+  <div class="sec-label">Part B</div>
+  <h2>Technical Brief <b>— Intraday Scoped</b></h2>
+  <div class="lead">One verdict word: TRIM. Confirmed bearish divergence plus OBV non-confirmation of a +5% pop is the framework's minimum-TRIM condition.</div>
+
+  <div class="flag"><b>Scope caveat that governs everything below —</b> the client chart is a <strong>1-minute</strong> chart, not the Daily (1D) the template specifies. Every reading here is intraday and valid for <strong>same-session timing only</strong>, not a swing entry or the 12-month thesis. A position-level technical call requires a Daily chart with Fibonacci anchored to the daily swing low→high. No Fib is drawn on the image, so confluence levels are constructed from visible intraday extremes and labelled low-confidence.</div>
+
+  <h3>Indicator values — read directly off the chart</h3>
+  <div class="strip">
+    <div><div class="k">Price</div><div class="v">179.93</div><div class="s">+5.16% · high 182.39</div></div>
+    <div><div class="k">EMA 9 / 21 / 50</div><div class="v">~180.9</div><div class="s">price below fast stack</div></div>
+    <div><div class="k">SMA 200</div><div class="v">178.51</div><div class="s">last shelf held</div></div>
+    <div><div class="k">RSI 14</div><div class="v">36.09</div><div class="s">below signal 49.59</div></div>
+    <div><div class="k">ATR 14</div><div class="v">0.51</div><div class="s">rising sharply</div></div>
+  </div>
+
+  <table>
+    <tr><th>#</th><th>Read</th><th>Interpretation</th></tr>
+    <tr><td class="t-key">1 · Trend phase</td><td>Intraday Distribution → early Markdown</td><td>Price ran to 182.39, rolled over, lost EMA 9/21/50; expansion-volume down-bar. Longer trend not determinable from a 1m chart.</td></tr>
+    <tr><td class="t-key">2 · Fibonacci</td><td>Not drawable with confidence</td><td>No Fib plotted. From visible extremes (high 182.39, swing low ~179.4–179.7) price is in the deep-retrace / lower third. Illustrative only.</td></tr>
+    <tr><td class="t-key">3 · EMA + Fib confluence</td><td>Supply $180.7–181.2 · support $178.5</td><td>Fast EMAs stacked overhead cap rallies; SMA 200 at $178.5 is the intraday line in the sand.</td></tr>
+    <tr><td class="t-key">4 · RSI + divergence</td><td>Confirmed bearish divergence</td><td>Chart's own "Bear" tag at the highs; RSI broke signal, fell to 36. Momentum with sellers.</td></tr>
+    <tr><td class="t-key">5 · OBV</td><td>Institutional distribution</td><td>OBV crossed below signal and dived on a +5.16% up-day — price up, flow leaving. OBV trumps RSI: non-confirmation of the pop.</td></tr>
+    <tr><td class="t-key">6 · ATR</td><td>0.51 (scalp-scale)</td><td>1.5–2.0x ATR ≈ $0.77–1.02 wide; clean invalidation = close below $178.5.</td></tr>
+  </table>
+
+  <h3>Trade Construction <span style="font-size:8pt;color:var(--muted);font-weight:400">— intraday scalp only, not a position trade</span></h3>
+  <table>
+    <tr><th>Parameter</th><th>Level</th></tr>
+    <tr><td class="t-key">Bias</td><td>Fade strength / do not chase the +5.16% pop</td></tr>
+    <tr><td class="t-key">Reclaim trigger (flips near-term)</td><td>Close back above $181.2 (EMA shelf)</td></tr>
+    <tr><td class="t-key">Invalidation</td><td>Close above $181.2</td></tr>
+    <tr><td class="t-key">Downside Target 1</td><td>$178.5 (SMA 200 shelf)</td></tr>
+    <tr><td class="t-key">Downside Target 2</td><td>~$177.0 (intraday range base)</td></tr>
+    <tr><td class="t-key">R/R to T1 / T2</td><td>~1.9:1 / ~4.9:1 (scalp math, tiny absolute size)</td></tr>
+  </table>
+
+  <div class="callout">
+    <div class="sec-label">Technical Verdict</div>
+    <h3><span class="pill trim">TRIM</span>&nbsp;&nbsp;Intraday · do not chase</h3>
+    <p>Confirmed bearish divergence + OBV non-confirmation of a +5% move is the framework's explicit minimum-TRIM condition. This is <strong>not</strong> a short recommendation and <strong>not</strong> a position-level call — it says don't chase this pop intraday; wait for either a reclaim of $181.2 or a flush to the $177–178.5 shelf. A genuine BUY / SELL / WAIT position call requires the Daily chart.</p>
+  </div>
+  <div class="footer"><span>ENTG · Private Research</span><span>Not investment advice · Page 5</span></div>
+</section>
+
+<!-- ============ PART C SYNTHESIS + SOURCES ============ -->
+<section class="page">
+  <div class="brandbar"><div class="brand">ENTG&nbsp;<span class="thin">PRIVATE&nbsp;RESEARCH</span></div><div class="meta">Section IV · Synthesis</div></div>
+  <div class="sec-label">Part C</div>
+  <h2>Fundamental / Technical <b>Alignment</b></h2>
+  <div class="lead">The two horizons conflict at spot — and that is not a contradiction. They run on different clocks.</div>
+
+  <table>
+    <tr><th>Horizon</th><th>Call</th><th>What it governs</th></tr>
+    <tr><td class="t-key">Fundamental (12-month)</td><td>HOLD, constructive-on-weakness</td><td><strong>Direction &amp; sizing.</strong> Up-and-to-the-right on deleveraging + margin recovery, but $179.93 is in the upper half of the $155–185 band — accumulate lower, not here.</td></tr>
+    <tr><td class="t-key">Technical (intraday)</td><td>TRIM / don't chase</td><td><strong>Entry timing.</strong> Confirmed bearish divergence + OBV distribution on today's +5% says the tape is handing stock off, not accumulating.</td></tr>
+    <tr><td class="t-key">News (01 Jul HF report)</td><td>Demand corroborant</td><td>Firms the demand leg; a plausible partial driver of the theme-led pop — which reinforces "don't chase," not "buy the spike."</td></tr>
+  </table>
+
+  <p style="margin-top:14px">They agree on the actionable conclusion: <strong>do not chase strength today.</strong> The technical call governs <em>entry timing</em> — wait for a flush toward the mid-$150s–low-$160s the fundamental band also favours, or an intraday reclaim of $181.2 that resets micro-structure. The fundamental call governs <em>direction and sizing</em> — constructive franchise, premium valuation capping upside until the 30 July print and the WFE cycle confirm. <strong>Net: patience. Let price come to the level; don't pay up into distribution ahead of earnings.</strong></p>
+
+  <div class="flag">
+    <b>Data-integrity flags carried through this report</b><br>
+    1. Chart timeframe mismatch — 1-minute, not the Daily the template specifies; Part B scoped to intraday.<br>
+    2. No Fibonacci drawn — confluence levels constructed from visible intraday extremes, low-confidence.<br>
+    3. Today's +5.16% move has no single verified primary-source catalyst; the HF report is a plausible theme driver, not a confirmed ENTG-specific cause.<br>
+    4. Valuation multiples reconciled across sources with as-of dates rather than averaged.
+  </div>
+
+  <h3>Sources</h3>
+  <p class="src">
+    Entegris Q1 FY2026 8-K / press release — SEC EDGAR (30 Apr 2026): sec.gov/Archives/edgar/data/0001101302/…/entgq12026ex991.htm ·
+    Q1 FY2026 earnings call transcript — Motley Fool ·
+    Net debt / leverage / FCF / Q2 guide — Seeking Alpha, StockTitan ·
+    Next earnings date (30 Jul 2026) — Investing.com, Seeking Alpha ·
+    Valuation &amp; market cap — StockAnalysis, GuruFocus ·
+    Peer context (MKSI, industry median) — StockAnalysis, Simply Wall St ·
+    Electronic-grade HF supply / suppliers — Future Market Insights, SunSirs, GlobeNewswire, ResearchNester ·
+    News item — Tiger Brokers Top News (01 Jul 2026, 10:17).
+  </p>
+
+  <div class="disc">
+    <strong>Disclaimer.</strong> Prepared 01 July 2026 for the named recipient. Figures carry the as-of dates noted inline; where a metric could not be verified from a primary or reputable source it is marked "data unavailable" and not estimated. This document is an educational research summary, is not personalised investment advice, and is not an offer or solicitation to buy or sell any security. Price and indicator values are read from a client-supplied intraday screenshot and a specific point in time; they will have changed. Past performance and technical setups do not guarantee future results. Verify all figures against primary filings before acting.
+  </div>
+  <div class="footer"><span>ENTG · Private Research</span><span>Not investment advice · Page 6</span></div>
+</section>
+
+</body>
+</html>
