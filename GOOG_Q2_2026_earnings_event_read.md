@@ -17,9 +17,11 @@ BLUF (5 lines)
    and operating income $40.8B at a 34% margin (+2pp YoY). The business beat; the
    headline EPS did not tell you that.
 2. QUALITY-OF-EARNINGS FLAG (mandatory): Headline diluted EPS of $9.11 IS driven by
-   non-operating gains — a ~$99.0B pre-tax ($~80B after-tax) gain on equity securities
-   (largely the Anthropic markup). Backed out, CORE operating EPS ≈ $2.62 — roughly
-   IN-LINE (a hair light vs the ~$2.63 modeled core). The $9.11 is a paper number.
+   non-operating gains — a ~$99.0B pre-tax ($~80B after-tax) gain on equity securities.
+   [CORRECTED per Q2 2026 10-Q: management attributes this "primarily" to SpaceX AND a
+   private company — NOT "largely Anthropic" as press reported. 99.7% unrealized.]
+   Backed out, CORE operating EPS ≈ $2.62 — roughly IN-LINE (a hair light vs the ~$2.63
+   modeled core). The $9.11 is a paper number.
 3. CLOUD READ: The star. +82% YoY to $24.8B (accelerating hard from +63% in Q1),
    operating income $8.8B (~35% margin, vs $2.8B a year ago), backlog $514B (+~$54B QoQ).
    AI-infra demand is the real signal in this print.
@@ -71,8 +73,11 @@ MODULE 2 — QUALITY-OF-EARNINGS CHECK (the crux this quarter)
 a) Headline: diluted EPS $9.11; net income $112.1B (vs $28.2B a year ago). (8-K)
 b) The distortion: "Other income (expense), net" = $98.0B, dominated by a $99.0B gain on
    equity securities (8-K footnote: realized + unrealized combined). Driver = markup of
-   minority stakes, chiefly Alphabet's ~14% Anthropic position, after Anthropic's valuation
-   re-rated (a ~$65B round took its implied value from ~$380B toward ~$965B in the quarter).
+   minority stakes. [CORRECTED per 10-Q: MD&A attributes the gain "primarily" to unrealized
+   gains from SPACEX AND A PRIVATE COMPANY. The widely-reported "largely Anthropic" framing
+   is incomplete — Alphabet never names Anthropic in the filing. 10-Q composition: $77.4B
+   unrealized on non-marketable (measurement alternative) + $21.4B unrealized on marketable
+   and other + $278M realized = $99.031B. Only 0.3% of the gain is realized.]
 c) Core/adjusted EPS: strip the full $99.0B pre-tax equity gain. At the ~19.2% effective
    rate that is ~$80B after-tax (≈ $6.5/share on 12.3B shares). Headline $9.11 − ~$6.5 ≈
    **CORE EPS ~$2.62**. Core net income ≈ $112.1B − ~$80B ≈ ~$32B. This reconciles cleanly
@@ -81,12 +86,12 @@ d) MANDATORY FLAG: **Headline EPS beat IS driven by non-operating gains; core op
    EPS was roughly IN-LINE (a hair light vs ~$2.63 modeled).** The genuine operating beat
    is on the top line (+2.5% vs consensus) and margin (+2pp YoY) — not on EPS.
 
-Sourcing caveat: a secondary report cited ~$37.7B as the *non-marketable* (Anthropic
-private-stake) unrealized sub-component. That figure is secondary and does NOT reconcile
-with the full headline-to-core bridge (which requires backing out the whole ~$99.0B /
-~$80B after-tax). The precise realized-vs-unrealized and marketable-vs-non-marketable
-split will be confirmable only in the 10-Q; core-EPS math here backs out the full 8-K line,
-which is the defensible approach. Treat any "clean beat on the headline" read as unreliable.
+Sourcing caveat [RESOLVED by the 10-Q]: a secondary report cited ~$37.7B as the
+*non-marketable* unrealized sub-component. The 10-Q shows the actual measurement-alternative
+unrealized net gain was $77.4B — the secondary figure was simply WRONG and is discarded.
+The full split is now confirmed (see (b) above). Core-EPS math backing out the full ~$99.0B
+line was the correct approach and stands. Treat any "clean beat on the headline" read as
+unreliable. See GOOG_Q2_2026_10Q_capex_beneficiary_analysis.md for the full 10-Q analysis.
 
 ============================================================
 MODULE 3 — SEGMENT DEEP DIVE (YoY vs prior-quarter YoY)
