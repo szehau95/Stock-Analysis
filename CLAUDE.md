@@ -36,7 +36,26 @@
 
 - Deliver analysis in copy-pasteable code-block format.
 - Long-term holder; comfortable holding through drawdowns.
-- Leveraged ETFs (SOXL and similar) are off the table as recovery vehicles —
-  volatility decay means a 3x fund does not regain its high when the
-  underlying index regains its own. This has been demonstrated with live
-  numbers and should not be re-proposed.
+## Leveraged ETFs (SOXL / TQQQ) — Refined Position
+
+Two distinct cases. Do not collapse them.
+
+- **As a RECOVERY vehicle (buy and hold through a drawdown): NO.**
+  Daily-reset decay means a 3x fund does not regain its own high when the
+  underlying index regains its high. Demonstrated with live numbers; do not
+  re-propose.
+- **As a TACTICAL entry AFTER a confirmed reversal: permitted.** In a smooth
+  sustained uptrend, daily compounding delivers ABOVE the stated multiple
+  (2023: SOXX ~+65%, SOXL +227%). Entry regime is the whole edge.
+
+Entry discipline when this is on the table:
+- Signal is the **200-day SMA of the UNDERLYING** (SOXX for SOXL, QQQ for
+  TQQQ), not of the leveraged fund. Compute it from actual daily bars —
+  never estimate it.
+- Preferred trigger: underlying washes to/through its 200-day, then closes
+  back above it for 3+ consecutive sessions.
+- Hard exit: underlying closes below its 200-day. That is a regime flip to
+  cash, not a dip to buy.
+- Size as a defined satellite sleeve (10-15% ceiling), never a core position.
+  A 3x fund large enough to hit a return target is also large enough to
+  restart the account.
