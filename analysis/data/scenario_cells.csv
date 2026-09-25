@@ -1,0 +1,73 @@
+print_state,guide_state,tone,mean,probability_pct
+Beat,Above cons < whisper,Clean,1.615,2.192
+Beat,Above cons < whisper,Mixed,-1.995,1.357
+Beat,Above cons < whisper,Very bullish,5.497,0.888
+Beat,Above whisper,Clean,6.048,2.632
+Beat,Above whisper,Mixed,2.573,0.602
+Beat,Above whisper,Very bullish,9.938,2.745
+Beat,Below,Clean,-5.537,5.274
+Beat,Below,Mixed,-8.975,6.472
+Beat,Below,Very bullish,-1.564,1.338
+Beat,Below (severe),Clean,-8.969,2.324
+Beat,Below (severe),Mixed,-12.513,4.388
+Beat,Below (severe),Very bullish,-5.028,0.564
+Beat,In-line,Clean,-2.505,5.315
+Beat,In-line,Mixed,-5.937,4.339
+Beat,In-line,Very bullish,1.578,1.322
+Beat,Sandbag (flat/down QoQ),Clean,-10.077,1.092
+Beat,Sandbag (flat/down QoQ),Mixed,-13.46,1.866
+Beat,Sandbag (flat/down QoQ),Very bullish,-5.658,0.146
+Big beat,Above cons < whisper,Clean,3.639,1.183
+Big beat,Above cons < whisper,Mixed,0.099,0.712
+Big beat,Above cons < whisper,Very bullish,7.269,0.504
+Big beat,Above whisper,Clean,7.99,5.632
+Big beat,Above whisper,Mixed,4.527,1.241
+Big beat,Above whisper,Very bullish,11.945,5.756
+Big beat,Below,Clean,-3.637,0.527
+Big beat,Below,Mixed,-6.906,0.67
+Big beat,Below,Very bullish,0.196,0.14
+Big beat,Below (severe),Clean,-8.01,0.01
+Big beat,Below (severe),Mixed,-10.768,0.016
+Big beat,Below (severe),Very bullish,-4.533,0.003
+Big beat,In-line,Clean,-0.332,1.449
+Big beat,In-line,Mixed,-3.95,1.208
+Big beat,In-line,Very bullish,3.64,0.356
+Big beat,Sandbag (flat/down QoQ),Clean,-8.453,0.204
+Big beat,Sandbag (flat/down QoQ),Mixed,-11.693,0.354
+Big beat,Sandbag (flat/down QoQ),Very bullish,-3.909,0.037
+In-line,Above cons < whisper,Clean,-1.299,0.198
+In-line,Above cons < whisper,Mixed,-5.364,0.106
+In-line,Above cons < whisper,Very bullish,2.937,0.08
+In-line,Above whisper,Clean,3.292,0.117
+In-line,Above whisper,Mixed,-0.548,0.021
+In-line,Above whisper,Very bullish,6.95,0.117
+In-line,Below,Clean,-8.602,1.636
+In-line,Below,Mixed,-12.075,1.946
+In-line,Below,Very bullish,-4.489,0.384
+In-line,Below (severe),Clean,-12.015,1.872
+In-line,Below (severe),Mixed,-15.482,3.526
+In-line,Below (severe),Very bullish,-7.999,0.481
+In-line,In-line,Clean,-5.558,0.852
+In-line,In-line,Mixed,-9.124,0.664
+In-line,In-line,Very bullish,-1.623,0.205
+In-line,Sandbag (flat/down QoQ),Clean,-12.993,0.488
+In-line,Sandbag (flat/down QoQ),Mixed,-16.343,0.86
+In-line,Sandbag (flat/down QoQ),Very bullish,-9.121,0.071
+Miss,Above cons < whisper,Clean,-4.697,0.024
+Miss,Above cons < whisper,Mixed,-8.231,0.014
+Miss,Above cons < whisper,Very bullish,-0.584,0.01
+Miss,Above whisper,Clean,-1.849,0.009
+Miss,Above whisper,Mixed,-3.081,0.003
+Miss,Above whisper,Very bullish,5.034,0.007
+Miss,Below,Clean,-11.758,0.458
+Miss,Below,Mixed,-15.64,0.565
+Miss,Below,Very bullish,-8.11,0.118
+Miss,Below (severe),Clean,-15.459,1.627
+Miss,Below (severe),Mixed,-18.968,2.992
+Miss,Below (severe),Very bullish,-11.489,0.42
+Miss,In-line,Clean,-9.068,0.15
+Miss,In-line,Mixed,-12.645,0.104
+Miss,In-line,Very bullish,-5.648,0.026
+Miss,Sandbag (flat/down QoQ),Clean,-16.234,0.358
+Miss,Sandbag (flat/down QoQ),Mixed,-19.935,0.638
+Miss,Sandbag (flat/down QoQ),Very bullish,-12.446,0.05

@@ -1,0 +1,11 @@
+,value
+composite_score_-2_to_+2,-0.8375
+base_rate_rally_gt3_pct,37.5
+base_rate_stn_lt-3_pct,43.75
+base_rate_chop_pct,18.75
+P_rally_pct,19.945551568858026
+P_sell_the_news_pct,63.570963623402456
+P_chop_pct,16.483484807739522
+MC_cross_check_P_rally_gt3,22.7995
+MC_cross_check_P_stn_lt-3,59.681
+MC_cross_check_P_chop,17.5195

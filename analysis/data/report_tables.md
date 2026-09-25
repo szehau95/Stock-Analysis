@@ -1,0 +1,128 @@
+## T_track16
+
+| Print      | Phase   |   Rev $bn |   Guide mid $bn | Rev vs guide mid   | GM vs guide   |   EPS | Next-Q guide QoQ   | Pre-20d   | 1d     | 5d     |
+|:-----------|:--------|----------:|----------------:|:-------------------|:--------------|------:|:-------------------|:----------|:-------|:-------|
+| 29/09/2022 | down    |      6.64 |            7.2  | -7.7%              | -222bp        |  1.45 | -36.0%             | -11.5%    | +0.2%  | +9.2%  |
+| 21/12/2022 | down    |      4.08 |            4.25 | -3.9%              | -314bp        | -0.04 | -7.0%              | -12.7%    | -3.4%  | -1.1%  |
+| 28/03/2023 | up      |      3.69 |            3.8  | -2.8%              | -3994bp       | -1.91 | +0.2%              | +2.5%     | +7.2%  | -3.4%  |
+| 28/06/2023 | up      |      3.75 |            3.7  | +1.4%              | +493bp        | -1.43 | +3.9%              | -6.4%     | -4.1%  | -8.7%  |
+| 27/09/2023 | up      |      4.01 |            3.9  | +2.8%              | +137bp        | -1.07 | +9.7%              | +2.3%     | -4.4%  | -0.1%  |
+| 20/12/2023 | up      |      4.73 |            4.4  | +7.4%              | +478bp        | -0.95 | +12.1%             | +2.6%     | +8.6%  | +9.3%  |
+| 20/03/2024 | up      |      5.82 |            5.3  | +9.9%              | +697bp        |  0.42 | +13.3%             | +18.1%    | +14.1% | +23.9% |
+| 26/06/2024 | up      |      6.81 |            6.6  | +3.2%              | +165bp        |  0.62 | +11.6%             | +7.3%     | -7.1%  | -3.9%  |
+| 25/09/2024 | up      |      7.75 |            7.6  | +2.0%              | +196bp        |  1.18 | +12.3%             | -2.1%     | +14.7% | +4.3%  |
+| 18/12/2024 | down    |      8.71 |            8.7  | +0.1%              | +1bp          |  1.79 | -9.3%              | +6.3%     | -16.2% | -13.6% |
+| 20/03/2025 | down    |      8.05 |            7.9  | +1.9%              | -59bp         |  1.56 | +9.3%              | -0.2%     | -8.0%  | -11.5% |
+| 25/06/2025 | up      |      9.3  |            8.8  | +5.7%              | +245bp        |  1.91 | +15.0%             | +32.0%    | -1.0%  | -4.3%  |
+| 23/09/2025 | up      |     11.32 |           10.7  | +5.7%              | +368bp        |  3.03 | +10.5%             | +42.9%    | -2.8%  | +0.5%  |
+| 17/12/2025 | up      |     13.64 |           12.5  | +9.1%              | +533bp        |  4.78 | +37.1%             | -1.3%     | +10.2% | +27.1% |
+| 18/03/2026 | up      |     23.86 |           18.7  | +27.6%             | +692bp        | 12.2  | +40.4%             | +9.7%     | -3.8%  | -17.2% |
+| 24/06/2026 | up      |     41.46 |           33.5  | +23.7%             | +391bp        | 25.11 | +20.6%             | +17.0%    | +15.7% | -1.5%  |
+
+## T_scen
+
+| Scenario                                                                                 | Prob   | E[1d]   | Range p10/p90   | Med FQ4 rev   | Med FQ1 guide   | Headline                                                                                             | Peer / read-through                                                                       |
+|:-----------------------------------------------------------------------------------------|:-------|:--------|:----------------|:--------------|:----------------|:-----------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|
+| S1 Blowout: beat + guide above whisper + very bullish tone                               | 8.5%   | +11.3%  | +6% / +17%      | $54.4bn       | $60.3bn         | 'Micron smashes estimates, guides FQ1 far above Street; 2027 sold out at higher prices; big buyback' | Hynix/Samsung +5-10% next KRX session; SNDK/WDC/STX up; AMAT/LRCX up on capex; SOXX +2-3% |
+| S2 Beat & raise above whisper (clean or mixed tone)                                      | 10.1%  | +6.7%   | +1% / +13%      | $54.4bn       | $60.3bn         | 'Micron beat-and-raise tops whisper'                                                                 | Korea memory +3-6%; SOXX +1-2%                                                            |
+| S3 Beat, guide above cons/below whisper, clean/bullish                                   | 4.8%   | +3.4%   | -3% / +10%      | $53.0bn       | $58.0bn         | 'Solid beat, guide above consensus but not the buy-side number'                                      | memory peers flat-to-up; muted                                                            |
+| S4 Beat, guide above cons/below whisper, mixed tone                                      | 2.1%   | -1.3%   | -7% / +4%       | $53.0bn       | $58.0bn         | 'Beat and raise, but capex jump / price moderation cap the upside'                                   | memory peers down 1-4%; semicap up on capex                                               |
+| S5 Beat, in-line guide, clean/bullish                                                    | 8.4%   | -1.2%   | -7% / +5%       | $52.5bn       | $56.7bn         | 'Record quarter, in-line outlook; stock digests run'                                                 | flat-to-down memory; SOXX flat                                                            |
+| S6 Beat, in-line guide, mixed tone                                                       | 5.5%   | -5.5%   | -11% / +0%      | $52.5bn       | $56.7bn         | 'Growth deceleration and capex overshadow record results'                                            | Korea memory -3-6%; SNDK down                                                             |
+| S7 Beat, guide below cons but very bullish offsets (buyback/SCA expansion)               | 2.0%   | -2.4%   | -8% / +3%       | $52.0bn       | $54.6bn         | 'Soft headline guide, but $bn buyback / new SCAs reassure'                                           | mixed; MU outperforms peers                                                               |
+| S8a Beat, guide modestly below cons (13-week optics), clean/mixed                        | 12.9%  | -7.2%   | -13% / -1%      | $52.1bn       | $54.9bn         | 'Micron's guide falls short as growth slows' (14->13 week optics)                                    | Korea memory -4-8%; SOXX -1-2%                                                            |
+| S8b Beat, guide well below cons (<-5%), clean/mixed                                      | 6.7%   | -11.3%  | -17% / -5%      | $51.8bn       | $53.1bn         | 'Micron outlook disappoints; peak-cycle fears return'                                                | Korea memory -6-10%; SNDK/WDC -5-10%; SOXX -2-3%                                          |
+| S9 In-line print, guide >= consensus                                                     | 2.4%   | -4.5%   | -12% / +4%      | $50.9bn       | $56.8bn         | 'In-line quarter, guide steadies nerves'                                                             | flat                                                                                      |
+| S10 In-line print, guide below consensus                                                 | 9.8%   | -12.2%  | -19% / -5%      | $50.8bn       | $53.5bn         | 'Micron merely meets the Street and guides light'                                                    | Korea memory -5-8%                                                                        |
+| S11 Print miss (any guide)                                                               | 6.5%   | -16.1%  | -23% / -9%      | $49.5bn       | $52.3bn         | 'Micron misses as SCA price caps bite'                                                               | memory complex -6-12%                                                                     |
+| T1 Capex shock (FY27 capex >= $55bn / greenfield pull-in)                                | 4.0%   | -8.0%   | -13% / -3%      | $52.1bn       | $55.8bn         | 'Micron's spending spree revives supply-glut fears'                                                  | MU/Hynix/Samsung down; AMAT/LRCX/KLAC UP 3-6%                                             |
+| T2 Pricing-peak language (pricing flattening in 2027, SCA ceilings binding)              | 3.0%   | -12.0%  | -17% / -7%      | $52.2bn       | $55.8bn         | 'Micron signals memory price peak'                                                                   | all memory -8..-15%; SNDK/WDC/STX down; SOXX -3..-5%                                      |
+| T3 SCA accounting noise (deposits/RPO/revenue-timing confusion)                          | 1.5%   | -4.0%   | -8% / -0%       | $52.1bn       | $55.7bn         | 'Quality-of-earnings questions cloud record quarter'                                                 | MU-specific; peers flat                                                                   |
+| T4 Guide sandbagged: flat/down headline QoQ on 13-week FQ1                               | 6.2%   | -13.5%  | -20% / -7%      | $51.5bn       | $50.6bn         | 'Micron guides revenue flat - peak growth is here' (14->13 week optics + conservatism)               | Korea memory -6-10%; SOXX -2-3%                                                           |
+| T5 Macro shock on the day (tariff Phase 2 incl. memory, rates, geopolitics)              | 2.0%   | -6.0%   | -12% / +0%      | $52.1bn       | $55.7bn         | 'Chip stocks slide on tariff/macro headline'                                                         | broad SOXX down; Korea memory down                                                        |
+| T6 Export-control headline (China/HBM rules)                                             | 1.0%   | -5.0%   | -10% / +0%      | $52.1bn       | $55.7bn         | 'New export curbs hit memory makers'                                                                 | Korea memory down more than MU; semicap down                                              |
+| T7 Management headline (CEO succession / exec exits)                                     | 1.0%   | -1.9%   | -7% / +3%       | $52.2bn       | $55.9bn         | 'Micron names successor / exec shuffle'                                                              | MU-specific                                                                               |
+| T8 Positive exogenous shock (memory tariff exemption / hyperscaler capex raise same day) | 1.5%   | +5.0%   | +0% / +10%      | $52.1bn       | $55.6bn         | 'Chip stocks jump on tariff relief / capex headline'                                                 | SOXX up; Korea memory up                                                                  |
+
+
+sum = 100.0%
+
+## T_sens
+
+| FQ1 per-week growth (mean)   | P(FQ1 guide > $56.7bn)   | EV (pos 0)   | EV (pos -1.5, central)   | EV (pos -3)   | P(up) central   | P(beat & down) central   |
+|:-----------------------------|:-------------------------|:-------------|:-------------------------|:--------------|:----------------|:-------------------------|
+| 12.0%                        | 24%                      | -5.4%        | -6.6%                    | -7.9%         | 21%             | 64%                      |
+| 13.0%                        | 29%                      | -4.7%        | -6.0%                    | -7.2%         | 24%             | 61%                      |
+| 14.0%                        | 34%                      | -3.9%        | -5.2%                    | -6.5%         | 27%             | 58%                      |
+| 15.0%                        | 39%                      | -3.2%        | -4.4%                    | -5.7%         | 30%             | 55%                      |
+| 16.0%                        | 45%                      | -2.4%        | -3.7%                    | -5.0%         | 34%             | 52%                      |
+| 17.4%                        | 53%                      | -1.2%        | -2.5%                    | -3.8%         | 39%             | 47%                      |
+| 20.0%                        | 67%                      | +0.8%        | -0.5%                    | -1.8%         | 49%             | 37%                      |
+| 22.0%                        | 77%                      | +2.2%        | +0.9%                    | -0.4%         | 56%             | 31%                      |
+
+## T_calib
+
+| date       | print    | guide                | tone         |   positioning |   predicted |   actual_r1 |   error | direction_hit   |
+|:-----------|:---------|:---------------------|:-------------|--------------:|------------:|------------:|--------:|:----------------|
+| 20/03/2024 | Big beat | Above whisper        | Very bullish |          -1.5 |        12   |        14.1 |     2.1 | True            |
+| 26/06/2024 | Beat     | In-line              | Clean        |          -1.5 |        -2.5 |        -7.1 |    -4.6 | True            |
+| 25/09/2024 | Beat     | Above whisper        | Very bullish |           0   |        11.5 |        14.7 |     3.2 | True            |
+| 18/12/2024 | In-line  | Below (severe)       | Mixed        |           0   |       -14   |       -16.2 |    -2.2 | True            |
+| 20/03/2025 | Beat     | Above cons < whisper | Mixed        |           0   |        -0.5 |        -8   |    -7.5 | True            |
+| 25/06/2025 | Beat     | Above cons < whisper | Clean        |          -1.5 |         1.5 |        -1   |    -2.5 | False           |
+| 23/09/2025 | In-line  | Above cons < whisper | Clean        |          -1.5 |        -1.5 |        -2.8 |    -1.3 | True            |
+| 17/12/2025 | Beat     | Above whisper        | Very bullish |           0   |        11.5 |        10.2 |    -1.3 | True            |
+| 18/03/2026 | Big beat | Above whisper        | Mixed        |          -1.5 |         4.5 |        -3.8 |    -8.3 | False           |
+| 24/06/2026 | Big beat | Above whisper        | Very bullish |          -1.5 |        12   |        15.7 |     3.7 | True            |
+
+## T_stn
+
+| factor                           |   weight |   score_-2_to_+2 |   contribution | evidence                                                                                                                                                                                                                                                                                                                                               |
+|:---------------------------------|---------:|-----------------:|---------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Pre-print run-up percentile      |     0.15 |            -1.5  |         -0.225 | 20d +15.1% (as of 24/09) = 86th pctile of prints since 2017; +5.2pp vs SOXX; +46% off 29/07 low; +16.6% in the week to 22/09                                                                                                                                                                                                                           |
+| IV rank / implied vs realised    |     0.1  |             0.25 |          0.025 | IV30 61% at 52w IV pctl ~20% (not euphoric); straddle-implied 8.9% vs last-8 mean \|1d\| 9.1% -> options not over-bid                                                                                                                                                                                                                                  |
+| Estimate revision momentum       |     0.15 |            -1    |         -0.15  | FQ4 consensus drifting up (+1.1% 11/09->24/09), FY27 EPS raised (Wells +10%, GS +4.9%) while stock +15%: bar being raised into print                                                                                                                                                                                                                   |
+| Guide vs whisper gap (Module 2c) |     0.25 |            -1.25 |         -0.312 | P(FQ1 guide > consensus) 39%, P(> whisper) 22%; 14->13 week optics: E[headline QoQ] +6.8% vs FQ4 +26%                                                                                                                                                                                                                                                  |
+| Positioning crowding             |     0.1  |            -0.75 |         -0.075 | GS HF crowding at record (Q2-26); MU = Coatue's top Q2 buy; DRAM ETF AUM $26bn; call-over-put skew +4.3 vol pts; offset: SI only 2.6-3.3% of float (DTC ~1) though multi-year high; Burry short = squeeze fuel on a clean beat                                                                                                                         |
+| Valuation vs peak-cycle history  |     0.1  |             0.5  |          0.05  | 6.9x FY27 consensus EPS $156.53 vs P/E on realised peak NTM EPS 3.4x (2018) / 8.9x (2021); mean PT $1,515-1,565 (+40-45%): valuation cushions a dip, doesn't stop a sell-the-news day                                                                                                                                                                  |
+| Historical analogs               |     0.15 |            -1    |         -0.15  | Up-cycle beat-and-raise often sold: Mar-18 -8.0%, Jun-24 -7.1%, Sep-25 -2.8%, Mar-26 -3.8% (r5 -17%) vs rallies Dec-25 +10.2%, Jun-26 +15.7% (guide +15-32% vs cons). Last 14-week FQ4 (Sep-20): guide -14% headline QoQ, stock -7.4%. Peers on record prints: SK Hynix Q2-26 -9%, Samsung Q2-26 -7% (capex). Last 16Q: P(down \| beat vs guide) = 62% |
+
+## T_edge
+
+| edge                        |   score_0_5 | confidence   | evidence                                                                                                                                                                                                                                                                      | expression                                                                                                                                                                                                 |
+|:----------------------------|------------:|:-------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 Directional               |         3   | Medium       | Model EV -4.4%, P(down) 69% vs a market that prices upside richer. Lean survives the growth sweep (EV<0 for FQ1 per-week growth <=20%).                                                                                                                                       | Personal book: underweight MU into print (trim, don't flip). Institutional: Oct-9 1020/940 put spread (defined risk).                                                                                      |
+| 2 Vol (straddle)            |         1.5 | Low          | Straddle +/-8.9% ~= model E\|move\| 8.7% and last-8 mean \|1d\| 9.1%; t-4->t+2 window exceeded implied only 12% of prints but event-only vol (E\|move\| 6.3-7.4%) is not rich. Net: noise.                                                                                    | No outright long/short straddle. If forced: short Oct-2 iron condor wings >= +/-12% (calendar risk from 20% tails).                                                                                        |
+| 3 Skew                      |         3.5 | Medium       | Market: 7%-OTM call IV 81.3% > put IV 77.0% (+4.3 vol pts). Model distribution is shifted left (mean -4.4%): P(< -6.8%) 44% vs market-implied P(S<1020) 28%; P(> +6.9%) 14% vs market-implied P(S>1170) 26%. The market over-prices the right tail and under-prices the left. | Buy Oct-9 1020/940 put spread, sell Oct-9 1170/1240 call spread: ~$3.8 net debit (BS on IBKR IVs, verify live). 1 lot = $109k notional, max loss ~$7.4k -> institutional sizing only, NOT for a $43k book. |
+| 4 Relative value            |         2   | Low          | MU -11% vs 2026 high while SK Hynix -36%, SNDK -25%, DRAM ETF -25%: MU carries the most 'already-recovered' expectations; 14->13-week optics are MU-specific.                                                                                                                 | Pair: short MU / long SK Hynix (KRX, reopens 28/09) into the print; hedges sector beta, isolates MU optics. Small size; KRX access/FX friction.                                                            |
+| 5 Read-through              |         2.5 | Medium       | Hynix next-session beta 0.34 (corr 0.70); LRCX beta 0.36, AMAT beta 0.33. Capex channel is the exception: an FY27 capex guide >= $50bn is MU-negative but semicap-positive (T1).                                                                                              | Korea memory at the 01/10 open reprices at ~0.3x MU's move (hynix beta 0.34, Samsung 0.16); semicap: fade MU-driven weakness in AMAT/LRCX only if the capex guide is >= $45-50bn.                          |
+| 6 Post-print drift          |         1.5 | Low          | Up-cycle prints: mean days 2-20 drift after a down day -1.0% vs after an up day +1.4%; only 30% of up-cycle down days were recovered by day 20; up-cycle days < -5% (n=3: Mar-18, Jun-21, Jun-24) extended -9.7% over days 2-20.                                              | Do NOT bottom-fish day 1 of a sell-the-news: historically the first down day is not the low. Re-assess after Samsung prelim (~07/10).                                                                      |
+| 7 Structured-product timing |         3.5 | High         | Event premium sits in the weekly (Oct-2 IV 79% vs IV30 61%, 52w IV pctl ~20%): a 3-6M KIKO/ELN struck pre-print earns little extra coupon but carries the full gap risk (model p05 -19%; MU drew down -39% in Jun-Jul 2026).                                                  | Issue AFTER the print (01-02/10) on single-name MU (not a worst-of memory basket: Hynix/SNDK drawdowns -55/-57%); strike 90-95%, KI 60% for 6M (40% buffer = ~4.5x implied move), 65% only for <=3M.       |
+
+## T_book
+
+| symbol   |   quantity |   market_value_usd |   weight_pct_nlv |   beta_to_MU_print |   corr |   mu_beta_exposure_usd |
+|:---------|-----------:|-------------------:|-----------------:|-------------------:|-------:|-----------------------:|
+| AMAT     |      27.01 |           13039.5  |            30.5  |               0.33 |   0.69 |                4349.33 |
+| MU       |       6    |            6560.4  |            15.35 |               1    |   1    |                6560.4  |
+| SOXX     |      12    |            6889.55 |            16.12 |               0.19 |   0.78 |                1278.71 |
+| JEPQ     |      50    |            3064    |             7.17 |               0.04 |   0.37 |                 110.32 |
+| QCOM     |      15    |            2943    |             6.88 |               0.14 |   0.68 |                 421.05 |
+| AVGO     |       8    |            2840    |             6.64 |               0.09 |   0.45 |                 256.19 |
+| LRCX     |       8    |            2500    |             5.85 |               0.36 |   0.75 |                 891.38 |
+| VRT      |      10    |            2510    |             5.87 |               0.11 |   0.48 |                 265.64 |
+| BE       |       5    |            1358.65 |             3.18 |               0.15 |   0.29 |                 209.15 |
+| 45757.HK |    3000    |              62.35 |             0.15 |               0    |   0    |                   0    |
+
+## T_cons
+
+| Metric                       | Guide lo/mid/hi   |   Mean (snapshots) |   Median |   High |    Low | Whisper   | Dispersion   |
+|:-----------------------------|:------------------|-------------------:|---------:|-------:|-------:|:----------|:-------------|
+| FQ4 revenue ($bn)            | 49 / 50 / 51      |             50.685 |   50.56  |  53.3  |  50.42 | 52.0-53.5 | 5.7%         |
+| FQ4 non-GAAP EPS ($)         | 30 / 31 / 32      |             31.337 |   31.335 |  32.54 |  31.14 | 32.5-34.0 | 4.5%         |
+| FQ4 non-GAAP GM (%)          | — / 86 / —        |             87     |   87     |  87.3  |  87    | 87.0-87.5 | 0.3%         |
+| FQ1 FY27 revenue guide ($bn) | — / — / —         |             56.7   |   56.7   |  57.7  |  56.4  | 57.5-59.5 | 2.3%         |
+| FQ1 FY27 GM guide (%)        | — / — / —         |             87.5   |   87.5   |  88.2  |  87.5  | 88.0-88.5 | 0.8%         |
+| FQ1 FY27 EPS guide ($)       | — / — / —         |             35.25  |   35.25  |  37.06 |  35.25 | 36.5-38.0 | 5.1%         |
+| FY27 revenue ($bn)           | — / — / —         |            254.55  |  254.55  | 262.3  | 249    | 260-275   | 5.2%         |
+| FY27 EPS ($)                 | — / — / —         |            156.53  |  156.53  | 175    | 156.53 | 165-185   | 11.8%        |

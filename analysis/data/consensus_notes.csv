@@ -1,0 +1,11 @@
+,value
+fq4_rev_consensus_drift_11_to_24_sep_pct,1.11
+mu_20d_return_pct,15.15
+revision_momentum_score_-2_to_+2,2
+interpretation,Estimates drifting up while stock +15% in 20d: bar is being raised into the print (high bar).
+whisper_a_top_quartile,"FQ4 rev $52.4-53.3bn (UBS, Wells-implied); EPS $32.50-32.54 (UBS, GS)"
+whisper_b_estimize_ewhispers,"EarningsWhispers EPS whisper $34.14-35.20 vs $31.33 consensus (Tier 3, unverified - page did not render; possibly stale)"
+whisper_c_previews,GS 'above consensus' $51.9bn/$32.54 & FQ1 $57.7bn/88.1%; Stifel FQ1 $56.4bn/88.2%; UBS $52.4bn/$32.50
+whisper_d_prerally,+15.1% 20d (86th pctile of prints) & +46% off 29/07 low: price already leans to a top-quartile outcome
+whisper_fq4,"rev $52.0-53.5bn, EPS $32.5-34.0"
+whisper_fq1_guide,"rev $57.5-59.5bn, GM 88.0-88.5%, EPS $36.5-38.0"

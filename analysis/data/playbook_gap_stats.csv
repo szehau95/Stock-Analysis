@@ -1,0 +1,10 @@
+,value
+n_gap_up_gt2,6.0
+mean_gap_up,12.999333333333333
+mean_intraday_after_gap_up,-0.9594257298194057
+pct_gap_up_extended,33.33333333333333
+n_gap_down_lt-2,6.0
+mean_gap_down,-6.187
+mean_intraday_after_gap_down,-1.0421921835379822
+pct_gap_down_extended,83.33333333333334
+corr_gap_r1,0.9604434334770158
