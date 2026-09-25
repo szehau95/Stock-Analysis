@@ -1,0 +1,9 @@
+pricing,target,basket,ko,strike,ki,cpn,p_ko1,p_ko3,life,p_loss,e_loss,flags
+24/09 cost,0.0900,none,,,,,,,,,,
+24/09 cost,0.1200,none,,,,,,,,,,
+24/09 cost,0.1600,none,,,,,,,,,,
+roll pricing,0.0900,ARM+DELL+DDOG,80.0000,60.0000,60.0000,0.0961,0.7160,0.8286,2.6501,0.0977,0.4950,low corr (avg rho 0.24); cheap (CPN/IV < 0.20); below high-vol target 16%
+roll pricing,0.0900,MU+AMD+ARM,83.0000,60.0000,60.0000,0.0918,0.7093,0.8196,2.7479,0.1022,0.4684,strong-day fix (AMD); cheap (CPN/IV < 0.20); below high-vol target 16%
+roll pricing,0.0900,NVDA+ARM+DELL,83.0000,60.0000,60.0000,0.0917,0.7092,0.8213,2.7239,0.1002,0.4759,low corr (avg rho 0.38); cheap (CPN/IV < 0.20); below mid target 12%
+roll pricing,0.1200,none,,,,,,,,,,
+roll pricing,0.1600,none,,,,,,,,,,

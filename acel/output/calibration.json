@@ -1,0 +1,97 @@
+{
+  "theta_desk": 0.05836622425960394,
+  "theta_roll": 0.033366224259603935,
+  "uf_cut": 0.025,
+  "fill": {
+    "td": "2026-09-24",
+    "basket": [
+      "MU",
+      "SNDK",
+      "SKHY"
+    ],
+    "ccy": "USD",
+    "ko": 95,
+    "strike": 70,
+    "ki": 70,
+    "cpn": 16.2,
+    "status": "released",
+    "calibration": true
+  },
+  "fill_p_ko1": 0.42977,
+  "fill_p_loss": 0.237185,
+  "fill_life": 4.85614,
+  "annuity": 0.39862204271818397,
+  "note": "USD rates for all; MYR/AUD quanto not modelled, so MYR fills imply a higher theta",
+  "cross_checks": [
+    {
+      "td": "2026-09-04",
+      "ccy": "MYR",
+      "basket": "MU+AVGO",
+      "ko": 100,
+      "strike": 75,
+      "ki": 55,
+      "desk_cpn": 12.5,
+      "model_cpn_at_desk_theta": 9.47,
+      "implied_theta": 0.0446,
+      "p_ko1": 0.317,
+      "p_loss": 0.178,
+      "life": 5.55
+    },
+    {
+      "td": "2026-09-09",
+      "ccy": "MYR",
+      "basket": "MU+SNDK+SKHY",
+      "ko": 90,
+      "strike": 80,
+      "ki": 70,
+      "desk_cpn": 15.0,
+      "model_cpn_at_desk_theta": 15.44,
+      "implied_theta": 0.0598,
+      "p_ko1": 0.55,
+      "p_loss": 0.18,
+      "life": 3.91
+    },
+    {
+      "td": "2026-09-11",
+      "ccy": "USD",
+      "basket": "NVDA+AMZN+GOOGL",
+      "ko": 100,
+      "strike": 80,
+      "ki": 80,
+      "desk_cpn": 10.1,
+      "model_cpn_at_desk_theta": 8.82,
+      "implied_theta": 0.0517,
+      "p_ko1": 0.207,
+      "p_loss": 0.301,
+      "life": 6.38
+    },
+    {
+      "td": "2026-09-22",
+      "ccy": "MYR",
+      "basket": "MU+SNDK+SKHY",
+      "ko": 95,
+      "strike": 72.4,
+      "ki": 70,
+      "desk_cpn": 15.0,
+      "model_cpn_at_desk_theta": 17.2,
+      "implied_theta": 0.0671,
+      "p_ko1": 0.43,
+      "p_loss": 0.237,
+      "life": 4.86
+    },
+    {
+      "td": "2026-09-24",
+      "ccy": "AUD",
+      "basket": "MU+SNDK+SKHY",
+      "ko": 100,
+      "strike": 70,
+      "ki": 60,
+      "desk_cpn": 17.0,
+      "model_cpn_at_desk_theta": 18.04,
+      "implied_theta": 0.0634,
+      "p_ko1": 0.319,
+      "p_loss": 0.263,
+      "life": 5.82
+    }
+  ]
+}
