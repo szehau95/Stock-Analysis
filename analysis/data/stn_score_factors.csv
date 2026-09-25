@@ -1,0 +1,8 @@
+factor,weight,score_-2_to_+2,evidence,contribution
+Pre-print run-up percentile,0.15,-1.5,20d +15.1% (as of 24/09) = 86th pctile of prints since 2017; +5.2pp vs SOXX; +46% off 29/07 low; +16.6% in the week to 22/09,-0.22499999999999998
+IV rank / implied vs realised,0.1,0.25,IV30 61% at 52w IV pctl ~20% (not euphoric); straddle-implied 8.9% vs last-8 mean |1d| 9.1% -> options not over-bid,0.025
+Estimate revision momentum,0.15,-1.0,"FQ4 consensus drifting up (+1.1% 11/09->24/09), FY27 EPS raised (Wells +10%, GS +4.9%) while stock +15%: bar being raised into print",-0.15
+Guide vs whisper gap (Module 2c),0.25,-1.25,"P(FQ1 guide > consensus) 39%, P(> whisper) 22%; 14->13 week optics: E[headline QoQ] +6.8% vs FQ4 +26%",-0.3125
+Positioning crowding,0.1,-0.75,GS HF crowding at record (Q2-26); MU = Coatue's top Q2 buy; DRAM ETF AUM $26bn; call-over-put skew +4.3 vol pts; offset: SI only 2.6-3.3% of float (DTC ~1) though multi-year high; Burry short = squeeze fuel on a clean beat,-0.07500000000000001
+Valuation vs peak-cycle history,0.1,0.5,"6.9x FY27 consensus EPS $156.53 vs P/E on realised peak NTM EPS 3.4x (2018) / 8.9x (2021); mean PT $1,515-1,565 (+40-45%): valuation cushions a dip, doesn't stop a sell-the-news day",0.05
+Historical analogs,0.15,-1.0,"Up-cycle beat-and-raise often sold: Mar-18 -8.0%, Jun-24 -7.1%, Sep-25 -2.8%, Mar-26 -3.8% (r5 -17%) vs rallies Dec-25 +10.2%, Jun-26 +15.7% (guide +15-32% vs cons). Last 14-week FQ4 (Sep-20): guide -14% headline QoQ, stock -7.4%. Peers on record prints: SK Hynix Q2-26 -9%, Samsung Q2-26 -7% (capex). Last 16Q: P(down | beat vs guide) = 62%",-0.15

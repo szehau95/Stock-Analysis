@@ -1,0 +1,21 @@
+,value
+EV_1d_move_pct,-4.414061254416863
+median_1d_move_pct,-5.409038270068218
+P_up_pct,30.519000000000002
+P_down_pct,69.48100000000001
+P_rally_gt_+3pct,22.799500000000002
+P_selloff_lt_-3pct,59.681
+P_chop_within_+/-3pct,17.5195
+E_abs_move_pct,8.721737793858875
+P_abs_move_gt_implied_8.92pct,44.9625
+P_print_beat_pct,84.794
+P_beat_AND_down_pct (sell-the-news),54.848
+P_down_given_beat_pct,64.68382196853551
+P_beat_and_raise_pct,38.589
+P_down_given_beat_and_raise_pct,34.27531161730027
+P_FQ1_guide_gt_consensus_pct,39.2025
+P_exogenous_tails_pct,13.942499999999999
+p05_move,-18.588772917316785
+p25_move,-11.233023153730715
+p75_move,2.0731333273714476
+p95_move,12.227776681386795

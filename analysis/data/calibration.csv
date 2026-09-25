@@ -1,0 +1,11 @@
+date,print,guide,tone,positioning,actual_r1,note,predicted,error,direction_hit
+2024-03-20,Big beat,Above whisper,Very bullish,-1.5,14.13,HBM sold out 2024/25; drift20 +18%,12.0,2.130000000000001,True
+2024-06-26,Beat,In-line,Clean,-1.5,-7.12,guide $7.6bn ~ cons $7.58bn (recall),-2.5,-4.62,True
+2024-09-25,Beat,Above whisper,Very bullish,0.0,14.73,guide $8.7bn vs ~$8.3bn (recall),11.5,3.2300000000000004,True
+2024-12-18,In-line,Below (severe),Mixed,0.0,-16.18,guide $7.9bn vs ~$8.98bn (recall),-14.0,-2.1799999999999997,True
+2025-03-20,Beat,Above cons < whisper,Mixed,0.0,-8.04,GM pressure/NAND,-0.5,-7.539999999999999,True
+2025-06-25,Beat,Above cons < whisper,Clean,-1.5,-0.98,drift20 +32%,1.5,-2.48,False
+2025-09-23,In-line,Above cons < whisper,Clean,-1.5,-2.82,guide $12.5bn vs $11.94bn LSEG; drift20 +43%,-1.5,-1.3199999999999998,True
+2025-12-17,Beat,Above whisper,Very bullish,0.0,10.21,guide $18.7bn vs ~$14.2bn LSEG (recall),11.5,-1.2899999999999991,True
+2026-03-18,Big beat,Above whisper,Mixed,-1.5,-3.78,FY26 capex raised; r5 -17%,4.5,-8.28,False
+2026-06-24,Big beat,Above whisper,Very bullish,-1.5,15.74,guide $50bn vs $43.58bn LSEG; SCAs,12.0,3.74,True
