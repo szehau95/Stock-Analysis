@@ -1,0 +1,18 @@
+{
+  "_notes": "Desk reply of 28/09/2026 to the KO 80-85 requests in report.md: every line repriced at KO 95, UF 4%, trade date 02/10/2026. Coupon calibration set.",
+  "quoted": "2026-09-28",
+  "td": "2026-10-02",
+  "ccy": "USD",
+  "uf": 0.04,
+  "comment": "the KO at 80-83 cant get anything of value",
+  "quotes": [
+    {"basket": ["ARM", "DELL", "DDOG"], "ko": 95, "strike": 60, "ki": 60, "cpn": 11.39},
+    {"basket": ["ARM", "DELL", "DDOG"], "ko": 95, "strike": 70, "ki": 60, "cpn": 15.14},
+    {"basket": ["ARM", "DELL", "PDD"], "ko": 95, "strike": 60, "ki": 60, "cpn": 9.73},
+    {"basket": ["ARM", "DELL", "PDD"], "ko": 95, "strike": 70, "ki": 60, "cpn": 13.40},
+    {"basket": ["AVGO", "ARM", "DELL"], "ko": 95, "strike": 60, "ki": 60, "cpn": 9.64},
+    {"basket": ["AVGO", "ARM", "DELL"], "ko": 95, "strike": 70, "ki": 60, "cpn": 13.40},
+    {"basket": ["ARM", "DELL"], "ko": 95, "strike": 60, "ki": 60, "cpn": 8.85},
+    {"basket": ["ORCL", "PANW", "DDOG"], "ko": 95, "strike": 65, "ki": 65, "cpn": 10.33}
+  ]
+}

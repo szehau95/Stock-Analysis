@@ -1,5 +1,5 @@
 {
-  "td": "2026-10-01",
+  "td": "2026-10-02",
   "obs1": "2026-11-02",
   "paths": 50000,
   "final_paths": 200000,
@@ -23,13 +23,19 @@
   ],
   "n_baskets": 680,
   "n_structures": 12002,
-  "n_eligible_structures": 75,
+  "n_eligible_structures": 0,
+  "n_rankable_structures": 538,
+  "ranking_basis": "rankable",
+  "max_cpn_roll_hard_pass": 0.07437335495156305,
   "n_hard_pass": 8499,
   "n_regime_target_met": 0,
   "mu_m1_iv": 0.531,
   "r_usd": 0.035,
   "skew_bump": 0.05,
-  "uf_cut": 0.025,
+  "uf_quoted": 0.04,
   "uf_roll": 0.01,
+  "corr_floor": 0.6,
+  "theta_desk": 0.07059856939710833,
+  "theta_roll": 0.04059856939710833,
   "min_cpn": 0.09
 }
