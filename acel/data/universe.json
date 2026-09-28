@@ -1,0 +1,48 @@
+{
+  "_notes": {
+    "source_research": "Lombard Odier Equity Research List LOC00373, prices/ratings as of 17.09.2026 (Communication Services, Information Technology, Consumer Discretionary pages)",
+    "source_market": "IBKR snapshots 25.09.2026 (pre-market) + 1Y daily closes to 24.09.2026",
+    "earnings": "confirmed = company press release / confirmed by data vendor; est = vendor estimate or prior-year pattern. amc = after market close.",
+    "lo_pt_ccy": "USD for US listings; foreign-listed LO ratings (KRX, TWSE, AEB, HKEX) carry only the list's % upside"
+  },
+  "names": {
+    "MU":    {"name": "Micron Technology Inc",      "bbg": "MU UW",    "lo_rating": "H",  "lo_pt": 1200,  "lo_upside_1709": 22.8, "div": 0.000, "earn": "2026-09-30", "earn_status": "confirmed amc", "group": "memory"},
+    "SKHY":  {"name": "SK hynix Inc ADR",           "bbg": "SKHY UW",  "lo_rating": "H",  "lo_pt": null,  "lo_upside_1709": -2.6, "div": 0.002, "earn": "2026-10-27", "earn_status": "est", "group": "memory", "lo_line": "SK HYNIX (KRX)"},
+    "SNDK":  {"name": "Sandisk Corp",               "bbg": "SNDK UW",  "lo_rating": null, "lo_pt": null,  "lo_upside_1709": null, "div": 0.000, "earn": "2026-10-30", "earn_status": "est window 30/10-09/11", "group": "memory", "not_in_lo_list": true},
+    "WDC":   {"name": "Western Digital Corp",       "bbg": "WDC UW",   "lo_rating": null, "lo_pt": null,  "lo_upside_1709": null, "div": 0.001, "earn": "2026-10-29", "earn_status": "est", "group": "memory", "not_in_lo_list": true, "no_history": true},
+    "STX":   {"name": "Seagate Technology",         "bbg": "STX UW",   "lo_rating": "H",  "lo_pt": 918,   "lo_upside_1709": 14.3, "div": 0.004, "earn": "2026-10-27", "earn_status": "est", "group": "memory", "no_history": true},
+    "NVDA":  {"name": "NVIDIA Corp",                "bbg": "NVDA UW",  "lo_rating": "SB", "lo_pt": 261,   "lo_upside_1709": 19.0, "div": 0.000, "earn": "2026-11-18", "earn_status": "est 18-25/11", "group": "mega"},
+    "AVGO":  {"name": "Broadcom Inc",               "bbg": "AVGO UW",  "lo_rating": "B",  "lo_pt": 500,   "lo_upside_1709": 44.0, "div": 0.004, "earn": "2026-12-10", "earn_status": "est", "group": "ai_semi"},
+    "AMD":   {"name": "Advanced Micro Devices",     "bbg": "AMD UW",   "lo_rating": "H",  "lo_pt": 480,   "lo_upside_1709": -11.9,"div": 0.000, "earn": "2026-11-03", "earn_status": "confirmed amc", "group": "ai_semi"},
+    "MRVL":  {"name": "Marvell Technology",         "bbg": "MRVL UW",  "lo_rating": null, "lo_pt": null,  "lo_upside_1709": null, "div": 0.001, "earn": "2026-12-01", "earn_status": "est", "group": "ai_semi", "not_in_lo_list": true},
+    "AMAT":  {"name": "Applied Materials",          "bbg": "AMAT UW",  "lo_rating": "H",  "lo_pt": 520,   "lo_upside_1709": 24.6, "div": 0.004, "earn": "2026-11-12", "earn_status": "est", "group": "ai_semi"},
+    "ARM":   {"name": "Arm Holdings ADR",           "bbg": "ARM UW",   "lo_rating": "H",  "lo_pt": 250,   "lo_upside_1709": -5.6, "div": 0.000, "earn": "2026-11-04", "earn_status": "est (FQ2 FY26 was 05/11/2025)", "group": "ai_semi"},
+    "ANET":  {"name": "Arista Networks",            "bbg": "ANET UN",  "lo_rating": "H",  "lo_pt": 220,   "lo_upside_1709": 10.3, "div": 0.000, "earn": "2026-11-02", "earn_status": "est (same day as obs #1)", "group": "ai_semi"},
+    "DELL":  {"name": "Dell Technologies C",        "bbg": "DELL UN",  "lo_rating": "B",  "lo_pt": 600,   "lo_upside_1709": 2.0,  "div": 0.003, "earn": "2026-11-24", "earn_status": "est", "group": "ai_hw"},
+    "ORCL":  {"name": "Oracle Corp",                "bbg": "ORCL UN",  "lo_rating": "H",  "lo_pt": 145,   "lo_upside_1709": -3.7, "div": 0.013, "earn": "2026-12-14", "earn_status": "est", "group": "software"},
+    "ADBE":  {"name": "Adobe Inc",                  "bbg": "ADBE UW",  "lo_rating": "H",  "lo_pt": 235,   "lo_upside_1709": -7.0, "div": 0.000, "earn": "2026-12-10", "earn_status": "est", "group": "software"},
+    "CRM":   {"name": "Salesforce Inc",             "bbg": "CRM UN",   "lo_rating": "B",  "lo_pt": 300,   "lo_upside_1709": 23.5, "div": 0.007, "earn": "2026-12-02", "earn_status": "est", "group": "software"},
+    "PANW":  {"name": "Palo Alto Networks",         "bbg": "PANW UW",  "lo_rating": "H",  "lo_pt": 360,   "lo_upside_1709": -4.0, "div": 0.000, "earn": "2026-11-12", "earn_status": "est 12-19/11", "group": "software"},
+    "PLTR":  {"name": "Palantir Technologies",      "bbg": "PLTR UW",  "lo_rating": "H",  "lo_pt": 170,   "lo_upside_1709": -3.5, "div": 0.000, "earn": "2026-11-09", "earn_status": "vendor-confirmed amc", "group": "software"},
+    "DDOG":  {"name": "Datadog Inc",                "bbg": "DDOG UW",  "lo_rating": "H",  "lo_pt": 246,   "lo_upside_1709": 4.2,  "div": 0.000, "earn": "2026-11-05", "earn_status": "est", "group": "software"},
+    "DIS":   {"name": "Walt Disney Co",             "bbg": "DIS UN",   "lo_rating": "SB", "lo_pt": 144,   "lo_upside_1709": 36.7, "div": 0.012, "earn": "2026-11-12", "earn_status": "est", "group": "consumer"},
+    "PDD":   {"name": "PDD Holdings ADR",           "bbg": "PDD UW",   "lo_rating": "B",  "lo_pt": 110.4, "lo_upside_1709": 41.5, "div": 0.000, "earn": "2026-11-18", "earn_status": "est", "group": "consumer"},
+    "BABA":  {"name": "Alibaba Group ADR",          "bbg": "BABA UN",  "lo_rating": "B",  "lo_pt": null,  "lo_upside_1709": 95.1, "div": 0.019, "earn": "2026-11-19", "earn_status": "est", "group": "consumer", "lo_line": "9988 HK"},
+    "GOOGL": {"name": "Alphabet Inc A",             "bbg": "GOOGL UW", "lo_rating": "B",  "lo_pt": 450,   "lo_upside_1709": 29.6, "div": 0.002, "earn": "2026-10-27", "earn_status": "est late Oct", "group": "mega"},
+    "AMZN":  {"name": "Amazon.com Inc",             "bbg": "AMZN UW",  "lo_rating": "SB", "lo_pt": 320,   "lo_upside_1709": 27.4, "div": 0.000, "earn": "2026-10-29", "earn_status": "est late Oct", "group": "mega"},
+    "MSFT":  {"name": "Microsoft Corp",             "bbg": "MSFT UW",  "lo_rating": "SB", "lo_pt": 611,   "lo_upside_1709": 22.8, "div": 0.007, "earn": "2026-10-27", "earn_status": "est late Oct", "group": "mega", "no_history": true},
+    "META":  {"name": "Meta Platforms",             "bbg": "META UW",  "lo_rating": "B",  "lo_pt": 700,   "lo_upside_1709": 2.6,  "div": 0.003, "earn": "2026-10-28", "earn_status": "est late Oct", "group": "mega", "no_history": true},
+    "AAPL":  {"name": "Apple Inc",                  "bbg": "AAPL UW",  "lo_rating": "B",  "lo_pt": 345,   "lo_upside_1709": 2.4,  "div": 0.003, "earn": "2026-10-29", "earn_status": "est late Oct", "group": "mega", "no_history": true},
+    "TSLA":  {"name": "Tesla Inc",                  "bbg": "TSLA UW",  "lo_rating": "H",  "lo_pt": 385,   "lo_upside_1709": 5.1,  "div": 0.000, "earn": "2026-10-21", "earn_status": "est", "group": "mega", "no_history": true},
+    "NFLX":  {"name": "Netflix Inc",                "bbg": "NFLX UW",  "lo_rating": "B",  "lo_pt": 105,   "lo_upside_1709": 39.4, "div": 0.000, "earn": "2026-10-15", "earn_status": "est", "group": "consumer", "no_history": true},
+    "TSM":   {"name": "Taiwan Semiconductor ADR",   "bbg": "TSM UN",   "lo_rating": "SB", "lo_pt": null,  "lo_upside_1709": 19.6, "div": 0.009, "earn": "2026-10-15", "earn_status": "est", "group": "ai_semi", "no_history": true, "lo_line": "2330 TT"},
+    "ASML":  {"name": "ASML Holding NY",            "bbg": "ASML UW",  "lo_rating": "B",  "lo_pt": null,  "lo_upside_1709": 20.9, "div": 0.004, "earn": "2026-10-14", "earn_status": "est", "group": "ai_semi", "no_history": true, "lo_line": "ASML NA"},
+    "INTC":  {"name": "Intel Corp",                 "bbg": "INTC UW",  "lo_rating": "H",  "lo_pt": 100,   "lo_upside_1709": -8.1, "div": 0.000, "earn": "2026-10-22", "earn_status": "est", "group": "ai_semi", "no_history": true},
+    "NOW":   {"name": "ServiceNow Inc",             "bbg": "NOW UN",   "lo_rating": "SB", "lo_pt": 180,   "lo_upside_1709": 30.0, "div": 0.000, "earn": "2026-10-21", "earn_status": "est", "group": "software", "no_history": true}
+  },
+  "screened_out_upfront": {
+    "sell_rated": ["SPACE EXPLORATION TECH", "ENPHASE ENERGY", "FIRST SOLAR", "NIKE"],
+    "not_us_listed_or_no_us_line": ["CELLNEX", "KPN", "SUNRISE", "TENCENT", "CHINA TELECOM", "DEUTSCHE TELEKOM", "SWISSCOM", "SAMSUNG ELECTRONICS", "COMET", "XIAOMI", "ASM INTERNATIONAL", "DASSAULT", "INFINEON", "BYD", "RICHEMONT", "ZALANDO", "BMW", "HERMES", "HYUNDAI", "INDITEX", "LVMH", "MERCEDES", "MICHELIN", "SWATCH"],
+    "small_cap_or_low_vol_for_acel": ["MIRION", "ON HOLDING", "SERVICE CORP", "VERIZON", "AT&T", "PINTEREST", "TKO", "MCDONALDS", "HOME DEPOT", "APTIV", "TRIMBLE", "LOGITECH", "NOKIA", "STMICRO", "IBM", "SPOTIFY", "BOOKING", "SAP", "BAIDU", "FERRARI"]
+  }
+}
