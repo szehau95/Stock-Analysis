@@ -1,0 +1,64 @@
+filed,txn_date,insider,title,code,type,A/D,shares,price,owned_after,10b5-1,value_$
+2026-09-23,2026-09-19,Smith Maria,"EVP, Chief  Accounting Officer",M,Option exercise,A,11934.0,0.0,70587.0,,0.0
+2026-09-23,2026-09-21,Smith Maria,"EVP, Chief  Accounting Officer",F,Tax withholding,D,6230.0,147.61,69863.0,,919610.0
+2026-09-23,2026-09-20,Smith Maria,"EVP, Chief  Accounting Officer",M,Option exercise,A,5506.0,0.0,76093.0,,0.0
+2026-09-23,2026-09-21,Smith Maria,"EVP, Chief  Accounting Officer",F,Tax withholding,D,2875.0,147.61,66988.0,,424379.0
+2026-09-23,2026-09-22,Smith Maria,"EVP, Chief  Accounting Officer",S,Open-mkt sale,D,2631.0,151.7,64357.0,,399123.0
+2026-09-23,2026-09-19,Sicilia Michael D.,Chief Executive Officer,M,Option exercise,A,35802.0,0.0,184886.279,10b5-1,0.0
+2026-09-23,2026-09-21,Sicilia Michael D.,Chief Executive Officer,F,Tax withholding,D,17311.0,147.61,240986.279,10b5-1,2555277.0
+2026-09-23,2026-09-20,Sicilia Michael D.,Chief Executive Officer,M,Option exercise,A,73411.0,0.0,258297.279,10b5-1,0.0
+2026-09-23,2026-09-21,Sicilia Michael D.,Chief Executive Officer,F,Tax withholding,D,35495.0,147.61,205491.279,10b5-1,5239417.0
+2026-09-23,2026-09-22,Sicilia Michael D.,Chief Executive Officer,S,Open-mkt sale,D,22562.0,151.59,182929.279,10b5-1,3420174.0
+2026-09-23,2026-09-19,Magouyrk Clayton M.,Chief Executive Officer,M,Option exercise,A,41769.0,0.0,213157.0,,0.0
+2026-09-23,2026-09-21,Magouyrk Clayton M.,Chief Executive Officer,F,Tax withholding,D,16437.0,147.61,284813.0,,2426266.0
+2026-09-23,2026-09-20,Magouyrk Clayton M.,Chief Executive Officer,M,Option exercise,A,88093.0,0.0,301250.0,,0.0
+2026-09-23,2026-09-21,Magouyrk Clayton M.,Chief Executive Officer,F,Tax withholding,D,34665.0,147.61,250148.0,,5116901.0
+2026-09-23,2026-09-19,Levey Stuart,"EVP, Chief Legal Officer",M,Option exercise,A,20885.0,0.0,38768.0,,0.0
+2026-09-23,2026-09-21,Levey Stuart,"EVP, Chief Legal Officer",F,Tax withholding,D,10245.0,147.61,28523.0,,1512264.0
+2026-09-23,2026-09-19,Hura Mark,"Pres., Global Field Operations",M,Option exercise,A,19393.0,0.0,269561.0,,0.0
+2026-09-23,2026-09-21,Hura Mark,"Pres., Global Field Operations",F,Tax withholding,D,8456.0,147.61,308822.0,,1248190.0
+2026-09-23,2026-09-20,Hura Mark,"Pres., Global Field Operations",M,Option exercise,A,47717.0,0.0,317278.0,,0.0
+2026-09-23,2026-09-21,Hura Mark,"Pres., Global Field Operations",F,Tax withholding,D,20805.0,147.61,288017.0,,3071026.0
+2026-09-23,2026-09-19,HENLEY JEFFREY,Vice Chairman,M,Option exercise,A,13426.0,0.0,480453.0,,0.0
+2026-09-23,2026-09-21,HENLEY JEFFREY,Vice Chairman,F,Tax withholding,D,5884.0,147.61,507604.0,,868537.0
+2026-09-23,2026-09-20,HENLEY JEFFREY,Vice Chairman,M,Option exercise,A,33035.0,0.0,513488.0,,0.0
+2026-09-23,2026-09-21,HENLEY JEFFREY,Vice Chairman,F,Tax withholding,D,14462.0,147.61,493142.0,,2134736.0
+2026-09-17,2026-09-15,Smith Maria,"EVP, Chief  Accounting Officer",M,Option exercise,A,13168.0,0.0,65527.0,,0.0
+2026-09-17,2026-09-15,Smith Maria,"EVP, Chief  Accounting Officer",F,Tax withholding,D,6874.0,144.79,58653.0,,995286.0
+2026-09-17,2026-09-15,Sicilia Michael D.,Chief Executive Officer,M,Option exercise,A,52673.0,0.0,185434.279,10b5-1,0.0
+2026-09-17,2026-09-15,Sicilia Michael D.,Chief Executive Officer,F,Tax withholding,D,25468.0,144.79,159966.279,10b5-1,3687512.0
+2026-09-17,2026-09-16,Sicilia Michael D.,Chief Executive Officer,S,Open-mkt sale,D,10882.0,139.94,149084.279,10b5-1,1522827.0
+2026-09-17,2026-09-15,Magouyrk Clayton M.,Chief Executive Officer,M,Option exercise,A,61452.0,0.0,195570.0,,0.0
+2026-09-17,2026-09-15,Magouyrk Clayton M.,Chief Executive Officer,F,Tax withholding,D,24182.0,144.79,171388.0,,3501312.0
+2026-09-17,2026-09-15,Levey Stuart,"EVP, Chief Legal Officer",M,Option exercise,A,26337.0,0.0,29766.0,,0.0
+2026-09-17,2026-09-15,Levey Stuart,"EVP, Chief Legal Officer",F,Tax withholding,D,11883.0,144.79,17883.0,,1720540.0
+2026-09-17,2026-09-15,Hura Mark,"Pres., Global Field Operations",M,Option exercise,A,28531.0,0.0,262608.0,,0.0
+2026-09-17,2026-09-15,Hura Mark,"Pres., Global Field Operations",F,Tax withholding,D,12440.0,144.79,250168.0,,1801188.0
+2026-09-17,2026-09-15,HENLEY JEFFREY,Vice Chairman,M,Option exercise,A,19752.0,0.0,475662.0,,0.0
+2026-09-17,2026-09-15,HENLEY JEFFREY,Vice Chairman,F,Tax withholding,D,8635.0,144.79,467027.0,,1250262.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,M,Option exercise,A,400000.0,40.93,400000.0,10b5-1,16372000.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,74969.0,156.0642,325031.0,10b5-1,11699977.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,78559.0,157.023,246472.0,10b5-1,12335570.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,45872.0,157.8869,200600.0,10b5-1,7242588.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,16802.0,159.0673,183798.0,10b5-1,2672649.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,62582.0,160.0776,121216.0,10b5-1,10017976.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,48353.0,160.8586,72863.0,10b5-1,7777996.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,16809.0,162.176,56054.0,10b5-1,2726016.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,15122.0,162.9955,40932.0,10b5-1,2464818.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,26603.0,163.9994,14329.0,10b5-1,4362876.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,13529.0,164.9137,800.0,10b5-1,2231117.0
+2026-06-26,2026-06-24,HENLEY JEFFREY,Vice Chairman,S,Open-mkt sale,D,800.0,165.57,0.0,10b5-1,132456.0
+2026-06-02,2026-05-31,MOORMAN CHARLES W,Director,M,Option exercise,A,2114.0,,40689.0,,
+2026-06-02,2026-05-31,Fairhead Rona Alison,Director,M,Option exercise,A,2114.0,,24224.0,,
+2026-06-02,2026-05-31,Fairhead Rona Alison,Director,F,Tax withholding,D,58.0,225.78,24166.0,,13095.0
+2026-06-02,2026-05-31,CHIZEN BRUCE R,Director,M,Option exercise,A,2114.0,,71056.0,,
+2026-06-02,2026-05-31,BOSKIN MICHAEL J,Director,M,Option exercise,A,2114.0,,97558.0,,
+2026-06-02,2026-05-31,BERG JEFFREY,Director,M,Option exercise,A,2114.0,,154113.0,,
+2026-06-02,2026-05-31,Ablo Awo,Director,M,Option exercise,A,2114.0,,13567.0,,
+2026-06-02,2026-05-31,Ablo Awo,Director,F,Tax withholding,D,80.0,225.78,13487.0,,18062.0
+2026-04-20,2026-04-16,Levey Stuart,"EVP, Chief Legal Officer",S,Open-mkt sale,D,15000.0,176.19,3429.0,10b5-1,2642850.0
+2026-04-17,2026-04-16,HENLEY JEFFREY,Vice Chairman,J,J,D,745000.0,0.0,455910.0,,0.0
+2026-04-17,2026-04-16,HENLEY JEFFREY,Vice Chairman,J,J,A,745000.0,0.0,745000.0,,0.0
+2026-04-01,2026-03-30,HENLEY JEFFREY,Vice Chairman,J,J,D,128304.0,0.0,16810.0,,0.0
+2026-04-01,2026-03-30,HENLEY JEFFREY,Vice Chairman,J,J,A,128304.0,0.0,490333.0,,0.0
+2026-04-01,2026-03-30,HENLEY JEFFREY,Vice Chairman,G,Gift,D,16810.0,0.0,0.0,,0.0
