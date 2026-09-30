@@ -1,0 +1,47 @@
+bank,qdate,type,reason,eps_reported_sen,eps_core_sen
+MAYBANK,2009-06-30,one-off,"BII goodwill impairment (one-off, RM1.9b-class)",-17.62,13.25
+MAYBANK,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),17.22,19.133333333333333
+MAYBANK,2022-06-30,cukai-makmur,add back prosperity tax (x1/0.9),15.52,17.244444444444444
+MAYBANK,2022-09-30,cukai-makmur,add back prosperity tax (x1/0.9),18.22,20.244444444444444
+MAYBANK,2022-12-31,cukai-makmur,add back prosperity tax (x1/0.9),17.98,19.977777777777778
+PBBANK,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),7.21,8.011111111111111
+PBBANK,2022-06-30,cukai-makmur,add back prosperity tax (x1/0.9),7.3,8.11111111111111
+PBBANK,2022-09-30,cukai-makmur,add back prosperity tax (x1/0.9),8.19,9.1
+PBBANK,2022-12-31,cukai-makmur,add back prosperity tax (x1/0.9),8.83,9.811111111111112
+CIMB,2018-06-30,one-off,Gain on disposal of 50% CIMB Securities International (CITIC Sec),21.29,12.115
+CIMB,2021-03-31,re-spread,quarterly mis-allocation; FY total kept,24.76,10.715
+CIMB,2021-06-30,re-spread,quarterly mis-allocation; FY total kept,10.8,10.715
+CIMB,2021-09-30,re-spread,quarterly mis-allocation; FY total kept,-1.07,10.715
+CIMB,2021-12-31,re-spread,quarterly mis-allocation; FY total kept,8.37,10.715
+CIMB,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),13.96,15.511111111111111
+CIMB,2022-06-30,cukai-makmur,add back prosperity tax (x1/0.9),12.3,13.666666666666668
+CIMB,2022-09-30,cukai-makmur,add back prosperity tax (x1/0.9),13.43,14.92222222222222
+CIMB,2022-12-31,cukai-makmur,add back prosperity tax (x1/0.9),12.49,13.877777777777778
+HLBANK,2013-03-31,one-off,Source transcription error (EPS=0.00),0.0,28.125
+HLBANK,2021-09-30,cukai-makmur,add back prosperity tax (x1/0.9),41.91,46.56666666666666
+HLBANK,2021-12-31,cukai-makmur,add back prosperity tax (x1/0.9),36.07,40.077777777777776
+HLBANK,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),38.32,42.577777777777776
+HLBANK,2022-06-30,cukai-makmur,add back prosperity tax (x1/0.9),44.32,49.24444444444444
+RHBBANK,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),14.49,16.1
+RHBBANK,2022-06-30,cukai-makmur,add back prosperity tax (x1/0.9),15.28,16.977777777777778
+RHBBANK,2022-09-30,cukai-makmur,add back prosperity tax (x1/0.9),16.63,18.477777777777778
+RHBBANK,2022-12-31,cukai-makmur,add back prosperity tax (x1/0.9),18.24,20.266666666666666
+AMBANK,2007-03-31,one-off,4QFY07 exceptional impairment/loss,-25.69,5.355
+AMBANK,2021-03-31,one-off,1MDB global settlement RM2.83b (4QFY21),-156.0,9.23
+AMBANK,2021-06-30,cukai-makmur,add back prosperity tax (x1/0.9),11.86,13.177777777777777
+AMBANK,2021-09-30,cukai-makmur,add back prosperity tax (x1/0.9),9.69,10.766666666666666
+AMBANK,2021-12-31,cukai-makmur,add back prosperity tax (x1/0.9),12.18,13.533333333333333
+AMBANK,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),11.83,13.144444444444444
+BIMB,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),4.95,5.5
+BIMB,2022-06-30,cukai-makmur,add back prosperity tax (x1/0.9),5.44,6.044444444444444
+BIMB,2022-09-30,cukai-makmur,add back prosperity tax (x1/0.9),6.63,7.366666666666666
+BIMB,2022-12-31,cukai-makmur,add back prosperity tax (x1/0.9),5.83,6.477777777777778
+ALLIANCE,2021-06-30,cukai-makmur,add back prosperity tax (x1/0.9),9.43,10.477777777777778
+ALLIANCE,2021-09-30,cukai-makmur,add back prosperity tax (x1/0.9),11.16,12.4
+ALLIANCE,2021-12-31,cukai-makmur,add back prosperity tax (x1/0.9),9.76,10.844444444444443
+ALLIANCE,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),6.66,7.4
+AFFIN,2022-09-30,one-off,Gain on disposal of Affin Hwang Asset Management stake,38.40631578947368,6.28578947368421
+AFFIN,2022-03-31,cukai-makmur,add back prosperity tax (x1/0.9),6.366315789473684,7.073684210526316
+AFFIN,2022-06-30,cukai-makmur,add back prosperity tax (x1/0.9),6.55578947368421,7.284210526315789
+AFFIN,2022-09-30,cukai-makmur,add back prosperity tax (x1/0.9),6.28578947368421,6.984210526315789
+AFFIN,2022-12-31,cukai-makmur,add back prosperity tax (x1/0.9),6.034736842105263,6.705263157894737
