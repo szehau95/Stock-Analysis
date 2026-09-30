@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.log
+data/raw/fmip_*
+data/raw/weekly_fund_flow*.pdf
