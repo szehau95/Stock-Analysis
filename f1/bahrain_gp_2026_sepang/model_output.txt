@@ -1,0 +1,54 @@
+BASE seed=7 sims=120000
+  VER 0.5684 [0.307, 0.775]
+  ANT 0.1635 [0.005, 0.507]
+  HAM 0.0853 [0.003, 0.315]
+  RUS 0.0768 [0.005, 0.271]
+  HAD 0.0551 [0.000, 0.240]
+  LEC 0.0383 [0.000, 0.136]
+  NOR 0.0111 [0.000, 0.040]
+  PIA 0.0016 [0.000, 0.005]
+   dry 0.396 {'VER': 0.621, 'ANT': 0.169, 'HAM': 0.071, 'RUS': 0.061, 'HAD': 0.049, 'LEC': 0.025, 'NOR': 0.004, 'PIA': 0.0}
+   mixed 0.451 {'VER': 0.56, 'ANT': 0.164, 'HAM': 0.088, 'RUS': 0.078, 'HAD': 0.057, 'LEC': 0.041, 'NOR': 0.011, 'PIA': 0.001}
+   wet 0.153 {'VER': 0.454, 'ANT': 0.146, 'HAM': 0.115, 'RUS': 0.114, 'HAD': 0.067, 'LEC': 0.066, 'NOR': 0.031, 'PIA': 0.006}
+BASE seed=8 sims=120000
+  VER 0.5559 [0.290, 0.760]
+  ANT 0.1691 [0.005, 0.530]
+  HAM 0.0807 [0.003, 0.295]
+  RUS 0.0858 [0.005, 0.253]
+  HAD 0.0641 [0.000, 0.302]
+  LEC 0.0323 [0.000, 0.103]
+  NOR 0.0110 [0.000, 0.038]
+  PIA 0.0011 [0.000, 0.005]
+   dry 0.398 {'VER': 0.608, 'ANT': 0.177, 'HAM': 0.064, 'RUS': 0.068, 'HAD': 0.058, 'LEC': 0.02, 'NOR': 0.005, 'PIA': 0.0}
+   mixed 0.448 {'VER': 0.547, 'ANT': 0.166, 'HAM': 0.085, 'RUS': 0.09, 'HAD': 0.066, 'LEC': 0.035, 'NOR': 0.011, 'PIA': 0.001}
+   wet 0.153 {'VER': 0.447, 'ANT': 0.159, 'HAM': 0.114, 'RUS': 0.119, 'HAD': 0.073, 'LEC': 0.056, 'NOR': 0.027, 'PIA': 0.005}
+POOLED 240k {'VER': 0.5621, 'ANT': 0.1663, 'HAM': 0.083, 'RUS': 0.0813, 'HAD': 0.0596, 'LEC': 0.0353, 'NOR': 0.011, 'PIA': 0.0013}
+
+LAP-1 CONDITIONALS (seed 7)
+  VER {'L1_P1': 'P(win)=0.593 freq=0.763', 'L1_P2': 'P(win)=0.516 freq=0.183', 'L1_P3': 'P(win)=0.463 freq=0.037', 'L1_P4': 'P(win)=0.412 freq=0.005'}
+  HAM {'L1_P1': 'P(win)=0.130 freq=0.190', 'L1_P2': 'P(win)=0.086 freq=0.538', 'L1_P3': 'P(win)=0.058 freq=0.199', 'L1_P4': 'P(win)=0.043 freq=0.046'}
+  ANT {'L1_P1': 'P(win)=0.310 freq=0.041', 'L1_P2': 'P(win)=0.210 freq=0.220', 'L1_P3': 'P(win)=0.157 freq=0.495', 'L1_P4': 'P(win)=0.120 freq=0.186'}
+  RUS {'L1_P1': 'P(win)=0.200 freq=0.000', 'L1_P2': 'P(win)=0.214 freq=0.001', 'L1_P3': 'P(win)=0.222 freq=0.003', 'L1_P4': 'P(win)=0.160 freq=0.023'}
+  HAD {'L1_P1': 'P(win)=0.000 freq=0.000', 'L1_P2': 'P(win)=0.171 freq=0.000', 'L1_P3': 'P(win)=0.128 freq=0.001', 'L1_P4': 'P(win)=0.165 freq=0.005'}
+  LEC {'L1_P1': 'P(win)=0.120 freq=0.005', 'L1_P2': 'P(win)=0.075 freq=0.052', 'L1_P3': 'P(win)=0.050 freq=0.222', 'L1_P4': 'P(win)=0.035 freq=0.516'}
+  VER|SC 0.535 VER|noSC 0.617
+
+SENSITIVITY (20k sims each, common seed)
+reference                    VER=0.604 ANT=0.148 HAM=0.074 RUS=0.071 HAD=0.049 LEC=0.047 NOR=0.006 PIA=0.001
+VER pace -0.10               VER=0.726 ANT=0.102 HAM=0.051 RUS=0.049 HAD=0.033 LEC=0.032 NOR=0.005 PIA=0.001
+VER pace +0.10               VER=0.442 ANT=0.201 HAM=0.105 RUS=0.102 HAD=0.070 LEC=0.069 NOR=0.008 PIA=0.002
+ANT pace -0.10               VER=0.538 ANT=0.250 HAM=0.065 RUS=0.055 HAD=0.043 LEC=0.041 NOR=0.006 PIA=0.001
+ANT pace +0.10               VER=0.643 ANT=0.080 HAM=0.081 RUS=0.081 HAD=0.055 LEC=0.051 NOR=0.007 PIA=0.002
+HAM pace -0.10               VER=0.563 ANT=0.137 HAM=0.142 RUS=0.063 HAD=0.044 LEC=0.043 NOR=0.005 PIA=0.001
+RUS pace +0.10               VER=0.620 ANT=0.158 HAM=0.079 RUS=0.030 HAD=0.053 LEC=0.051 NOR=0.007 PIA=0.002
+HAD pace +0.10               VER=0.617 ANT=0.152 HAM=0.077 RUS=0.073 HAD=0.022 LEC=0.049 NOR=0.007 PIA=0.002
+rain: dry 0.70               VER=0.626 ANT=0.158 HAM=0.065 RUS=0.057 HAD=0.046 LEC=0.044 NOR=0.004 PIA=0.001
+rain: wet-heavy              VER=0.566 ANT=0.146 HAM=0.084 RUS=0.083 HAD=0.054 LEC=0.053 NOR=0.011 PIA=0.003
+all dry                      VER=0.654 ANT=0.156 HAM=0.059 RUS=0.046 HAD=0.045 LEC=0.038 NOR=0.001 PIA=0.001
+pass harder (0.04/0.4)       VER=0.613 ANT=0.147 HAM=0.080 RUS=0.063 HAD=0.042 LEC=0.046 NOR=0.007 PIA=0.002
+pass easier (0.15/0.9)       VER=0.593 ANT=0.149 HAM=0.073 RUS=0.077 HAD=0.054 LEC=0.047 NOR=0.006 PIA=0.001
+VER DNF 0.03                 VER=0.639 ANT=0.138 HAM=0.067 RUS=0.062 HAD=0.045 LEC=0.042 NOR=0.005 PIA=0.001
+VER DNF 0.12                 VER=0.561 ANT=0.160 HAM=0.082 RUS=0.079 HAD=0.055 LEC=0.053 NOR=0.008 PIA=0.002
+start sd 0.6                 VER=0.595 ANT=0.149 HAM=0.074 RUS=0.074 HAD=0.051 LEC=0.049 NOR=0.007 PIA=0.002
+deg 0.15                     VER=0.577 ANT=0.152 HAM=0.079 RUS=0.077 HAD=0.054 LEC=0.052 NOR=0.007 PIA=0.002
+SC prob x0.6                 VER=0.615 ANT=0.146 HAM=0.074 RUS=0.067 HAD=0.046 LEC=0.046 NOR=0.005 PIA=0.001
