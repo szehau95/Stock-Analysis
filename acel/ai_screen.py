@@ -142,9 +142,9 @@ def rule_flags(basket, ctx, scr, ko, ki):
     if near:
         out.append("<30% off high (" + "/".join(f"{t} {scr.loc[t, 'off_hi52']:.0%}" for t in near) + ")")
     if ko > ctx["ko_cap"] + 1e-9:
-        out.append(f"KO above {ctx['ko_cap']:.0f} rule of thumb")
+        out.append(f"KO above {ctx['ko_cap']:.1f} rule of thumb")
     if ki > ctx["ki_cap_rule"] + 1e-9:
-        out.append(f"KI above {ctx['ki_cap_rule']:.0f} rule of thumb")
+        out.append(f"KI above {ctx['ki_cap_rule']:.1f} rule of thumb")
     return "; ".join(out)
 
 

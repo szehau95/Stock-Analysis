@@ -98,7 +98,7 @@ def short_flags(r):
         if m:
             out.append(m.group(1).replace("/", ", ").replace("-", "−") + " off high")
             continue
-        m = re.match(r"(KO|KI) above (\d+) rule of thumb", f)
+        m = re.match(r"(KO|KI) above ([\d.]+) rule of thumb", f)
         if m:
             out.append(f"{m.group(1)} > {m.group(2)} rule")
             continue
@@ -200,7 +200,9 @@ def main():
     f2 = fin[fin["uf"] == 0.02].sort_values("p_ko1", ascending=False)
     f1 = fin[fin["uf"] == 0.01].sort_values("p_ko1", ascending=False)
     L = lines.set_index("line")
-    l1, l2, l4, l5 = (L.loc[i] for i in (1, 2, 4, 5))
+    l1, l2, l3, l4, l5 = (L.loc[i] for i in range(1, 6))
+    gap = 100 * (lines["cpn"] - lines["cpn_x"])        # coupon the print adds
+    dko = 100 * (lines["p_ko1_x"] - lines["p_ko1"])    # P(KO@1) the print costs
     s = scr
     obs1_after = E.obs1_date(TD_AFTER)
     after_in = [t for t in priced if pd.Timestamp(TD_AFTER) < pd.Timestamp(s.loc[t, "next_earn"]) <= pd.Timestamp(obs1_after)]
@@ -218,6 +220,9 @@ def main():
     def off(t):
         return f"{s.loc[t, 'off_hi52']:.0%}".replace("-", "−")
 
+    def offa(t):
+        return f"{abs(s.loc[t, 'off_hi52']):.0%}"
+
     def rho(a, b):
         return f"{corr.loc[a, b]:.2f}".replace("-", "−")
 
@@ -234,6 +239,14 @@ def main():
 
     # ---------------------------------------------------------------- bottom line
     w("## Bottom line\n")
+    w(f"- **Top 5 counters: {', '.join(TOP5)}.** ORCL ({off('ORCL')}) is the anchor: the deepest correction on the "
+      f"list, {s.loc['ORCL', 'iv']:.0%} IV, and no print until ~{d(s.loc['ORCL', 'next_earn'])}. ARM ({off('ARM')}, "
+      f"{s.loc['ARM', 'iv']:.0%} IV) funds the coupon. AMAT is ARM's most correlated partner (ρ {rho('ARM', 'AMAT')}), "
+      f"but it is only {offa('AMAT')} off its high and {s.loc['AMAT', 'ma20_gap']:.0%} above its 20-day average, so "
+      f"fixing now locks in a high strike. AVGO ({off('AVGO')}, LO Buy) adds KO odds at the lowest vol of the seven "
+      f"priced. BIDU ({off('BIDU')}) edges BABA ({off('BABA')}, LO Buy) on correlation to the US names. ADBE is "
+      f"{offa('ADBE')} off its high, but it has traded against the semis (ρ {rho('ADBE', 'AMAT')} to AMAT), which "
+      f"works against you in a worst-of.")
     w(f"- **A 15% coupon at desk terms needs ARM in the basket.** {len(corrected)} AI names on the lists are ≥30% off "
       f"their 52-week highs: {', '.join(f'{t} ({off(t)})' for t in corrected.index)}. "
       f"{', '.join(corrected_late)} print before obs #1, which leaves {', '.join(corrected_clean)}. "
@@ -251,18 +264,12 @@ def main():
       f"{pct(ref['uf1']['p_ko1'])}. On these notes (expected life {lines['life_mem'].min():.1f}–"
       f"{lines['life_mem'].max():.1f} months), each 1% of UF is worth {100 * uplift.min():.1f}–{100 * uplift.max():.1f} "
       f"pts of coupon.")
-    w(f"- **ARM's print is worth ~{100 * (l1['cpn'] - l1['cpn_x']):.1f} pts of that coupon.** Its weeklies price a "
-      f"±{ev['move']:.0%} move on {d(s.loc['ARM', 'next_earn'])} (30/10 expiry {ev['base']:.0%} IV, 06/11 expiry "
-      f"{ev['post']:.0%}). With the print taken out of month 1, line 1 would pay {l1['cpn_x']:.1%} instead of "
-      f"{l1['cpn']:.1%}, and P(KO@1) would be {pct(l1['p_ko1_x'])} instead of {pct(l1['p_ko1'])}. The extra coupon "
-      f"is payment for carrying the print into obs #1.")
-    w(f"- **Top 5 counters: {', '.join(TOP5)}.** ORCL ({off('ORCL')}) is the anchor: the deepest correction on the "
-      f"list, {s.loc['ORCL', 'iv']:.0%} IV, and no print until ~{d(s.loc['ORCL', 'next_earn'])}. ARM funds the "
-      f"coupon. AMAT is ARM's most correlated partner (ρ {rho('ARM', 'AMAT')}), but it is only {off('AMAT')} off its "
-      f"high and {s.loc['AMAT', 'ma20_gap']:.0%} above its 20-day average, so fixing now locks in a high strike. "
-      f"AVGO ({off('AVGO')}, LO Buy) adds KO odds at the lowest vol of the seven priced. BIDU ({off('BIDU')}) edges BABA "
-      f"({off('BABA')}, LO Buy) on correlation to the US names. ADBE is {off('ADBE').lstrip('−')} off but has traded "
-      f"against the semis (ρ {rho('ADBE', 'AMAT')} to AMAT), which works against you in a worst-of.")
+    w(f"- **ARM's print is not what pays the coupon, so waiting for it costs little.** Its weeklies price a "
+      f"±{ev['move']:.0%} move on {d(s.loc['ARM', 'next_earn'])}. Taking that out of month 1 costs only "
+      f"{gap.min():.1f}–{gap.max():.1f} pts of coupon across the six desk lines (line 1: {l1['cpn_x']:.1%} instead of "
+      f"{l1['cpn']:.1%}), because the coupon comes from ARM's {s.loc['ARM', 'iv12m']:.0%} vol over the whole year. "
+      f"A fixing around {d(TD_AFTER)} (obs #1 {d(obs1_after)}) has ARM, ORCL and AVGO all clear of prints. At "
+      f"today's levels, ORCL + ARM + AVGO 100/75/65 would then price ~{l3['cpn_x']:.1%} at desk terms.")
     w(f"- **Memory: your instinct holds on the numbers.** MU ({off('MU')}), SKHY ({off('SKHY')}) and SNDK "
       f"({off('SNDK')}) are not 30% off their highs. SKHY, SNDK and WDC ({off('WDC')}) report before obs #1.")
     w(f"- **Nothing at ≥15% passes every hard filter.** A true monthly roll on these names (P(KO@1) ≥ 55%, "
@@ -329,23 +336,24 @@ def main():
                                            f" ({s.loc[t, 'lo_upside_now']:+.0%} to PT)".replace("-", "−")),
         })
     w(md_table(pd.DataFrame(rows)) + "\n")
-    w(f"1. **ORCL**: {off('ORCL')} off its high, the deepest correction on the list. {ivs('ORCL')} IV, and the "
+    w(f"1. **ORCL**: {offa('ORCL')} off its high, the deepest correction on the list. {ivs('ORCL')} IV, and the "
       f"13-week low allows a KI up to {s.loc['ORCL', 'ki_cap_13w']:.0%}. Next print ~{d(s.loc['ORCL', 'next_earn'])}, "
       f"well after obs #1. It is in the best basket at every UF. LO Hold, at its PT.")
-    w(f"2. **ARM**: {off('ARM')}, with the highest IV on the list ({ivs('ARM')}). It funds the coupon: every basket "
+    w(f"2. **ARM**: {offa('ARM')} off its high, with the highest IV on the list ({ivs('ARM')}). It funds the coupon: every basket "
       f"that reaches 15% at desk terms contains it. It fails your earnings rule: confirmed print "
       f"{d(s.loc['ARM', 'next_earn'])} after the close, three sessions before obs #1, priced at ±{ev['move']:.0%}. "
-      f"The 13-week low ({snap.loc['ARM', 'low_13w']:.2f}) caps KI at {100 * s.loc['ARM', 'ki_cap_13w']:.0f}. "
+      f"The print is worth only {gap.min():.1f}–{gap.max():.1f} pts of coupon, so a post-print fixing loses little "
+      f"(section 5). The 13-week low ({snap.loc['ARM', 'low_13w']:.2f}) caps KI at {100 * s.loc['ARM', 'ki_cap_13w']:.0f}. "
       f"LO Hold, {abs(s.loc['ARM', 'lo_upside_now']):.0%} above its {uni['ARM']['lo_pt']} PT.")
-    w(f"3. **AMAT**: {off('AMAT')}, short of your 30% line. {ivs('AMAT')} IV, and the best correlation on the list "
+    w(f"3. **AMAT**: {offa('AMAT')} off its high, short of your 30% line. {ivs('AMAT')} IV, and the best correlation on the list "
       f"to ARM ({rho('ARM', 'AMAT')}) and AVGO ({rho('AMAT', 'AVGO')}). It prints ~{d(s.loc['AMAT', 'next_earn'])}, "
       f"three days after obs #1. Strong-day flag: {s.loc['AMAT', 'ma20_gap']:.0%} above its 20-day average after a "
       f"rally from 474 on 24/09/2026, so fixing now locks in a high strike. LO Hold, above its {uni['AMAT']['lo_pt']} PT.")
-    w(f"4. **AVGO**: {off('AVGO')}, also short of 30%. The lowest IV of the group ({ivs('AVGO')}) but the best house "
+    w(f"4. **AVGO**: {offa('AVGO')} off its high, also short of 30%. The lowest IV of the group ({ivs('AVGO')}) but the best house "
       f"view (LO Buy, {s.loc['AVGO', 'lo_upside_now']:+.0%} to the {uni['AVGO']['lo_pt']} PT), and it moves with ARM and AMAT (ρ "
       f"{rho('ARM', 'AVGO')} / {rho('AMAT', 'AVGO')}). It buys KO odds and costs coupon. Next print "
       f"{d(s.loc['AVGO', 'next_earn'])} (company plan).")
-    w(f"5. **BIDU**: {off('BIDU')}, {ivs('BIDU')} IV, sitting {s.loc['BIDU', 'spot'] / snap.loc['BIDU', 'low_13w'] - 1:.0%} "
+    w(f"5. **BIDU**: {offa('BIDU')} off its high, {ivs('BIDU')} IV, sitting {s.loc['BIDU', 'spot'] / snap.loc['BIDU', 'low_13w'] - 1:.0%} "
       f"above its 13-week low. Correlation to ORCL/ARM/AMAT is {rho('BIDU', 'ORCL')}/{rho('BIDU', 'ARM')}/"
       f"{rho('BIDU', 'AMAT')}, against BABA's {rho('BABA', 'ORCL')}/{rho('BABA', 'ARM')}/{rho('BABA', 'AMAT')}, which "
       f"is why it edges BABA on KO odds. **BABA** ({off('BABA')}, LO Buy) is the swap if you want the house view behind "
@@ -410,10 +418,10 @@ def main():
       f"P(loss) {pct(l5['p_loss_mem'])}. **Rolls:** two names, so one fewer way to miss, and the most correlated pair "
       f"on the list. **Breaks:** both legs are AI semis: if the trade unwinds, nothing in the basket diversifies it. "
       f"At desk terms the pair reaches {l2['cpn']:.1%} only at KO 100 (P(KO@1) {pct(l2['p_ko1'])}).\n")
-    w(f"If ARM's print before obs #1 is a deal-breaker, there are two choices. One is the clean-calendar basket "
-      f"(ORCL + AMAT + AVGO, ~{ref['clean']['cpn_uf4']:.1%} at desk terms at KO 100, P(KO@1) "
-      f"{pct(ref['clean']['p_ko1'])}), which falls short of 15%. "
-      f"The other is to wait for the post-print window in section 5.\n")
+    w(f"If ARM's print before obs #1 is a deal-breaker, wait for it rather than drop ARM. The clean-calendar basket "
+      f"available now (ORCL + AMAT + AVGO) prices ~{ref['clean']['cpn_uf4']:.1%} at desk terms at KO 100, with P(KO@1) "
+      f"{pct(ref['clean']['p_ko1'])}. ORCL + ARM + AVGO after the print (section 5) gives up only "
+      f"~{100 * (l3['cpn'] - l3['cpn_x']):.1f} pts against today's line 3.\n")
 
     # ---------------------------------------------------------------- ARM event
     w("## 5. ARM's print: what it adds, and the window after it\n")
@@ -428,15 +436,18 @@ def main():
                      "P(KO@1) now": pct(r["p_ko1"]), "P(KO@1) ex-print": pct(r["p_ko1_x"]),
                      "P(loss) now": pct(r["p_loss_mem"]), "P(loss) ex-print": pct(r["p_loss_x"])})
     w(md_table(pd.DataFrame(rows)) + "\n")
-    gap = 100 * (lines["cpn"] - lines["cpn_x"])
-    w(f"- The print adds {gap.min():.1f}–{gap.max():.1f} pts of coupon and costs "
-      f"{100 * (lines['p_ko1_x'] - lines['p_ko1']).min():.0f}–{100 * (lines['p_ko1_x'] - lines['p_ko1']).max():.0f} "
-      f"pts off P(KO@1). The extra coupon pays for the extra risk; it is not free.")
+    w(f"- Taking the print out of month 1 costs {gap.min():.1f}–{gap.max():.1f} pts of coupon and raises P(KO@1) by "
+      f"only {dko.min():.1f}–{dko.max():.1f} pts. Month-1 vol mostly drives obs #1. The coupon depends on vol over "
+      f"the note's expected 4–7-month life, which is ARM's {s.loc['ARM', 'iv12m']:.0%} 12-month vol, and the print "
+      f"barely moves that.")
+    w("- In the model the print is just extra month-1 variance. In practice it is a gap: obs #1 becomes a bet on the "
+      "print's direction, which is what your earnings rule guards against. The numbers say keeping the rule costs "
+      "little.")
     w(f"- **Calendar.** ARM ({d(s.loc['ARM', 'next_earn'])}) and AMAT (~{d(s.loc['AMAT', 'next_earn'])}) report eight "
       f"days apart, so any fixing between now and mid-November carries one of them into obs #1. The first clean ARM "
       f"window is a fixing around {d(TD_AFTER)} (obs #1 {d(obs1_after)}). {', '.join(after_out)} are clear then, while "
-      f"{', '.join(after_in)} report before that obs #1. So the post-print trade is ORCL + ARM + AVGO, at a coupon "
-      f"closer to the ex-print column, from wherever the stocks are after the print.\n")
+      f"{', '.join(after_in)} report before that obs #1. So the post-print trade is ORCL + ARM + AVGO: lines 3 and 6 "
+      f"re-struck after the print, at roughly the ex-print coupons above, from wherever the stocks are then.\n")
 
     # ---------------------------------------------------------------- desk lines
     w("## 6. Desk request lines (Florence)\n")
@@ -452,7 +463,8 @@ def main():
             f"{nm(r['basket'])} {lv(r)}: ~{100 * r['cpn']:.0f}% (P(KO@1) {r['p_ko1']:.0%}, P(loss) {r['p_loss_mem']:.0%})"
             for _, r in sub.iterrows()) + ".\n")
     w(f"- ARM reports {d(s.loc['ARM', 'next_earn'])} after the close (confirmed), three sessions before obs #1 on "
-      f"{d(obs1)}. Every line fails the earnings rule on ARM, and none passes P(KO@1) ≥ 55% or P(loss) ≤ 12%.")
+      f"{d(obs1)}. Every line fails the earnings rule on ARM, and none passes P(KO@1) ≥ 55% or P(loss) ≤ 12%. "
+      f"To keep the rule, re-request lines 3 and 6 for a fixing after the print (around {d(TD_AFTER)}).")
     w(f"- AMAT reports ~{d(s.loc['AMAT', 'next_earn'])} (estimate), three days after obs #1. Strong-day fix on AMAT: "
       f"re-check the 20-day-MA test on the fixing morning.")
     w("- KO 95–100 sits above the KO ≤ 100 − 0.5·σ₁ₘ rule of thumb on the UF 4% lines. KI 65 is 1–2 pts above the "
