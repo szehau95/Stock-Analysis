@@ -258,18 +258,19 @@ def main():
       f"P(KO@1) {pct(l1['p_ko1'])}, P(KO by obs #3) {pct(l1['p_ko3_mem'], 0)}, P(KO ever) {pct(l1['p_ko_ever'], 0)}. "
       f"P(loss) {pct(l1['p_loss_mem'])}, with an average loss of {pct(l1['e_loss_mem'], 0)} when it happens. "
       f"This is a 12-month coupon trade, not a monthly roll. It misses the P(KO@1) and P(loss) filters, and "
-      f"ARM reports on {d(s.loc['ARM', 'next_earn'])}, three sessions before obs #1.")
+      f"ARM reports on {d(s.loc['ARM', 'next_earn'])}, five days before obs #1.")
     w(f"- **Lower UF buys KO odds.** At UF 2% the same basket pays {l4['cpn']:.1%} at KO 90, with "
       f"P(KO@1) {pct(l4['p_ko1'])}. At UF 1% it pays {ref['uf1']['cpn_uf1']:.1%} at KO 88, with P(KO@1) "
       f"{pct(ref['uf1']['p_ko1'])}. On these notes (expected life {lines['life_mem'].min():.1f}–"
       f"{lines['life_mem'].max():.1f} months), each 1% of UF is worth {100 * uplift.min():.1f}–{100 * uplift.max():.1f} "
       f"pts of coupon.")
-    w(f"- **ARM's print is not what pays the coupon, so waiting for it costs little.** Its weeklies price a "
+    w(f"- **ARM's print adds little coupon, so a post-print fixing is a real option.** Its weeklies price a "
       f"±{ev['move']:.0%} move on {d(s.loc['ARM', 'next_earn'])}. Taking that out of month 1 costs only "
       f"{gap.min():.1f}–{gap.max():.1f} pts of coupon across the six desk lines (line 1: {l1['cpn_x']:.1%} instead of "
       f"{l1['cpn']:.1%}), because the coupon comes from ARM's {s.loc['ARM', 'iv12m']:.0%} vol over the whole year. "
-      f"A fixing around {d(TD_AFTER)} (obs #1 {d(obs1_after)}) has ARM, ORCL and AVGO all clear of prints. At "
-      f"today's levels, ORCL + ARM + AVGO 100/75/65 would then price ~{l3['cpn_x']:.1%} at desk terms.")
+      f"A fixing around {d(TD_AFTER)} (obs #1 {d(obs1_after)}) has ARM, ORCL and AVGO all clear of prints; AMAT, BIDU "
+      f"and BABA are not (they report 12/11–24/11). At today's levels, ORCL + ARM + AVGO 100/75/65 would price "
+      f"~{l3['cpn_x']:.1%} at desk terms then, but the coupon re-sets off wherever ARM trades after the print.")
     w(f"- **Memory: your instinct holds on the numbers.** MU ({off('MU')}), SKHY ({off('SKHY')}) and SNDK "
       f"({off('SNDK')}) are not 30% off their highs. SKHY, SNDK and WDC ({off('WDC')}) report before obs #1.")
     w(f"- **Nothing at ≥15% passes every hard filter.** A true monthly roll on these names (P(KO@1) ≥ 55%, "
@@ -341,7 +342,7 @@ def main():
       f"well after obs #1. It is in the best basket at every UF. LO Hold, at its PT.")
     w(f"2. **ARM**: {offa('ARM')} off its high, with the highest IV on the list ({ivs('ARM')}). It funds the coupon: every basket "
       f"that reaches 15% at desk terms contains it. It fails your earnings rule: confirmed print "
-      f"{d(s.loc['ARM', 'next_earn'])} after the close, three sessions before obs #1, priced at ±{ev['move']:.0%}. "
+      f"{d(s.loc['ARM', 'next_earn'])} after the close, five days before obs #1, priced at ±{ev['move']:.0%}. "
       f"The print is worth only {gap.min():.1f}–{gap.max():.1f} pts of coupon, so a post-print fixing loses little "
       f"(section 5). The 13-week low ({snap.loc['ARM', 'low_13w']:.2f}) caps KI at {100 * s.loc['ARM', 'ki_cap_13w']:.0f}. "
       f"LO Hold, {abs(s.loc['ARM', 'lo_upside_now']):.0%} above its {uni['ARM']['lo_pt']} PT.")
@@ -404,7 +405,7 @@ def main():
       f"P(KO≤3) {pct(l1['p_ko3_mem'], 0)}, P(loss) {pct(l1['p_loss_mem'])}. **Rolls:** ORCL has already de-rated "
       f"{off('ORCL').lstrip('−')} and does not report until mid-December. ARM and AMAT are the most correlated pair "
       f"on the list ({rho('ARM', 'AMAT')}), so the worst-of behaves closer to a two-name basket. **Breaks:** ARM's "
-      f"{d(s.loc['ARM', 'next_earn'])} print (±{ev['move']:.0%}) lands three sessions before obs #1. AMAT is being "
+      f"{d(s.loc['ARM', 'next_earn'])} print (±{ev['move']:.0%}) lands five days before obs #1. AMAT is being "
       f"fixed after a {s.loc['AMAT', 'ma20_gap']:.0%} run above its 20-day average. With the strike at 75 above the "
       f"KI of 65, a breach costs at least {1 - 65 / 75:.0%}. Without the strike lever (95/65/65) the coupon is "
       f"{ref['no_lever']['cpn_uf4']:.1%}.")
@@ -462,7 +463,7 @@ def main():
         w("- Model expectation at UF " + f"{uf:.0%}" + " (±1.5 pts): " + "; ".join(
             f"{nm(r['basket'])} {lv(r)}: ~{100 * r['cpn']:.0f}% (P(KO@1) {r['p_ko1']:.0%}, P(loss) {r['p_loss_mem']:.0%})"
             for _, r in sub.iterrows()) + ".\n")
-    w(f"- ARM reports {d(s.loc['ARM', 'next_earn'])} after the close (confirmed), three sessions before obs #1 on "
+    w(f"- ARM reports {d(s.loc['ARM', 'next_earn'])} after the close (confirmed), five days before obs #1 on "
       f"{d(obs1)}. Every line fails the earnings rule on ARM, and none passes P(KO@1) ≥ 55% or P(loss) ≤ 12%. "
       f"To keep the rule, re-request lines 3 and 6 for a fixing after the print (around {d(TD_AFTER)}).")
     w(f"- AMAT reports ~{d(s.loc['AMAT', 'next_earn'])} (estimate), three days after obs #1. Strong-day fix on AMAT: "
