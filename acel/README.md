@@ -65,3 +65,35 @@ To refresh, re-pull those inputs (and add the latest desk quotes) and re-run the
 | `strict_pass_top.csv` | best coupon per basket among structures passing every hard filter |
 | `benchmarks.csv` | recent house structures re-run for the same fixing |
 | `strike_levers_top5.csv`, `tradeoff_top1.csv`, `frontier.csv` | coupon trade-offs |
+
+## AI pull-back screen (06/10/2026)
+
+Follow-up question: which AI counters, already ~30% off their 52-week highs, give the best
+chance of knocking out at a coupon of at least 15%? Fixing 08/10/2026, obs #1 09/11/2026. Same
+engine and desk calibration, with 06/10 market data. The write-up is in
+[`output/ai_pullback_2026-10-06/report.md`](output/ai_pullback_2026-10-06/report.md).
+
+```bash
+cd acel
+python3 ai_screen.py        # ~10 min: IV/drawdown screen of 33 names, 63 baskets x KO/strike/KI grid
+python3 ai_report.py        # desk lines, ARM ex-print scenario, report.md
+```
+
+`ai_screen.py --reuse-grid` re-runs only the finalists from the saved grid.
+
+| Input (`data/`) | Contents |
+|---|---|
+| `snapshots_2026-10-06.jsonl` | IBKR snapshot of 33 tech/AI names on the LO lists (spot, ranges, 30D IV, HV30, IV percentiles) |
+| `closes_update_2026-10-05.csv` | daily closes 25/09–05/10 for the priced names, and BIDU's full year |
+| `iv12m_quotes_2026-10-06.csv` | Sep-2027 ATM call/put quotes for the 7 priced names |
+| `arm_event_quotes_2026-10-06.csv` | ARM weeklies either side of its 04/11 print (implied earnings move) |
+| `universe_overrides_2026-10-06.json` | re-checked earnings dates, and BIDU, IBM and SAP |
+
+| Output (`output/ai_pullback_2026-10-06/`) | Contents |
+|---|---|
+| `report.md` | IV screen, top 5 counters, baskets that clear 15%, verdicts, desk lines |
+| `screen.csv` | per-name drawdown, 30D/12M IV, HV30, IV percentile, next print, 13-week-low KI cap |
+| `grid.csv.gz` | every structure priced (50k paths), coupons at UF 4%/2%/1% |
+| `finalists.csv` | best ≥15% structure per basket at each UF (200k paths) |
+| `names.csv` | per-counter best P(KO@1) at ≥15% |
+| `desk_lines.csv`, `no_arm.csv` | desk request lines with the ARM ex-print scenario; best baskets without ARM |

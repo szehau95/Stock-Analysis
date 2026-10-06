@@ -1,0 +1,18 @@
+{
+  "_notes": "Overlay on universe.json for the 06/10/2026 AI pull-back screen: earnings dates re-checked against company/vendor calendars on 06/10/2026, and the three list names that were not in the 24/09 run (BIDU, IBM, SAP).",
+  "names": {
+    "ARM":  {"earn": "2026-11-04", "earn_status": "confirmed amc (company release)"},
+    "AMAT": {"earn": "2026-11-12", "earn_status": "est (quarter ends 25/10)"},
+    "ORCL": {"earn": "2026-12-14", "earn_status": "est 10-14/12"},
+    "ADBE": {"earn": "2026-12-09", "earn_status": "est"},
+    "AVGO": {"earn": "2026-12-09", "earn_status": "company plan, amc"},
+    "BABA": {"earn": "2026-11-24", "earn_status": "est, unconfirmed (24/11-01/12)"},
+    "NOW":  {"earn": "2026-10-28", "earn_status": "est"},
+    "BIDU": {"name": "Baidu Inc ADR", "bbg": "BIDU UW", "lo_rating": "H", "lo_pt": null, "lo_upside_1709": 20.2,
+             "div": 0.0, "earn": "2026-11-18", "earn_status": "est 17-24/11", "group": "china_ai", "lo_line": "9888 HK"},
+    "IBM":  {"name": "International Business Machines", "bbg": "IBM UN", "lo_rating": "H", "lo_pt": 200, "lo_upside_1709": -15.9,
+             "div": 0.028, "earn": "2026-10-20", "earn_status": "est", "group": "software"},
+    "SAP":  {"name": "SAP SE ADR", "bbg": "SAP UN", "lo_rating": "B", "lo_pt": null, "lo_upside_1709": 9.6,
+             "div": 0.014, "earn": "2026-10-21", "earn_status": "est", "group": "software", "lo_line": "SAP GY"}
+  }
+}
