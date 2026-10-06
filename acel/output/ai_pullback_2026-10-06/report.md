@@ -70,8 +70,8 @@ Ranked on the best P(KO @ obs #1) each name reaches inside a basket that pays at
 |  | *BABA* | −41% | 38% / 44% | 24/11/2026 est. | 19% · 42% · 49% | BABA + ARM + AMAT | B (+95% to PT) |
 |  | *ADBE* | −34% | 38% / 45% | 09/12/2026 est. | 15% · 38% · 45% | ORCL + ADBE + ARM | H (−2% to PT) |
 
-1. **ORCL**: 55% off its high, the deepest correction on the list. 52% / 56% IV, and the 13-week low allows a KI up to 72%. Next print ~14/12/2026, well after obs #1. It is in the best basket at every UF. LO Hold, at its PT.
-2. **ARM**: 33% off its high, with the highest IV on the list (72% / 68%). It funds the coupon: every basket that reaches 15% at desk terms contains it. It fails your earnings rule: confirmed print 04/11/2026 after the close, five days before obs #1, priced at ±11%. The print is worth only 0.4–1.1 pts of coupon, so a post-print fixing loses little (section 5). The 13-week low (219.39) caps KI at 65. LO Hold, 17% above its 250 PT.
+1. **ORCL**: 55% off its high, the deepest correction on the list. 52% / 56% IV, and the 13-week low allows a KI up to 72%. Next print ~14/12/2026, well after obs #1. It is in the best basket at UF 4% and 2%, and in the second-best at UF 1%. LO Hold, at its PT.
+2. **ARM**: 33% off its high, with the highest IV on the list (72% / 68%). It funds the coupon: every basket that reaches 15% at desk terms contains it. It fails your earnings rule: confirmed print 04/11/2026 after the close, five days before obs #1, priced at ±11%. The print is worth only 0.4–1.1 pts of coupon, so a post-print fixing loses little (section 5). The 13-week low (219.39) caps KI at 65. LO Hold, and 21% above its 250 PT.
 3. **AMAT**: 26% off its high, short of your 30% line. 51% / 56% IV, and the best correlation on the list to ARM (0.53) and AVGO (0.54). It prints ~12/11/2026, three days after obs #1. Strong-day flag: 15% above its 20-day average after a rally from 474 on 24/09/2026, so fixing now locks in a high strike. LO Hold, above its 520 PT.
 4. **AVGO**: 26% off its high, also short of 30%. The lowest IV of the group (36% / 44%) but the best house view (LO Buy, +37% to the 500 PT), and it moves with ARM and AMAT (ρ 0.51 / 0.54). It buys KO odds and costs coupon. Next print 09/12/2026 (company plan).
 5. **BIDU**: 47% off its high, 37% / 43% IV, sitting 4% above its 13-week low. Correlation to ORCL/ARM/AMAT is 0.28/0.34/0.30, against BABA's 0.20/0.28/0.18, which is why it edges BABA on KO odds. **BABA** (−41%, LO Buy) is the swap if you want the house view behind the fifth name, since the numbers are within 1–2 pts. BIDU's 12M vol comes off a wide market.
@@ -98,15 +98,15 @@ For each basket, the structure with the highest P(KO @ obs #1) that pays at leas
 
 | # | Basket | KO/Str/KI | CPN | P(KO@1) | P(KO≤3) | P(KO ever) | E[life] m | P(loss) | E[loss\|loss] | avg ρ | Misses | Flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | ORCL + ARM + AMAT | 95/75/65 | 15.2% | 32.3% | 51% | 68% | 5.7 | 28.1% | 50% | 0.41 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 92 rule; KI > 65 rule; strong day (AMAT); avg ρ < 0.5 |
-| 2 | ARM + AMAT + AVGO | 100/75/65 | 16.1% | 23.7% | 43% | 62% | 6.5 | 31.0% | 47% | 0.53 | print, P(KO@1), P(loss) | AMAT −26%, AVGO −26% off high; KO > 92 rule; strong day (AMAT) |
-| 3 | ORCL + ARM + AVGO | 100/75/65 | 16.4% | 21.8% | 41% | 60% | 6.7 | 32.8% | 47% | 0.46 | print, P(KO@1), P(loss) | AVGO −26% off high; KO > 92 rule; avg ρ < 0.5 |
-| 4 | BIDU + ARM + AMAT | 100/75/65 | 16.0% | 20.3% | 39% | 60% | 6.9 | 33.0% | 47% | 0.39 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 92 rule; strong day (AMAT); avg ρ < 0.5 |
-| 5 | ORCL + BIDU + ARM | 100/75/65 | 16.2% | 19.0% | 38% | 59% | 7.0 | 34.3% | 47% | 0.35 | print, P(KO@1), P(loss) | KO > 92 rule; avg ρ < 0.5 |
-| 6 | BABA + ARM + AMAT | 100/75/65 | 16.3% | 18.7% | 38% | 58% | 7.0 | 34.3% | 47% | 0.33 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 92 rule; strong day (AMAT); avg ρ < 0.5 |
-| 7 | ORCL + BABA + ARM | 100/75/65 | 16.5% | 17.8% | 36% | 57% | 7.2 | 35.5% | 47% | 0.30 | print, P(KO@1), P(loss) | KO > 92 rule; avg ρ < 0.5 |
-| 8 | ORCL + ADBE + ARM | 100/75/65 | 16.4% | 14.9% | 34% | 56% | 7.4 | 36.7% | 47% | 0.17 | print, P(KO@1), P(loss) | KO > 92 rule; avg ρ < 0.5 |
-| 9 | ADBE + ARM + AMAT | 100/75/65 | 16.2% | 11.7% | 31% | 55% | 7.6 | 36.9% | 46% | 0.02 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 92 rule; strong day (AMAT); avg ρ < 0.5 |
+| 1 | ORCL + ARM + AMAT | 95/75/65 | 15.2% | 32.3% | 51% | 68% | 5.7 | 28.1% | 50% | 0.41 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 91.6 rule; KI > 64.5 rule; strong day (AMAT); avg ρ < 0.5 |
+| 2 | ARM + AMAT + AVGO | 100/75/65 | 16.1% | 23.7% | 43% | 62% | 6.5 | 31.0% | 47% | 0.53 | print, P(KO@1), P(loss) | AMAT −26%, AVGO −26% off high; KO > 92.4 rule; strong day (AMAT) |
+| 3 | ORCL + ARM + AVGO | 100/75/65 | 16.4% | 21.8% | 41% | 60% | 6.7 | 32.8% | 47% | 0.46 | print, P(KO@1), P(loss) | AVGO −26% off high; KO > 92.3 rule; avg ρ < 0.5 |
+| 4 | BIDU + ARM + AMAT | 100/75/65 | 16.0% | 20.3% | 39% | 60% | 6.9 | 33.0% | 47% | 0.39 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 92.3 rule; strong day (AMAT); avg ρ < 0.5 |
+| 5 | ORCL + BIDU + ARM | 100/75/65 | 16.2% | 19.0% | 38% | 59% | 7.0 | 34.3% | 47% | 0.35 | print, P(KO@1), P(loss) | KO > 92.2 rule; avg ρ < 0.5 |
+| 6 | BABA + ARM + AMAT | 100/75/65 | 16.3% | 18.7% | 38% | 58% | 7.0 | 34.3% | 47% | 0.33 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 92.2 rule; strong day (AMAT); avg ρ < 0.5 |
+| 7 | ORCL + BABA + ARM | 100/75/65 | 16.5% | 17.8% | 36% | 57% | 7.2 | 35.5% | 47% | 0.30 | print, P(KO@1), P(loss) | KO > 92.2 rule; avg ρ < 0.5 |
+| 8 | ORCL + ADBE + ARM | 100/75/65 | 16.4% | 14.9% | 34% | 56% | 7.4 | 36.7% | 47% | 0.17 | print, P(KO@1), P(loss) | KO > 92.2 rule; avg ρ < 0.5 |
+| 9 | ADBE + ARM + AMAT | 100/75/65 | 16.2% | 11.7% | 31% | 55% | 7.6 | 36.9% | 46% | 0.02 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 92.2 rule; strong day (AMAT); avg ρ < 0.5 |
 
 ### With a lower UF
 
@@ -114,12 +114,12 @@ UF 2%:
 
 | # | Basket | KO/Str/KI | CPN | P(KO@1) | P(KO≤3) | P(KO ever) | E[life] m | P(loss) | E[loss\|loss] | avg ρ | Misses | Flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | ORCL + ARM + AMAT | 90/75/65 | 15.9% | 46.7% | 64% | 77% | 4.5 | 20.8% | 51% | 0.41 | print, P(KO@1), P(loss) | AMAT −26% off high; KI > 65 rule; strong day (AMAT); avg ρ < 0.5 |
+| 1 | ORCL + ARM + AMAT | 90/75/65 | 15.9% | 46.7% | 64% | 77% | 4.5 | 20.8% | 51% | 0.41 | print, P(KO@1), P(loss) | AMAT −26% off high; KI > 64.5 rule; strong day (AMAT); avg ρ < 0.5 |
 | 2 | ORCL + ARM + AVGO | 92/75/65 | 15.4% | 44.4% | 62% | 76% | 4.6 | 21.2% | 50% | 0.46 | print, P(KO@1), P(loss) | AVGO −26% off high; avg ρ < 0.5 |
-| 3 | ARM + AMAT | 95/75/65 | 15.9% | 43.2% | 61% | 76% | 4.7 | 21.0% | 50% | 0.53 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 91 rule; KI > 63 rule; strong day (AMAT) |
+| 3 | ARM + AMAT | 95/75/65 | 15.9% | 43.2% | 61% | 76% | 4.7 | 21.0% | 50% | 0.53 | print, P(KO@1), P(loss) | AMAT −26% off high; KO > 91.1 rule; KI > 63.0 rule; strong day (AMAT) |
 | 4 | BABA + ARM + AMAT | 92/75/65 | 15.5% | 42.1% | 60% | 75% | 4.8 | 22.0% | 49% | 0.33 | print, P(KO@1), P(loss) | AMAT −26% off high; strong day (AMAT); avg ρ < 0.5 |
 | 5 | ORCL + BIDU + ARM | 92/75/65 | 15.5% | 41.8% | 60% | 75% | 4.8 | 22.2% | 49% | 0.35 | print, P(KO@1), P(loss) | avg ρ < 0.5 |
-| 6 | ORCL + ARM | 95/75/65 | 16.2% | 40.9% | 59% | 74% | 4.9 | 22.2% | 50% | 0.42 | print, P(KO@1), P(loss) | KO > 91 rule; KI > 63 rule |
+| 6 | ORCL + ARM | 95/75/65 | 16.2% | 40.9% | 59% | 74% | 4.9 | 22.2% | 50% | 0.42 | print, P(KO@1), P(loss) | KO > 91.0 rule; KI > 62.7 rule |
 | 7 | ORCL + BABA + ARM | 92/75/65 | 15.8% | 40.6% | 59% | 74% | 4.9 | 22.8% | 49% | 0.30 | print, P(KO@1), P(loss) | avg ρ < 0.5 |
 | 8 | ORCL + ADBE + ARM | 92/75/65 | 15.7% | 38.0% | 58% | 74% | 5.1 | 23.5% | 49% | 0.17 | print, P(KO@1), P(loss) | avg ρ < 0.5 |
 
@@ -127,9 +127,9 @@ UF 1%:
 
 | # | Basket | KO/Str/KI | CPN | P(KO@1) | P(KO≤3) | P(KO ever) | E[life] m | P(loss) | E[loss\|loss] | avg ρ | Misses | Flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | ARM + AMAT | 90/75/65 | 14.7% | 56.3% | 71% | 83% | 3.7 | 15.5% | 51% | 0.53 | print, P(loss) | AMAT −26% off high; KI > 63 rule; strong day (AMAT) |
-| 2 | ORCL + ARM | 90/75/65 | 15.1% | 54.3% | 70% | 82% | 3.9 | 16.5% | 51% | 0.42 | print, P(KO@1), P(loss) | KI > 63 rule |
-| 3 | ORCL + ARM + AMAT | 88/75/65 | 16.8% | 53.0% | 69% | 81% | 4.0 | 17.9% | 52% | 0.41 | print, P(KO@1), P(loss) | AMAT −26% off high; KI > 65 rule; strong day (AMAT); avg ρ < 0.5 |
+| 1 | ARM + AMAT | 90/75/65 | 14.7% | 56.3% | 71% | 83% | 3.7 | 15.5% | 51% | 0.53 | print, P(loss) | AMAT −26% off high; KI > 63.0 rule; strong day (AMAT) |
+| 2 | ORCL + ARM | 90/75/65 | 15.1% | 54.3% | 70% | 82% | 3.9 | 16.5% | 51% | 0.42 | print, P(KO@1), P(loss) | KI > 62.7 rule |
+| 3 | ORCL + ARM + AMAT | 88/75/65 | 16.8% | 53.0% | 69% | 81% | 4.0 | 17.9% | 52% | 0.41 | print, P(KO@1), P(loss) | AMAT −26% off high; KI > 64.5 rule; strong day (AMAT); avg ρ < 0.5 |
 | 4 | ARM + AMAT + AVGO | 90/75/65 | 16.2% | 52.8% | 69% | 81% | 4.0 | 17.4% | 50% | 0.53 | print, P(KO@1), P(loss) | AMAT −26%, AVGO −26% off high; strong day (AMAT) |
 | 5 | ORCL + ARM + AVGO | 90/75/65 | 16.5% | 50.8% | 67% | 80% | 4.1 | 18.3% | 50% | 0.46 | print, P(KO@1), P(loss) | AVGO −26% off high; avg ρ < 0.5 |
 | 6 | BIDU + ARM + AMAT | 90/75/65 | 16.2% | 50.2% | 67% | 80% | 4.2 | 18.3% | 50% | 0.39 | print, P(KO@1), P(loss) | AMAT −26% off high; strong day (AMAT); avg ρ < 0.5 |
@@ -158,9 +158,9 @@ Without ARM, 15% needs UF 2% or less and KO 95–100, and P(KO@1) tops out aroun
 
 ## 4. Top 3 verdicts
 
-1. **ORCL + ARM + AMAT 95/75/65 at desk terms, ~15.2%.** P(KO@1) 32.3%, P(KO≤3) 51%, P(loss) 28.1%. **Rolls:** ORCL has already de-rated 55% and does not report until mid-December. ARM and AMAT are the most correlated pair on the list (0.53), so the worst-of behaves closer to a two-name basket. **Breaks:** ARM's 04/11/2026 print (±11%) lands five days before obs #1. AMAT is being fixed after a 15% run above its 20-day average. With the strike at 75 above the KI of 65, a breach costs at least 13%. Without the strike lever (95/65/65) the coupon is 10.9%.
-2. **ORCL + ARM + AMAT 90/75/65 at UF 2%, ~15.9%.** The best KO odds at 15%: P(KO@1) 46.7%, P(KO≤3) 64%, P(KO ever) 77%, P(loss) 20.8%. **Rolls:** KO 90 sits 0.6 monthly σ below spot instead of 0.3 at KO 95. **Costs:** 2 pts of UF. At desk terms the same line prices ~10.0%. The breaks are the same as line 1.
-3. **ARM + AMAT 95/75/65 at UF 2%, ~15.9%** (your pair). P(KO@1) 43.2%, P(loss) 21.0%. **Rolls:** two names, so one fewer way to miss, and the most correlated pair on the list. **Breaks:** both legs are AI semis: if the trade unwinds, nothing in the basket diversifies it. At desk terms the pair reaches 14.0% only at KO 100 (P(KO@1) 31.1%).
+1. **ORCL + ARM + AMAT 95/75/65 at desk terms, ~15.2%.** P(KO@1) 32.3%, P(KO≤3) 51%, P(loss) 28.1%. **Rolls:** ORCL has already de-rated 55% and does not report until mid-December. AMAT is ARM's most correlated partner (0.53), which keeps the worst-of closer to a single stock. **Breaks:** ARM's 04/11/2026 print (±11%) lands five days before obs #1. AMAT is being fixed after a 15% run above its 20-day average. With the strike at 75 above the KI of 65, a breach costs at least 13%. Without the strike lever (95/65/65) the coupon is 10.9%.
+2. **ORCL + ARM + AMAT 90/75/65 at UF 2%, ~15.9%.** The best KO odds at 15%: P(KO@1) 46.7%, P(KO≤3) 64%, P(KO ever) 77%, P(loss) 20.8%. **Rolls:** KO 90 sits 0.6 monthly σ below spot instead of 0.3 at KO 95. **Needs:** UF at 2% instead of 4%. At desk terms the same line prices ~10.0%. The breaks are the same as line 1.
+3. **ARM + AMAT 95/75/65 at UF 2%, ~15.9%** (your pair). P(KO@1) 43.2%, P(loss) 21.0%. **Rolls:** two names, so one fewer way to miss, and the two move together (ρ 0.53). **Breaks:** both legs are AI semis: if the trade unwinds, nothing in the basket diversifies it. At desk terms the pair reaches 14.0% only at KO 100 (P(KO@1) 31.1%).
 
 If ARM's print before obs #1 is a deal-breaker, wait for it rather than drop ARM. The clean-calendar basket available now (ORCL + AMAT + AVGO) prices ~12.4% at desk terms at KO 100, with P(KO@1) 21.2%. ORCL + ARM + AVGO after the print (section 5) gives up only ~0.4 pts against today's line 3.
 

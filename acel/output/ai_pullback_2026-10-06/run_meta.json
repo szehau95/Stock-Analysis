@@ -21,6 +21,7 @@
   "n_structures": 4986,
   "paths": 50000,
   "final_paths": 200000,
+  "seed": 20261006,
   "theta_desk": 0.07059856939710833,
   "spread": 0.03059856939710833,
   "corr_floor": 0.6
