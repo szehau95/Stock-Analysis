@@ -1,0 +1,34 @@
+ticker,bbg,name,theme,core_ai,lo_rating,lo_upside_now,spot,hi52,off_hi52,iv,iv12m,iv12m_src,hv30,ivp52,ki_cap_13w,ma20_gap,strong_day,next_earn,earn_status,earn_in_obs1,corrected,near_miss,div
+ARM,ARM UW,Arm Holdings ADR,AI semis,True,H,-0.1749,303.0000,452.7000,-0.3307,0.7211,0.6816,06/10,0.7264,0.6853,0.6517,0.0660,False,2026-11-04,confirmed amc (company release),True,True,False,0.0000
+AMAT,AMAT UW,Applied Materials,AI semi equipment,True,H,-0.0457,544.9000,739.6700,-0.2633,0.5100,0.5569,06/10,0.4706,0.3785,0.6797,0.1512,True,2026-11-12,est (quarter ends 25/10),False,False,True,0.0040
+ORCL,ORCL UN,Oracle Corp,AI cloud,True,H,0.0093,143.6600,320.5330,-0.5518,0.5217,0.5615,06/10,0.5961,0.3187,0.7174,-0.0104,False,2026-12-14,est 10-14/12,False,True,False,0.0130
+ADBE,ADBE UW,Adobe Inc,AI software,True,H,-0.0229,240.5000,363.7000,-0.3387,0.3816,0.4458,06/10,0.4160,0.2869,0.7891,-0.0210,False,2026-12-09,est,False,True,False,0.0000
+NOW,NOW UN,ServiceNow Inc,AI software,True,SB,0.3071,137.7100,192.6000,-0.2850,0.5856,0.5856,30D,0.5215,0.7490,0.5983,,False,2026-10-28,est,True,False,True,0.0000
+AVGO,AVGO UW,Broadcom Inc,AI semis,True,B,0.3733,364.0900,494.2250,-0.2633,0.3588,0.4389,06/10,0.3384,0.0558,0.8301,0.0275,False,2026-12-09,"company plan, amc",False,False,True,0.0040
+BABA,BABA UN,Alibaba Group ADR,China AI cloud,True,B,0.9510,110.4500,188.6150,-0.4144,0.3811,0.4372,06/10,0.3037,0.1793,0.7936,0.0046,False,2026-11-24,"est, unconfirmed (24/11-01/12)",False,True,False,0.0190
+BIDU,BIDU UW,Baidu Inc ADR,China AI,True,H,0.2020,87.6200,165.3000,-0.4699,0.3747,0.4267,06/10,0.3632,0.0478,0.8623,-0.0181,False,2026-11-18,est 17-24/11,False,True,False,0.0000
+SAP,SAP UN,SAP SE ADR,AI software,True,B,0.0960,210.8600,276.5480,-0.2375,0.4466,0.4466,30D,0.3414,0.7610,0.6188,,False,2026-10-21,est,True,False,False,0.0140
+NVDA,NVDA UW,NVIDIA Corp,AI semis,True,SB,0.0844,240.6900,240.0980,0.0000,0.2868,0.3914,24/09,0.3583,0.0000,0.7105,,False,2026-11-18,est 18-25/11,False,False,False,0.0000
+AMD,AMD UW,Advanced Micro Devices,AI semis,True,H,-0.2393,631.0000,645.4600,-0.0224,0.4753,0.5754,24/09,0.4861,0.0677,0.6048,,False,2026-11-03,confirmed amc,True,False,False,0.0000
+MU,MU UW,Micron Technology Inc,Memory,True,H,0.1348,1057.5000,1255.0000,-0.1574,0.4549,0.6238,24/09,0.5088,0.0000,0.6280,,False,2026-09-30,confirmed amc,False,False,False,0.0000
+SKHY,SKHY UW,SK hynix Inc ADR,Memory,True,H,-0.0260,190.0600,199.8650,-0.0491,0.5475,0.6348,24/09,0.5691,0.0000,0.5909,,False,2026-10-27,est,True,False,False,0.0020
+SNDK,SNDK UW,Sandisk Corp,Memory,True,n/r,,1693.9900,2354.3900,-0.2805,0.6246,0.7342,24/09,0.6463,0.0040,0.5303,,False,2026-10-30,est window 30/10-09/11,True,False,True,0.0000
+WDC,WDC UW,Western Digital Corp,Storage,True,n/r,,436.0000,799.8700,-0.4549,0.6080,0.6080,30D,0.6976,0.0279,0.8186,,False,2026-10-29,est,True,True,False,0.0010
+STX,STX UW,Seagate Technology,Storage,True,H,0.0565,868.8800,1144.1800,-0.2406,0.6764,0.6764,30D,0.7776,0.3108,0.7240,,False,2026-10-27,est,True,False,False,0.0040
+MRVL,MRVL UW,Marvell Technology,AI semis,True,n/r,,271.1900,329.8800,-0.1779,0.6075,0.6823,24/09,0.6637,0.3426,0.5406,,False,2026-12-01,est,False,False,False,0.0010
+TSM,TSM UN,Taiwan Semiconductor ADR,AI semis,True,SB,0.1960,484.0300,487.4700,-0.0071,0.3210,0.3210,30D,0.2836,0.0558,0.6912,,False,2026-10-15,est,True,False,False,0.0090
+ASML,ASML UW,ASML Holding NY,AI semi equipment,True,B,0.2090,1870.5000,1999.9600,-0.0647,0.4351,0.4351,30D,0.3799,0.3386,0.7365,,False,2026-10-14,est,True,False,False,0.0040
+INTC,INTC UW,Intel Corp,AI semis,True,H,-0.1377,115.9700,142.3500,-0.1853,0.6624,0.6624,30D,0.6335,0.4940,0.6347,,False,2026-10-22,est,True,False,False,0.0000
+DELL,DELL UN,Dell Technologies C,AI hardware,True,B,0.0791,556.0000,595.5100,-0.0663,0.5547,0.6784,24/09,0.6665,0.3745,0.5816,,False,2026-11-24,est,False,False,False,0.0030
+ANET,ANET UN,Arista Networks,AI networking,True,H,0.0589,207.7600,213.0600,-0.0249,0.5008,0.5008,30D,0.4146,0.3506,0.6794,,False,2026-11-02,est (same day as obs #1),True,False,False,0.0000
+CRM,CRM UN,Salesforce Inc,AI software,True,B,0.2970,231.3000,268.2400,-0.1377,0.3788,0.4540,24/09,0.5727,0.2311,0.6039,,False,2026-12-02,est,False,False,False,0.0070
+PLTR,PLTR UW,Palantir Technologies,AI software,True,H,-0.1076,190.5000,207.5200,-0.0820,0.5348,0.5843,24/09,0.4202,0.5936,0.5570,,False,2026-11-09,vendor-confirmed amc,True,False,False,0.0000
+DDOG,DDOG UW,Datadog Inc,AI software,True,H,-0.1135,277.5000,292.7200,-0.0520,0.6673,0.6269,24/09,0.5518,0.7689,0.6592,,False,2026-11-05,est,True,False,False,0.0000
+MSFT,MSFT UW,Microsoft Corp,Hyperscaler,True,SB,0.1572,528.0000,550.2860,-0.0405,0.3503,0.3503,30D,0.2560,0.8247,0.6364,,False,2026-10-27,est late Oct,True,False,False,0.0070
+GOOGL,GOOGL UW,Alphabet Inc A,Hyperscaler,True,B,0.2909,348.6000,408.3650,-0.1464,0.3862,0.3568,24/09,0.2715,0.8606,0.8130,,False,2026-10-27,est late Oct,True,False,False,0.0020
+META,META UW,Meta Platforms,Hyperscaler,True,B,-0.0627,746.7900,779.8190,-0.0424,0.4469,0.4469,30D,0.4276,0.8645,0.6321,,False,2026-10-28,est late Oct,True,False,False,0.0030
+AMZN,AMZN UW,Amazon.com Inc,Hyperscaler,True,SB,0.2662,252.7200,287.2000,-0.1201,0.4318,0.3631,24/09,0.2458,0.9084,0.8054,,False,2026-10-29,est late Oct,True,False,False,0.0000
+PANW,PANW UW,Palo Alto Networks,Security software,False,H,-0.1252,411.5000,409.5000,0.0000,0.4815,0.5680,24/09,0.5668,0.5857,0.6748,,False,2026-11-12,est 12-19/11,False,False,False,0.0000
+IBM,IBM UN,International Business Machines,AI software,True,H,-0.0977,221.6600,332.4100,-0.3332,0.4338,0.4338,30D,0.3343,0.7729,0.8088,,False,2026-10-20,est,True,True,False,0.0280
+TSLA,TSLA UW,Tesla Inc,Autonomy / robotics,False,H,0.0098,381.2700,498.8300,-0.2357,0.4342,0.4342,30D,0.3793,0.3386,0.7020,,False,2026-10-21,est,True,False,False,0.0000
+AAPL,AAPL UW,Apple Inc,Devices,False,B,0.0358,333.0900,345.3400,-0.0355,0.2575,0.2575,30D,0.2302,0.5578,0.8106,,False,2026-10-29,est late Oct,True,False,False,0.0030

@@ -1,0 +1,28 @@
+{
+  "asof": "2026-10-06",
+  "td": "2026-10-08",
+  "obs1": "2026-11-09",
+  "min_cpn": 0.15,
+  "uf_levels": [
+    0.04,
+    0.02,
+    0.01
+  ],
+  "priced": [
+    "ORCL",
+    "BIDU",
+    "BABA",
+    "ADBE",
+    "ARM",
+    "AMAT",
+    "AVGO"
+  ],
+  "n_baskets": 63,
+  "n_structures": 4986,
+  "paths": 50000,
+  "final_paths": 200000,
+  "seed": 20261006,
+  "theta_desk": 0.07059856939710833,
+  "spread": 0.03059856939710833,
+  "corr_floor": 0.6
+}

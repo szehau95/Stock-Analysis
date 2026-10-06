@@ -1,0 +1,20 @@
+{
+  "_notes": "Ledger May-Sep 2026 as provided in the master prompt. Status is estimated, verify with the desk. UF per fill not recorded.",
+  "trades": [
+    {"td": "2026-05-16", "basket": ["MU"], "ccy": null, "ko": 100, "strike": 62, "ki": 62, "cpn": 13.00, "status": "likely KO obs #1"},
+    {"td": "2026-06-18", "basket": ["AVGO", "MU", "MRVL"], "ccy": "USD", "ko": 95, "strike": 61, "ki": 61, "cpn": 20.00, "status": "stuck"},
+    {"td": "2026-07-08", "basket": ["MU", "SNDK", "WDC"], "ccy": "MYR", "ko": 85, "strike": 50, "ki": 50, "cpn": 20.22, "status": null},
+    {"td": "2026-07-15", "basket": ["MU", "SNDK", "WDC"], "ccy": "MYR", "ko": 80, "strike": 60, "ki": 60, "cpn": 19.66, "status": "likely KO obs #1"},
+    {"td": "2026-07-21", "basket": ["GOOGL", "AMZN", "NVDA"], "ccy": "USD", "ko": 100, "strike": 85, "ki": 75, "cpn": 13.20, "status": "stuck"},
+    {"td": "2026-08-13", "basket": ["MU", "SNDK", "WDC"], "ccy": "USD", "ko": 83, "strike": 60, "ki": 60, "cpn": 20.00, "status": null},
+    {"td": "2026-08-14", "basket": ["MRVL", "ASML", "ARM"], "ccy": "MYR", "ko": 85, "strike": 70, "ki": 70, "cpn": 13.00, "status": "watch"},
+    {"td": "2026-08-14", "basket": ["MU", "SNDK", "WDC"], "ccy": "MYR", "ko": 85, "strike": 60, "ki": 60, "cpn": 13.60, "status": null},
+    {"td": "2026-08-21", "basket": ["MU", "SNDK", "SKHY"], "ccy": "USD", "ko": 85, "strike": 65, "ki": 65, "cpn": 18.60, "status": "likely KO obs #1"},
+    {"td": "2026-09-04", "basket": ["MU", "AVGO"], "ccy": "MYR", "ko": 100, "strike": 75, "ki": 55, "cpn": 12.50, "status": null},
+    {"td": "2026-09-09", "basket": ["MU", "SNDK", "SKHY"], "ccy": "MYR", "ko": 90, "strike": 80, "ki": 70, "cpn": 15.00, "status": null},
+    {"td": "2026-09-11", "basket": ["NVDA", "AMZN", "GOOGL"], "ccy": "USD", "ko": 100, "strike": 80, "ki": 80, "cpn": 10.10, "status": null},
+    {"td": "2026-09-22", "basket": ["MU", "SNDK", "SKHY"], "ccy": "MYR", "ko": 95, "strike": 72.4, "ki": 70, "cpn": 15.00, "status": "bad entry"},
+    {"td": "2026-09-24", "basket": ["MU", "SNDK", "SKHY"], "ccy": "AUD", "ko": 100, "strike": 70, "ki": 60, "cpn": 17.00, "status": "released"},
+    {"td": "2026-09-24", "basket": ["MU", "SNDK", "SKHY"], "ccy": "USD", "ko": 95, "strike": 70, "ki": 70, "cpn": 16.20, "status": "released"}
+  ]
+}
