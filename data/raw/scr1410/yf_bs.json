@@ -1,0 +1,56 @@
+{
+ "MAYBANK": {
+  "date": "2026-06-30",
+  "Stockholders Equity": 93045413000.0,
+  "Goodwill And Other Intangible Assets": 6333345000.0,
+  "Tangible Book Value": 86712068000.0,
+  "Investmentsin Associatesat Cost": 1800056000.0,
+  "Ordinary Shares Number": 12095318095.0,
+  "Total Assets": 1080180751000.0
+ },
+ "PBBANK": {
+  "date": "2026-06-30",
+  "Stockholders Equity": 61494481000.0,
+  "Goodwill And Other Intangible Assets": 3060788000.0,
+  "Tangible Book Value": 58433693000.0,
+  "Investmentsin Associatesat Cost": 456160000.0,
+  "Ordinary Shares Number": 19410691735.0,
+  "Total Assets": 582121010000.0
+ },
+ "CIMB": {
+  "date": "2026-06-30",
+  "Stockholders Equity": 70461905000.0,
+  "Goodwill And Other Intangible Assets": 8017213000.0,
+  "Tangible Book Value": 62444692000.0,
+  "Investmentsin Associatesat Cost": 2458441000.0,
+  "Ordinary Shares Number": 10808175315.0,
+  "Total Assets": 794851196000.0
+ },
+ "HLBANK": {
+  "date": "2026-06-30",
+  "Stockholders Equity": 41790038000.0,
+  "Goodwill And Other Intangible Assets": 2151463000.0,
+  "Tangible Book Value": 39638575000.0,
+  "Investmentsin Associatesat Cost": 10352079000.0,
+  "Ordinary Shares Number": 2050444002.0,
+  "Total Assets": 328411320000.0
+ },
+ "RHBBANK": {
+  "date": "2026-06-30",
+  "Stockholders Equity": 34045680000.0,
+  "Goodwill And Other Intangible Assets": 3494917000.0,
+  "Tangible Book Value": 30550763000.0,
+  "Investmentsin Associatesat Cost": 69983000.0,
+  "Ordinary Shares Number": 4364896950.0,
+  "Total Assets": 379230871000.0
+ },
+ "AMBANK": {
+  "date": "2026-06-30",
+  "Stockholders Equity": 21425334000.0,
+  "Goodwill And Other Intangible Assets": 489741000.0,
+  "Tangible Book Value": 20935593000.0,
+  "Investmentsin Associatesat Cost": 1352345000.0,
+  "Ordinary Shares Number": 3306152944.0,
+  "Total Assets": 214078777000.0
+ }
+}

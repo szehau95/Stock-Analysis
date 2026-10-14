@@ -1,0 +1,9 @@
+bank,date,house,action,from,to,stated_reason,factor_mapped,negative,tier,source
+CIMB,~07/10/2026,JPMorgan,Downgrade,n/a,Underweight,"3Q26 surprises likely skewed negative for quite a few banks; sell-off attributed by dealers to rising long-term yields",treasury_mtm;results_risk,1,T2,"thefinancialcoconut.com Oct-2026 market report; The Star dealers"
+CIMB,01/10/2026,MBSB Research,TP cut,RM9.29,RM9.20 (Buy),"Trim",results_risk,0,T3,"ad-hoc-news aggregator"
+AMBANK,~07/10/2026,JPMorgan,Downgrade,n/a,Neutral,"3Q26 surprises skewed negative",treasury_mtm;results_risk,1,T2,"thefinancialcoconut.com Oct-2026 market report"
+RHBBANK,05/10/2026,HLIB,Rating/TP,Buy RM9.50 (The Star 02/09/2026),Hold RM8.00,"Higher MGS yields weigh on 3Q26 trading income/NOII; ROE likely at low end of 10.8-11.0% target",treasury_mtm;results_risk;roe_fade,1,T2,"BusinessToday 05/10/2026; The Star 02/09/2026 (path between the two not independently verified)"
+SECTOR,11/09/2026,RHB Research,Sector downgrade,Overweight,Neutral,"Valuations; funding pressure; early asset-quality stress",sector,1,T2,"BusinessToday 11/09/2026"
+SECTOR,06/10/2026,RHB Research,Sensitivity note,,,"+100bp yields: sector CET1 -46bp, ~RM8b MTM; top picks AMMB, MAYBANK, HLBANK",treasury_mtm,0,T2,"BusinessToday 06/10/2026"
+SECTOR,01/10/2026,Affin Hwang IB,Sensitivity note,,,"Largest capital-ratio drops MAYBANK, RHB, CIMB; least PBB, HLB (shortest duration)",treasury_mtm,0,T2,"The Edge node/820219"
+PBBANK,09/09/2026,Maybank IB,Maintain,,Buy RM5.50,"PFHL privatisation (RM379m) neutral",corporate_event,0,T2,"minichart.com.sg 09/09/2026; The Star 08/09/2026"
