@@ -5,6 +5,7 @@ cd "$(dirname "$0")"
 if [[ "${FETCH:-0}" == "1" ]]; then
   python3 fetch_px.py && python3 fetch_cons.py && python3 fetch_bs.py && python3 fetch_mgs.py
 fi
+python3 m2b_treasury.py
 python3 m14_fundamentals.py
 python3 m5_technicals.py
 python3 m6_composite.py

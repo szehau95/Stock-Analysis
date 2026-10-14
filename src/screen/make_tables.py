@@ -57,9 +57,9 @@ blocks["M2_PROFIT"] = md([[lab[b], pu(F.loc[b, "roe_t4q_core"]), pu(F.loc[b, "ro
                          ["Bank", "Core ROE T4Q (headline basis)", "Core ROE ranked", "Latest Q ann.", "Last 4Q ROE path (%)", "4Q slope /qtr",
                           "NIM", "CIR", "Loan growth y/y", "CASA", "FY+1 EPS rev. 3M"])
 blocks["M2_RISK"] = md([[lab[b], kv(b, "gil_pct", "%"), "UNVERIFIED", kv(b, "credit_cost_bps", "bp"), f"{kv(b,'llc_pct','%')} ({K.loc[b,'llc_basis'] if pd.notna(K.loc[b,'llc_basis']) else 'n/a'})",
-                         kv(b, "cet1_pct", "%") + (" (pro forma ~14.1% post-Etiqa)" if b == "MAYBANK" else ""), kv(b, "tcr_pct", "%"), kv(b, "lcr_pct", "%"),
+                         kv(b, "cet1_pct", "%"), f"{Q.loc[b,'cet1_for_buffer']:.2f}%" + (" (incl. Etiqa −1.10pp)" if b == "MAYBANK" else ""), kv(b, "tcr_pct", "%"), kv(b, "lcr_pct", "%"),
                          pu(F.loc[b, "payout_t4q"], 0), n(Q.loc[b, "excess_cet1_rm_bn_est"], 1), Q.loc[b, "payout_flag"]] for b in CORE],
-                       ["Bank", "GIL", "Stage 2", "Credit cost", "LLC (basis)", "CET1", "TCR", "LCR", "Payout T4Q", "CET1 >13% (RM bn, est.)", "Payout vs CET1"])
+                       ["Bank", "GIL", "Stage 2", "Credit cost", "LLC (basis)", "CET1 reported", "CET1 adj. (FVOCI to 13/10)", "TCR", "LCR", "Payout T4Q", "CET1 >13% (RM bn, T1 RWA)", "Payout vs CET1"])
 blocks["M2_TARGETS"] = md([[lab[b], K.loc[b, "guidance"], K.loc[b, "guidance_status"], K.loc[b, "opr_sens_bps_per25"], K.loc[b, "tier"]] for b in CORE],
                           ["Bank", "FY guidance (mgmt)", "YTD vs guidance", "NIM per 25bp OPR cut (bp)", "KPI tier"])
 
@@ -81,11 +81,12 @@ blocks["M3_DIV_CONS"] = md([[lab[b], pu(F.loc[b, "dy_ntm"]), f"{(F.loc[b,'dy_ntm
                            ["Bank", "DY NTM", "Spread vs MGS10 3.83%", "Payout", "Cons. TP median", "# analysts", "Buy/Hold/Sell", "Our FV", "FV vs cons.", ">15% gap"])
 QS = S[[]].join(Q[["quality_score"]])
 blocks["M4_QUALITY"] = md([[lab[b], pu(Q.loc[b, "roe_core_rank"]), f"{Q.loc[b,'roe_trend_4q']*100:+.2f}pp", kv(b, "casa_pct", "%"), kv(b, "cir_pct", "%"),
-                            kv(b, "gil_pct", "%"), kv(b, "llc_pct", "%"), f"{Q.loc[b,'cet1_buffer_pp']:+.2f}pp",
-                            *[f"{Q.loc[b,c]:.0f}" for c in ["roe_level", "roe_trend", "casa", "cir", "gil", "llc", "cet1_buffer"]], f"**{Q.loc[b,'quality_score']:.1f}**"]
+                            kv(b, "gil_pct", "%"), kv(b, "llc_pct", "%"), f"{Q.loc[b,'cet1_buffer_pp']:+.2f}pp", f"−{Q.loc[b,'rate_risk_cet1_bp_100']:.0f}bp",
+                            *[f"{Q.loc[b,c]:.0f}" for c in ["roe_level", "roe_trend", "casa", "cir", "gil", "llc", "cet1_buffer", "rate_risk"]],
+                            f"{Q.loc[b,'quality_score_w10']:.1f}", f"**{Q.loc[b,'quality_score']:.1f}**"]
                            for b in Q.sort_values("quality_score", ascending=False).index],
-                          ["Bank", "Core ROE", "ROE slope", "CASA", "CIR", "GIL", "LLC", "CET1 vs 13%", "ROE (30)", "Trend (10)", "CASA (15)", "CIR (10)",
-                           "GIL (15)", "LLC (10)", "CET1 (10)", "Quality"])
+                          ["Bank", "Core ROE", "ROE slope", "CASA", "CIR", "GIL", "LLC", "CET1 adj. vs 13%", "CET1 per +100bp", "ROE (27)", "Trend (9)", "CASA (13.5)", "CIR (9)",
+                           "GIL (13.5)", "LLC (9)", "CET1 (9)", "Rate risk (10)", "Quality v1.0 wts", "Quality v1.1"])
 
 blocks["M5_TREND"] = md([[lab[b], n(T.loc[b, "price"]), n(T.loc[b, "sma20"]), n(T.loc[b, "sma50"]), n(T.loc[b, "sma200"]), n(T.loc[b, "w40"]),
                           f"{T.loc[b,'cross']} ({pd.Timestamp(T.loc[b,'last_cross']).strftime('%d/%m/%y')})", f"{T.loc[b,'slope40w_4w']*100:+.1f}%",
@@ -110,20 +111,54 @@ blocks["M5_SCORE"] = md([[lab[b], f"{T.loc[b,'trend_pts']:.0f}", f"{T.loc[b,'rs_
 
 blocks["M6_COMPOSITE"] = md([[lab[b], f"{S.loc[b,'value']:.0f}", f"{S.loc[b,'quality']:.0f}", f"{S.loc[b,'tech']:.0f}", f"**{S.loc[b,'composite']:.1f}**",
                               int(S.loc[b, "rank_composite"]), int(S.loc[b, "rank_comp_value_tilt"]), int(S.loc[b, "rank_comp_tech_tilt"]), int(S.loc[b, "rank_comp_beta1"]),
-                              S.loc[b, "quadrant"], S.loc[b, "quadrant_beta1"], S.loc[b, "quadrant_t1cons"], f"{int(S.loc[b,'checks_passed'])}/4"] for b in order],
+                              S.loc[b, "quadrant"], S.loc[b, "quadrant_beta1"], S.loc[b, "quadrant_t1cons"],
+                              S.loc[b, "recent_negative_action"] if isinstance(S.loc[b, "recent_negative_action"], str) and S.loc[b, "recent_negative_action"] else "–",
+                              f"**{S.loc[b,'lean']}**", " / ".join({"Overweight": "OW", "Neutral": "N", "Underweight": "UW"}[S.loc[b, f"lean_{k}"]] for k in ["value_tilt", "tech_tilt", "beta1", "t1cons"]),
+                              f"{S.loc[b,'confidence']} ({int(S.loc[b,'checks_passed'])}/4)"] for b in order],
                             ["Bank", "Value", "Quality", "Tech", "Composite 40/30/30", "Rank", "Rank 60/20/20", "Rank 20/30/50", "Rank (β=1)",
-                             "Quadrant", "Quadrant (β=1)", "Quadrant (cons. T1)", "Checks"])
+                             "Quadrant", "Quadrant (β=1)", "Quadrant (cons. T1)", "Negative broker action ≤30d", "Lean", "Lean under 60/20/20 · 20/30/50 · β=1 · cons. T1",
+                             "Confidence (lean stable)"])
 blocks["M6_VALUE"] = md([[lab[b], f"{S.loc[b,'mispricing']:.0f}", f"{S.loc[b,'resid']:.0f}", f"{S.loc[b,'pb_z5']:.0f}", f"{S.loc[b,'dy_ntm']:.0f}",
                           f"**{S.loc[b,'value']:.0f}**", f"{S.loc[b,'value_beta1']:.0f}"] for b in order],
                         ["Bank", "Mispricing (40)", "P/B–ROE resid. (30)", "P/B z 5Y (15)", "DY NTM (15)", "Value score", "… with β=1 COE"])
 
 blocks["M8_SCORECARD"] = md([[lab[b], n(F.loc[b, "price"]), n(F.loc[b, "mcap_rm_bn"], 1), n(F.loc[b, "pb_core"]), n(F.loc[b, "jpb"]), p(F.loc[b, "mispricing"], 0),
-                              pu(F.loc[b, "roe_core_rank"]), pu(F.loc[b, "dy_ntm"]), kv(b, "cet1_pct", "%"), kv(b, "gil_pct", "%"), T.loc[b, "regime"],
+                              pu(F.loc[b, "roe_core_rank"]), pu(F.loc[b, "dy_ntm"]), f"{Q.loc[b,'cet1_for_buffer']:.1f}%", f"−{Q.loc[b,'rate_risk_cet1_bp_100']:.0f}bp", kv(b, "gil_pct", "%"), T.loc[b, "regime"],
                               n(T.loc[b, "rsi_d"], 0), p(T.loc[b, "upside_t1"], 1), n(T.loc[b, "stop"]), n(T.loc[b, "rr"], 1),
                               f"{S.loc[b,'value']:.0f} / {S.loc[b,'quality']:.0f} / {S.loc[b,'tech']:.0f} / **{S.loc[b,'composite']:.1f}**",
                               S.loc[b, "quadrant"], f"**{S.loc[b,'lean']}**", S.loc[b, "confidence"]] for b in order],
-                            ["Bank", "Price", "Mkt cap RMbn", "P/B (core)", "Fair P/B", "Mispricing", "Core ROE", "FY+1 yld", "CET1", "GIL", "Trend", "RSI",
+                            ["Bank", "Price", "Mkt cap RMbn", "P/B (core)", "Fair P/B", "Mispricing", "Core ROE", "FY+1 yld", "CET1 adj.", "CET1 per +100bp", "GIL", "Trend", "RSI",
                              "Upside T1", "Stop", "R:R", "V / Q / T / Composite", "Quadrant", "Lean", "Confidence"])
+
+TR = pd.read_csv(f"{OUT}/m2b_treasury.csv", index_col=0)
+TM = pd.read_csv(f"{OUT}/m2b_treasury_meta.csv", index_col=0).iloc[:, 0]
+TM = pd.Series({k: (v if k == 'peak_day' else float(v)) for k, v in TM.items()})
+blocks["M2B_BOOK"] = md([[lab[b], n(TR.loc[b, "fvoci"], 1), n(TR.loc[b, "ac"], 1), n(TR.loc[b, "fvtpl"], 1), n(TR.loc[b, "rwa"], 1),
+                          n(TR.loc[b, "reserve"], 2) if pd.notna(TR.loc[b, "reserve"]) else "UNVERIFIED (0 assumed)", pu(TR.loc[b, "fvoci_to_rwa"]),
+                          f"{TR.loc[b,'fvoci'] / (F.loc[b,'bvps_unadj'] * C[b]['shares'] / 1e9):.2f}×", f"{TR.loc[b,'duration']:.1f}y", TR.loc[b, "duration_basis"]]
+                         for b in TR.sort_values("fvoci_to_rwa", ascending=False).index],
+                        ["Bank", "FVOCI debt (RM bn)", "Amortised cost (RM bn)", "FVTPL (RM bn)", "Group RWA (RM bn)", "FVOCI reserve (RM bn)", "FVOCI / RWA",
+                         "FVOCI / equity", "Effective duration", "Duration basis"])
+blocks["M2B_IMPACT"] = md([[lab[b], f"−{TR.loc[b,'cet1_hit_q3_bp']:.0f}bp", f"−{TR.loc[b,'cet1_hit_peak_bp']:.0f}bp", f"−{TR.loc[b,'cet1_hit_now_bp']:.0f}bp",
+                            f"−{TR.loc[b,'bv_loss_now_ps']:.3f} ({TR.loc[b,'bv_loss_now_ps'] / F.loc[b,'bvps_unadj'] * 100:.1f}%)",
+                            f"**−{TR.loc[b,'cet1_hit_stress_bp']:.0f}bp**", f"−{TR.loc[b,'bv_loss_stress_pct_equity'] * 100:.1f}%",
+                            f"{TR.loc[b,'fvtpl_q3_pct_q2_pbt'] * 100:.1f}%", f"{TR.loc[b,'fvtpl_q3_pct_fy_np'] * 100:.1f}%"]
+                           for b in TR.sort_values("cet1_hit_stress_bp", ascending=False).index],
+                          ["Bank", f"CET1: Q3 (+{TM['dy_q3_bp']:.0f}bp)", f"CET1: peak {TM['peak_day']} (+{TM['dy_peak_bp']:.0f}bp)",
+                           f"CET1: to 13/10 (+{TM['dy_now_bp']:.0f}bp)", "BV/share marked to 13/10", "CET1: further +100bp", "BV: further +100bp",
+                           "3Q26 FVTPL hit, % of 2Q PBT (unhedged max)", "… % of FY26e profit"])
+BA = pd.read_csv("data/clean/scr_broker_actions.csv")
+blocks["M1_BROKERS"] = md([[r.date, r.bank, r.house, r.action, f"{r._5} → {r.to}" if isinstance(r._5, str) and r._5 not in ("", "n/a") else (r.to if isinstance(r.to, str) else "–"),
+                            r.stated_reason, r.factor_mapped, r.tier] for r in BA.itertuples()],
+                          ["Date", "Bank", "House", "Action", "Rating / TP", "Stated reason", "Factor in model", "Tier"])
+V0S = pd.read_csv(f"{OUT}/v1.0/m6_composite.csv", index_col=0)
+V0F = pd.read_csv(f"{OUT}/v1.0/m14_fundamentals_all9.csv", index_col=0)
+V0Q = pd.read_csv(f"{OUT}/v1.0/m24_core6.csv", index_col=0)
+blocks["M0_RECON"] = md([[lab[b], p(V0F.loc[b, "mispricing"], 0), p(F.loc[b, "mispricing"], 0), f"{V0Q.loc[b,'quality_score']:.0f} → {Q.loc[b,'quality_score']:.0f}",
+                          f"{V0S.loc[b,'composite']:.1f} (#{int(V0S.loc[b,'rank_composite'])})", f"{S.loc[b,'composite']:.1f} (#{int(S.loc[b,'rank_composite'])})",
+                          f"{V0S.loc[b,'lean']} ({V0S.loc[b,'confidence']})", f"**{S.loc[b,'lean']} ({S.loc[b,'confidence']})**",
+                          "TOP PICK" if S.loc[b, "top_pick"] else ("was top pick" if b == V0S.composite.idxmax() else "")] for b in order],
+                        ["Bank", "Mispricing v1.0", "v1.1", "Quality v1.0 → v1.1", "Composite v1.0", "Composite v1.1", "Lean v1.0", "Lean v1.1", ""])
 
 with open(f"{OUT}/tables.md", "w") as f:
     for k, v in blocks.items():

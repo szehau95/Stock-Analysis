@@ -60,6 +60,7 @@ F = pd.DataFrame(rows).set_index("bank")
 
 # P/TBV from Yahoo quarterly balance sheet (T3)
 import json
+TRX = pd.read_csv(f"{OUT}/m2b_treasury.csv", index_col=0)
 bs = json.load(open("data/raw/scr1410/yf_bs.json"))
 F["tbvps"] = [bs[b]["Tangible Book Value"] / bs[b]["Ordinary Shares Number"] if b in bs else np.nan for b in F.index]
 F["ptbv"] = F.price / F.tbvps
@@ -75,6 +76,13 @@ F["roe_core_rank"] = F.roe_t4q_core
 F["bv_core"] = F.bvps
 F["addon_ps"] = 0.0
 F.loc["HLBANK", ["roe_core_rank", "bv_core", "addon_ps"]] = [roe_ex, bv_ex, bocd_mv_ps]
+# Treasury adjustment (Module 2b): June BV is pre-yield-spike; mark FVOCI to 13/10 (after tax) before any P/B or fair value.
+TR = pd.read_csv(f"{OUT}/m2b_treasury.csv", index_col=0)
+F["bv_fvoci_mark_ps"] = TR.bv_loss_now_ps.reindex(F.index).fillna(0.0)
+F["bvps_unadj"] = F.bvps
+F["bvps"] = F.bvps - F.bv_fvoci_mark_ps
+F["bv_core"] = F.bv_core - F.bv_fvoci_mark_ps
+F["pb"] = F.price / F.bvps
 F["pb_core"] = (F.price - F.addon_ps) / F.bv_core
 hlb_note = dict(roe_headline=h["pat_t4q"] / ((h["equity_now"] + h["equity_4q_ago"]) / 2), roe_ex_assoc=roe_ex, bv_ex_ps=bv_ex,
                 bocd_mv_ps=bocd_mv_ps, bocd_carry_ps=bocd_carry_ps, assoc_share_of_pat=h["share_profit_t4q"] / h["pat_t4q"],
@@ -127,12 +135,16 @@ for col in ["nim_pct", "nim_yoy_bps", "casa_pct", "cir_pct", "gil_pct", "llc_pct
     Q[col] = K.loc[CORE, col]
 num = ["nim_pct", "casa_pct", "cir_pct", "gil_pct", "llc_pct", "credit_cost_bps", "cet1_pct", "tcr_pct", "lcr_pct", "loan_growth_yoy_pct"]
 Q[num] = Q[num].apply(pd.to_numeric, errors="coerce")
-# Maybank CET1 for the buffer: pro forma post-Etiqa (-0.83pp, RM4.83b / RWA ~RM580b, 30/09 run arithmetic)
-Q["cet1_for_buffer"] = Q.cet1_pct
-Q.loc["MAYBANK", "cet1_for_buffer"] = Q.loc["MAYBANK", "cet1_pct"] - 0.83
+# CET1 for the buffer: reported, less the FVOCI mark to 13/10 (Module 2b); MAYBANK also pro forma for the RM4.83b Etiqa
+# buyout on T1 group RWA RM440.5b (-1.10pp; the 30/09 run used an RWA proxy of ~RM580b and understated it at -0.83pp).
+Q["rwa_t1_rm_bn"] = TRX.rwa
+Q["cet1_treasury_hit_pp"] = TRX.cet1_hit_now_bp / 100
+Q["cet1_for_buffer"] = Q.cet1_pct - Q.cet1_treasury_hit_pp
+Q.loc["MAYBANK", "cet1_for_buffer"] -= 4.83 / Q.loc["MAYBANK", "rwa_t1_rm_bn"] * 100
 Q["cet1_buffer_pp"] = Q.cet1_for_buffer - 13.0
-Q["rwa_proxy_rm_bn"] = [0.55 * bs[b]["Total Assets"] / 1e9 for b in Q.index]
-Q["excess_cet1_rm_bn_est"] = Q.cet1_buffer_pp / 100 * Q.rwa_proxy_rm_bn
+Q["excess_cet1_rm_bn_est"] = Q.cet1_buffer_pp / 100 * Q.rwa_t1_rm_bn
+Q["rate_risk_cet1_bp_100"] = TRX.cet1_hit_stress_bp
+Q["rate_risk_bv_pct_100"] = TRX.bv_loss_stress_pct_equity
 Q["payout_flag"] = np.select([Q.cet1_buffer_pp < 0, (Q.cet1_buffer_pp < 0.5) & (Q.payout_t4q > 0.6)],
                              ["WATCH: CET1 below 13% ref", "WATCH: thin buffer, high payout"], "ok")
 
@@ -145,7 +157,10 @@ QS["cir"] = pct_score(Q.cir_pct, higher_better=False)
 QS["gil"] = pct_score(Q.gil_pct, higher_better=False)
 QS["llc"] = pct_score(Q.llc_pct)
 QS["cet1_buffer"] = pct_score(Q.cet1_buffer_pp)
-W = dict(roe_level=.30, roe_trend=.10, casa=.15, cir=.10, gil=.15, llc=.10, cet1_buffer=.10)
+QS["rate_risk"] = pct_score(Q.rate_risk_cet1_bp_100, higher_better=False)
+W10 = dict(roe_level=.30, roe_trend=.10, casa=.15, cir=.10, gil=.15, llc=.10, cet1_buffer=.10)
+W = {**{k: 0.9 * v for k, v in W10.items()}, "rate_risk": 0.10}  # v1.1: securities-book rate risk added at 10%
+QS["quality_score_w10"] = sum(QS[k] * w for k, w in W10.items())
 QS["quality_score"] = sum(QS[k] * w for k, w in W.items())
 
 F.to_csv(f"{OUT}/m14_fundamentals_all9.csv")
@@ -157,5 +172,5 @@ print("REGRESSION", {k: round(v, 3) for k, v in reg.items()})
 print("HLB", {k: round(v, 4) for k, v in hlb_note.items()})
 print(F[["price", "bvps", "pb", "pb_core", "roe_t4q_core", "roe_core_rank", "roe_lq_ann", "roe_trend_4q", "beta_blume", "coe", "jpb",
          "fair_value", "mispricing", "resid_pct", "pb_z5", "pe_t4q", "pe_ntm", "dy_ntm", "eps_rev_3m", "tp_median", "fv_vs_cons", "adv3m_rm_m"]].round(3).to_string())
-print(Q[["casa_pct", "cir_pct", "gil_pct", "llc_pct", "cet1_for_buffer", "cet1_buffer_pp", "excess_cet1_rm_bn_est", "payout_t4q", "payout_flag"]].round(3).to_string())
+print(Q[["casa_pct", "cir_pct", "gil_pct", "llc_pct", "cet1_pct", "cet1_treasury_hit_pp", "cet1_for_buffer", "cet1_buffer_pp", "excess_cet1_rm_bn_est", "rate_risk_cet1_bp_100", "payout_t4q", "payout_flag"]].round(3).to_string())
 print(QS.round(1).to_string())
