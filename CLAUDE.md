@@ -32,6 +32,16 @@ Equity analysis from an institutional PM lens; the owner works at an HLB-group p
 11. **Policy and fiscal.** Budget, BNM policy documents, tax changes.
 12. **Conflicts.** HLBANK and HLFG are employer-group entities. Label them, and remind the owner about staff dealing and blackout rules.
 
+## IPO checklist (cover every item, or mark it UNVERIFIED)
+- **Deal mechanics.** Primary vs offer for sale (who is selling: PE or founders), free float, greenshoe and stabilisation, cornerstones, tranche mix (MITI Bumiputera, retail), lock-up expiry date.
+- **Price vs earlier talk.** Indicative price against pre-marketing and press valuations: is the deal priced to clear? Note that the institutional (private-bank) price can exceed the capped retail price.
+- **Earnings.** PAT vs **PATAMI** (minorities), acquisition-driven vs organic growth, supplier/rebate income as a share of PBT, and the final-prospectus year vs the draft.
+- **Balance sheet.** Goodwill vs equity (NTA), gearing including leases, net debt after the IPO, FCF yield.
+- **Valuation.** Like-for-like (trailing vs trailing) P/E against local and regional peers, explicit bear/base/bull scenarios, and an expected return **net of the placement fee** (e.g. 2.5% + 8% SST).
+- **Aftermarket base rates.** Recent Bursa Main Market debuts and full-year outcomes, IPO pipeline supply, index-inclusion potential, and the rate backdrop for high-P/E names.
+- **Client suitability.** Risk profile, sizing as % of net worth, income vs growth sleeve, and pre-agreed exit rules (first-day bands, stop at issue price, exit before the lock-up expires).
+- Model: `src/ipo/` (one script per deal; narrative template plus computed tables).
+
 ## Data pitfalls (learned the hard way)
 - **Yahoo "Available For Sale Securities"** for Malaysian banks = FVOCI **plus amortised cost**. Do not use it as FVOCI; take the split from T1 statements.
 - **TradingView consensus** for MYX banks can carry USD figures labelled MYR. Cross-check before use.
