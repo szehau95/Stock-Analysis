@@ -51,7 +51,7 @@ S["rank_comp_t1cons"] = S.comp_t1cons.rank(ascending=False).astype(int)
 # results risk) is not yet in reported numbers. It blocks an Overweight until the next print resolves it.
 BA = pd.read_csv("data/clean/scr_broker_actions.csv")
 BA["d"] = pd.to_datetime(BA.date.str.replace("~", "", regex=False), dayfirst=True)
-recent_neg = BA[(BA.negative == 1) & (BA.d >= ASOF - pd.Timedelta(days=30)) & BA.bank.isin(CORE)]
+recent_neg = BA[(BA.negative == 1) & (BA.d >= ASOF - pd.Timedelta(days=30)) & (BA.d <= ASOF) & BA.bank.isin(CORE)]
 S["recent_negative_action"] = [", ".join(f"{r.house} {r.to}" for r in recent_neg[recent_neg.bank == b].itertuples()) for b in S.index]
 S["flagged"] = S.recent_negative_action != ""
 S["rate_risk_cet1_bp_100"] = Q.rate_risk_cet1_bp_100
