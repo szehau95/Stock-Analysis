@@ -17,3 +17,6 @@ data/raw/odds/kalshi_series.json
 data/raw/odds/pm_search_*.json
 __pycache__/
 *.pyc
+
+# bulky re-downloadable research data
+data/raw/ff/
