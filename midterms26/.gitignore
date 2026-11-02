@@ -1,0 +1,22 @@
+# client / personal data — never commit
+data/raw/acel/
+data/clean/livebook.csv
+data/raw/ibkr_live_*.json
+out/m9_client_deals.csv
+out/m9_client_legs.csv
+out/m9_personal.csv
+out/table8_book_impact.csv
+out/PRE_*.md
+# bulky market data (re-downloadable)
+data/raw/cboe/
+data/raw/yahoo/
+# derived from the client book (lists its underlyings)
+out/m9_underlying_inputs.csv
+# discovery dumps / build artefacts
+data/raw/odds/kalshi_series.json
+data/raw/odds/pm_search_*.json
+__pycache__/
+*.pyc
+
+# bulky re-downloadable research data
+data/raw/ff/
