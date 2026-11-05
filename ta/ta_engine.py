@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ta_engine.py - Technical Analysis v2: screenshot-free PM engine (Entry / Exit / Breakout).
+ta_engine.py - Technical Analysis v2 / v2.1: screenshot-free engine (Entry / Exit / Breakout / Short).
 
 Claude Code rebuild of the project doc `claude/ta-engine.py`, which is not reachable from
 Claude Code. Written from the master-prompt spec (M1-M9, M10 log row + score_call).
@@ -403,6 +403,29 @@ def run(a):
     def targets_below(p, min_n):
         return sorted([z for z in zones if z["hi"] < p - 1e-9 and is_target(z, min_n)], key=lambda z: -z["hi"])
 
+    # Mean-reversion targets (plans A, S, live setups) are measured beyond the AT-PRICE band:
+    # the trade expects a move back through the current congestion to the next level.
+    # Calibrated on the 17/07/2026 MU validation-log fade (T1 816.57 / T2 750, not the at-price 937).
+    at_top = max([z["hi"] for z in zones if z["at_price"]] + [px])
+    at_bot = min([z["lo"] for z in zones if z["at_price"]] + [px])
+
+    def targets_up_beyond(p, min_n):
+        floor_ = max(p, at_top)
+        return sorted([z for z in zones if z["lo"] > floor_ + 1e-9 and is_target(z, min_n)], key=lambda z: z["lo"])
+
+    def targets_down_beyond(p, min_n):
+        ceil_ = min(p, at_bot)
+        return sorted([z for z in zones if z["hi"] < ceil_ - 1e-9 and is_target(z, min_n)], key=lambda z: -z["hi"])
+
+    def next_zone_up(z0):
+        """T2: the next zone of any strength beyond the T1 zone (log: fade T2 = lone round 750)."""
+        nz = sorted([x for x in zones if x["lo"] > z0["hi"] + 1e-9], key=lambda x: x["lo"])
+        return nz[0]["lo"] if nz else None
+
+    def next_zone_down(z0):
+        nz = sorted([x for x in zones if x["hi"] < z0["lo"] - 1e-9], key=lambda x: -x["hi"])
+        return nz[0]["hi"] if nz else None
+
     res_zones = sorted([z for z in zones if z["lo"] > px and z["n"] >= 2], key=lambda z: z["lo"])
     sup_zones = sorted([z for z in zones if z["hi"] < px and z["n"] >= 2], key=lambda z: -z["hi"])
     at_zones = [z for z in zones if z["at_price"]]
@@ -487,8 +510,12 @@ def run(a):
                             res["pending"] = {"type": "regular bullish", "bar": str(D[q].date()), "price": r2(L[q]),
                                               "ind": r2(R[q], 2 if kind == "rsi" else 0),
                                               "vs": r2(R[p2], 2 if kind == "rsi" else 0)}
-                    if "pending" in res and res["status"] == "NONE":
-                        res["status"] = "PENDING"
+                    if "pending" in res:
+                        pdiff = abs(res["pending"]["ind"] - res["pending"]["vs"])
+                        if kind == "rsi" and pdiff < thr:
+                            res["pending"]["grade"] = f"MARGINAL ({pdiff:.2f} pts < {thr:g})"
+                        if res["status"] == "NONE":
+                            res["status"] = "PENDING" if not (kind == "rsi" and pdiff < thr) else "PENDING-MARGINAL"
             out[side] = res
         return out
 
@@ -541,7 +568,7 @@ def run(a):
         up = next(((k, p) for k, p in lv if p > px), None)
         dn = next(((k, p) for k, p in reversed(lv) if p <= px), None)
         lab = "IN BAND"
-        for k, p in lv:
+        for k, p in sorted(lv, key=lambda kv: -abs(kv[1] - px)):  # nearest qualifying level wins
             was_below = (C[max(0, i - 5):i] < p).any()
             was_above = (C[max(0, i - 5):i] > p).any()
             if px >= p + 0.25 * ATR and was_below:
@@ -652,17 +679,19 @@ def run(a):
         z = max(cand, key=lambda z: (z["n"], z["hi"]))
         entry = z["hi"]
         stop, note = clamp_long_stop(entry, z["lo"] - 0.5 * ATR)
-        tz = targets_above(entry, minn)
+        tz = targets_up_beyond(entry, minn)
         t1 = tz[0]["lo"] if tz else None
-        t2 = tz[1]["lo"] if len(tz) > 1 else None
-        mode = "pullback (MARKUP)" if phase_d == "MARKUP" else "reversal only: tag, close back above zone top + RSI higher low; no resting bids"
+        t2 = next_zone_up(tz[0]) if tz else None
+        mode ="pullback (MARKUP)" if phase_d == "MARKUP" else "reversal only: tag, close back above zone top + RSI higher low; no resting bids"
         plans["A"] = {"name": "LONG ON SUPPORT", "mode": mode, "zone": ztxt(z), "zone_n": z["n"], "zone_components": z["components"],
                       "trigger": f"tag {z['hi']:.2f} then close > {z['hi']:.2f}" + ("" if phase_d == "MARKUP" else " with RSI higher low"),
                       "entry": r2(entry), "stop": r2(stop), "stop_note": note, "hard_stop": r2(entry - 1.5 * (entry - stop)),
                       "t1": r2(t1), "t2": r2(t2), "rr1": r2((t1 - entry) / (entry - stop)) if t1 else None,
                       "rr2": r2((t2 - entry) / (entry - stop)) if t2 else None,
                       "price_rr15": r2(rr15_price_long(t1, stop)) if t1 else None,
-                      "risk_atr": r2((entry - stop) / ATR), "size": size(entry, stop, half=True)}
+                      "risk_atr": r2((entry - stop) / ATR), "risk_ps": r2(entry - stop),
+                      "risk_pct": r2((entry - stop) / entry * 100), "hard_risk_ps": r2(1.5 * (entry - stop)),
+                      "size": size(entry, stop, half=True)}
 
     # B. BREAKOUT LADDER
     base_low = float(L[i - 19:i + 1].min())
@@ -681,12 +710,10 @@ def run(a):
         t1, t1_src = (mm, "measured move") if (t1z is None or mm < t1z["lo"]) else (t1z["lo"], f"zone {ztxt(t1z)}")
         if t1z is not None and t1z["lo"] <= trig:
             t1, t1_src = trig, f"trigger inside next zone {ztxt(t1z)}"
-        t2 = None
         if t1_src != "measured move":
-            nxt = [x for x in tz[1:] if x["lo"] > t1z["hi"]]
-            t2 = nxt[0]["lo"] if nxt else (mm if mm > t1 else None)
+            t2 = next_zone_up(t1z) or (mm if mm > t1 else None)
         else:
-            nxt = [x for x in tz if x["lo"] > mm]
+            nxt = sorted([x for x in zones if x["lo"] > mm], key=lambda x: x["lo"])
             t2 = nxt[0]["lo"] if nxt else None
         rr1 = (t1 - trig) / (trig - stop)
         rr2 = (t2 - trig) / (trig - stop) if t2 else None
@@ -704,6 +731,7 @@ def run(a):
                        "stop": r2(stop), "hard_stop": r2(trig - 1.5 * (trig - stop)), "t1": r2(t1), "t1_src": t1_src,
                        "t2": r2(t2), "rr1": r2(rr1), "rr2": r2(rr2), "chase_limit": r2(chase),
                        "price_rr15": r2(rr15_price_long(t1, stop)), "status": status,
+                       "risk_ps": r2(trig - stop), "risk_pct": r2((trig - stop) / trig * 100),
                        "dist_pct": r2((trig / px - 1) * 100), "dist_atr": r2((trig - px) / ATR)})
     first_ok = next((r for r in ladder if r["rr1"] is not None and r["rr1"] >= a.rr_min), None)
     if first_ok:
@@ -716,9 +744,9 @@ def run(a):
         z = max(cand, key=lambda z: (z["n"], -z["lo"]))
         entry = z["lo"]
         stop, note = clamp_short_stop(entry, z["hi"] + 0.5 * ATR)
-        tz = targets_below(entry, minn)
+        tz = targets_down_beyond(entry, minn)
         t1 = tz[0]["hi"] if tz else None
-        t2 = tz[1]["hi"] if len(tz) > 1 else None
+        t2 = next_zone_down(tz[0]) if tz else None
         plans["S"] = {"name": "FADE SHORT", "phase_qualified": phase_d in ("MARKDOWN", "DISTRIBUTION", "EARLY MARKDOWN"),
                       "zone": ztxt(z), "zone_n": z["n"], "zone_components": z["components"],
                       "trigger": f"rally into {ztxt(z)} then close < {z['lo']:.2f}", "entry": r2(entry), "stop": r2(stop),
@@ -726,7 +754,9 @@ def run(a):
                       "rr1": r2((entry - t1) / (stop - entry)) if t1 else None,
                       "rr2": r2((entry - t2) / (stop - entry)) if t2 else None,
                       "price_rr15": r2(rr15_price_short(t1, stop)) if t1 else None,
-                      "risk_atr": r2((stop - entry) / ATR), "size": size(entry, stop)}
+                      "risk_atr": r2((stop - entry) / ATR), "risk_ps": r2(stop - entry),
+                      "risk_pct": r2((stop - entry) / entry * 100), "hard_risk_ps": r2(1.5 * (stop - entry)),
+                      "size": size(entry, stop)}
 
     # C. EXIT (if held)
     if len(sup_zones) >= 2:
@@ -739,16 +769,18 @@ def run(a):
         if z["n"] >= 3 and z["touched_today"] and z["at_price"]:
             if L[i] <= z["hi"] and px > z["hi"]:
                 stop, note = clamp_long_stop(px, z["lo"] - 0.5 * ATR)
-                tz = targets_above(px, minn)
+                tz = targets_up_beyond(px, minn)
                 t1 = tz[0]["lo"] if tz else None
                 live.append({"type": "support bounce", "zone": ztxt(z), "n": z["n"], "entry": r2(px), "stop": r2(stop),
-                             "stop_note": note, "t1": r2(t1), "rr1": r2((t1 - px) / (px - stop)) if t1 else None})
+                             "stop_note": note, "t1": r2(t1), "rr1": r2((t1 - px) / (px - stop)) if t1 else None,
+                             "risk_ps": r2(px - stop), "risk_pct": r2((px - stop) / px * 100)})
             if H[i] >= z["lo"] and px < z["lo"]:
                 stop, note = clamp_short_stop(px, z["hi"] + 0.5 * ATR)
-                tz = targets_below(px, minn)
+                tz = targets_down_beyond(px, minn)
                 t1 = tz[0]["hi"] if tz else None
                 live.append({"type": "resistance failure", "zone": ztxt(z), "n": z["n"], "entry": r2(px), "stop": r2(stop),
-                             "stop_note": note, "t1": r2(t1), "rr1": r2((px - t1) / (stop - px)) if t1 else None})
+                             "stop_note": note, "t1": r2(t1), "rr1": r2((px - t1) / (stop - px)) if t1 else None,
+                             "risk_ps": r2(stop - px), "risk_pct": r2((stop - px) / px * 100)})
 
     # ---- M8 PM overlay
     rs = {}
@@ -835,6 +867,21 @@ def run(a):
         mech = "WAIT (BUY blocked: " + "; ".join(blocks) + ")"
     bd, bw = bias[phase_d], bias[phase_w]
     conf = "H" if (bd != 0 and bd * bw > 0) else ("L" if bd * bw < 0 else "M")
+    if mech.startswith("BUY (support") and conf == "H":
+        conf = "M"  # v2.1: pullback / bounce longs capped at M (MU walk-forward)
+
+    # v2.1 holder note (chart-only)
+    if bear_rsi_obv:
+        holder = "TRIM: confirmed bearish RSI + OBV divergence"
+    elif big_down:
+        holder = "TRIM: close below EMA50 and AVWAP(cycle high) on >= 1.5x volume"
+    elif sup_zones:
+        holder = f"HOLD while daily closes stay above {sup_zones[0]['lo']:.2f} (first support zone {ztxt(sup_zones[0])})"
+    else:
+        holder = "HOLD: no support zone with n >= 2 below price"
+    for p_ in plans.values():
+        if p_.get("size") is None:
+            p_.pop("size", None)
 
     out = {
         "engine": VERSION, "symbol": sym, "asof": str(asof.date()), "bars": n, "close": px,
@@ -878,7 +925,8 @@ def run(a):
                 "pctile_1y_atr_abs": r2(atr_usd_pctile, 0)},
         "plans": plans, "ladder": ladder, "trend_repair": r2(repair), "live_setups": live,
         "pm": {"rs": rs, "event": event, "implied": implied, "book": book, "acel": acel},
-        "verdict": {"mechanical": mech, "confidence": conf, "blocks": blocks, "bias_daily": bd, "bias_weekly": bw},
+        "verdict": {"mechanical": mech, "confidence": conf, "blocks": blocks, "bias_daily": bd, "bias_weekly": bw,
+                    "holder_note": holder, "big_down_bar": bool(big_down)},
         "params": {"risk_pct": a.risk, "max_name_pct": a.max_name, "cash_buffer_pct": a.cash_buffer, "rr_min": a.rr_min,
                    "zone_atr": a.zone_atr, "target_min_n": minn, "lot": a.lot, "ccy": a.ccy, "usd_local": a.usd_local,
                    "usdmyr": a.fx, "round_step": step},
